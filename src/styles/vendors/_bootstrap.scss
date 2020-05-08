@@ -1,0 +1,40 @@
+// Color system
+$black: $black;
+
+// Links
+$link-color: $blue;
+
+// Typography
+$font-family-base: 'SFUIDisplay', Arial, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+$body-color: $grey;
+$head-color: $black;
+
+
+// Grid containers
+$container-max-widths: (
+        sm: 540px,
+        md: 960px,
+        lg: 1100px,
+        xl: 1400px
+);
+
+@import "bootstrap-4.4.1/scss/functions";
+@import "bootstrap-4.4.1/scss/variables";
+@import "bootstrap-4.4.1/scss/mixins";
+@import "bootstrap-4.4.1/scss/mixins/breakpoints";
+@import "bootstrap-4.4.1/scss/reboot";
+@import "bootstrap-4.4.1/scss/utilities/screenreaders";
+
+// Row
+
+.row {
+  @include make-row();
+}
+
+
+// Lists
+
+.list-unstyled {
+  margin-bottom: 0;
+  @include list-unstyled();
+}

@@ -1,0 +1,17 @@
+.hide-placeholder {
+  @include hidePlaceholder {
+    opacity: 1;
+    font-weight: 400;
+    font-size: 11px;
+    color: $grey2;
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+  }
+
+  &:focus {
+    @include hidePlaceholder {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+}

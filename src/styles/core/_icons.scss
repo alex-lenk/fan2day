@@ -1,0 +1,152 @@
+@font-face {
+  font-family: 'icon-fan';
+  src: url('../fonts/icomoon.woff?l8gwvi') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  &::before {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+.icon-guitar:before {
+  content: "\e900";
+}
+
+.icon-food-tray:before {
+  content: "\e901";
+}
+
+.icon-hair-dye:before {
+  content: "\e902";
+}
+
+.icon-running:before {
+  content: "\e903";
+}
+
+.icon-education:before {
+  content: "\e904";
+}
+
+.icon-paint:before {
+  content: "\e905";
+}
+
+.icon-balloon:before {
+  content: "\e906";
+}
+
+.icon-attention:before {
+  content: "\e907";
+}
+
+.icon-chat:before {
+  content: "\e908";
+}
+
+.icon-notification:before {
+  content: "\e909";
+}
+
+.icon-time:before {
+  content: "\e90a";
+}
+
+.icon-user:before {
+  content: "\e90b";
+}
+
+.icon-check-circle:before {
+  content: "\e90c";
+}
+
+.icon-check:before {
+  content: "\e90d";
+}
+
+.icon-close:before {
+  content: "\e90e";
+}
+
+.icon-comment:before {
+  content: "\e90f";
+}
+
+.icon-menu:before {
+  content: "\e910";
+}
+
+.icon-menu-list:before {
+  content: "\e911";
+}
+
+.icon-menu-circle:before {
+  content: "\e912";
+}
+
+.icon-minus:before {
+  content: "\e913";
+}
+
+.icon-like:before {
+  content: "\e914";
+}
+
+.icon-plus:before {
+  content: "\e915";
+}
+
+.icon-gift:before {
+  content: "\e916";
+}
+
+.icon-search:before {
+  content: "\e917";
+}
+
+.icon-compare:before {
+  content: "\e918";
+}
+
+.icon-arrow-long-left:before {
+  content: "\e919";
+}
+
+.icon-arrow-left:before {
+  content: "\e91a";
+}
+
+.icon-arrow-right:before {
+  content: "\e91b";
+}
+
+.icon-increase:before {
+  content: "\e91c";
+}
+
+.icon-decrease:before {
+  content: "\e91d";
+}
+
+.icon-arrow-down:before {
+  content: "\e91e";
+}
+
+.icon-refresh:before {
+  content: "\e91f";
+}
