@@ -20,8 +20,6 @@ const paths = {
     js: {
         src: [
             'src/js/vendors/jquery.min.js',
-            'src/js/vendors/jquery.fancybox.min.js',
-            'src/js/snippets/mask.js',
             'src/js/snippets/tab.js',
             'src/js/scripts.js'
         ],

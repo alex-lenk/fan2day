@@ -1,6 +1,8 @@
+@import "icons-variables";
+
 @font-face {
-  font-family: 'icon-fan';
-  src: url('../fonts/icomoon.woff?l8gwvi') format('woff');
+  font-family: '#{$icomoon-font-family}';
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?kpw7ur') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -9,144 +11,204 @@
 [class^="icon-"],
 [class*=" icon-"] {
   &::before {
-    font-family: 'icon-fan' !important;
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    @include coreIcon
   }
 }
 
-.icon-guitar:before {
-  content: "\e900";
+.icon-extreme {
+  &:before {
+    content: $icon-extreme;
+  }
 }
 
-.icon-food-tray:before {
-  content: "\e901";
+.icon-guitar {
+  &:before {
+    content: $icon-guitar;
+  }
 }
 
-.icon-hair-dye:before {
-  content: "\e902";
+.icon-food-tray {
+  &:before {
+    content: $icon-food-tray;
+  }
 }
 
-.icon-running:before {
-  content: "\e903";
+.icon-hair-dye {
+  &:before {
+    content: $icon-hair-dye;
+  }
 }
 
-.icon-education:before {
-  content: "\e904";
+.icon-running {
+  &:before {
+    content: $icon-running;
+  }
 }
 
-.icon-paint:before {
-  content: "\e905";
+.icon-education {
+  &:before {
+    content: $icon-education;
+  }
 }
 
-.icon-balloon:before {
-  content: "\e906";
+.icon-paint {
+  &:before {
+    content: $icon-paint;
+  }
 }
 
-.icon-attention:before {
-  content: "\e907";
+.icon-balloon {
+  &:before {
+    content: $icon-balloon;
+  }
 }
 
-.icon-chat:before {
-  content: "\e908";
+.icon-attention {
+  &:before {
+    content: $icon-attention;
+  }
 }
 
-.icon-notification:before {
-  content: "\e909";
+.icon-chat {
+  &:before {
+    content: $icon-chat;
+  }
 }
 
-.icon-time:before {
-  content: "\e90a";
+.icon-notification {
+  &:before {
+    content: $icon-notification;
+  }
 }
 
-.icon-user:before {
-  content: "\e90b";
+.icon-time {
+  &:before {
+    content: $icon-time;
+  }
 }
 
-.icon-check-circle:before {
-  content: "\e90c";
+.icon-user {
+  &:before {
+    content: $icon-user;
+  }
 }
 
-.icon-check:before {
-  content: "\e90d";
+.icon-check-circle {
+  &:before {
+    content: $icon-check-circle;
+  }
 }
 
-.icon-close:before {
-  content: "\e90e";
+.icon-check {
+  &:before {
+    content: $icon-check;
+  }
 }
 
-.icon-comment:before {
-  content: "\e90f";
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
 }
 
-.icon-menu:before {
-  content: "\e910";
+.icon-comment {
+  &:before {
+    content: $icon-comment;
+  }
 }
 
-.icon-menu-list:before {
-  content: "\e911";
+.icon-menu {
+  &:before {
+    content: $icon-menu;
+  }
 }
 
-.icon-menu-circle:before {
-  content: "\e912";
+.icon-menu-list {
+  &:before {
+    content: $icon-menu-list;
+  }
 }
 
-.icon-minus:before {
-  content: "\e913";
+.icon-menu-circle {
+  &:before {
+    content: $icon-menu-circle;
+  }
 }
 
-.icon-like:before {
-  content: "\e914";
+.icon-minus {
+  &:before {
+    content: $icon-minus;
+  }
 }
 
-.icon-plus:before {
-  content: "\e915";
+.icon-like {
+  &:before {
+    content: $icon-like;
+  }
 }
 
-.icon-gift:before {
-  content: "\e916";
+.icon-plus {
+  &:before {
+    content: $icon-plus;
+  }
 }
 
-.icon-search:before {
-  content: "\e917";
+.icon-gift {
+  &:before {
+    content: $icon-gift;
+  }
 }
 
-.icon-compare:before {
-  content: "\e918";
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
 }
 
-.icon-arrow-long-left:before {
-  content: "\e919";
+.icon-compare {
+  &:before {
+    content: $icon-compare;
+  }
 }
 
-.icon-arrow-left:before {
-  content: "\e91a";
+.icon-arrow-long-left {
+  &:before {
+    content: $icon-arrow-long-left;
+  }
 }
 
-.icon-arrow-right:before {
-  content: "\e91b";
+.icon-arrow-left {
+  &:before {
+    content: $icon-arrow-left;
+  }
 }
 
-.icon-increase:before {
-  content: "\e91c";
+.icon-arrow-right {
+  &:before {
+    content: $icon-arrow-right;
+  }
 }
 
-.icon-decrease:before {
-  content: "\e91d";
+.icon-increase {
+  &:before {
+    content: $icon-increase;
+  }
 }
 
-.icon-arrow-down:before {
-  content: "\e91e";
+.icon-decrease {
+  &:before {
+    content: $icon-decrease;
+  }
 }
 
-.icon-refresh:before {
-  content: "\e91f";
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down;
+  }
+}
+
+.icon-refresh {
+  &:before {
+    content: $icon-refresh;
+  }
 }

@@ -1,0 +1,51 @@
+@mixin coreIcon {
+  font-family: $icomoon-font-family;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @content;
+}
+
+$icomoon-font-family: 'iconFan' !default;
+$icomoon-font-path: "../fonts" !default;
+
+$icon-extreme: "\e920";
+$icon-guitar: "\e900";
+$icon-food-tray: "\e901";
+$icon-hair-dye: "\e902";
+$icon-running: "\e903";
+$icon-education: "\e904";
+$icon-paint: "\e905";
+$icon-balloon: "\e906";
+$icon-attention: "\e907";
+$icon-chat: "\e908";
+$icon-notification: "\e909";
+$icon-time: "\e90a";
+$icon-user: "\e90b";
+$icon-check-circle: "\e90c";
+$icon-check: "\e90d";
+$icon-close: "\e90e";
+$icon-comment: "\e90f";
+$icon-menu: "\e910";
+$icon-menu-list: "\e911";
+$icon-menu-circle: "\e912";
+$icon-minus: "\e913";
+$icon-like: "\e914";
+$icon-plus: "\e915";
+$icon-gift: "\e916";
+$icon-search: "\e917";
+$icon-compare: "\e918";
+$icon-arrow-long-left: "\e919";
+$icon-arrow-left: "\e91a";
+$icon-arrow-right: "\e91b";
+$icon-increase: "\e91c";
+$icon-decrease: "\e91d";
+$icon-arrow-down: "\e91e";
+$icon-refresh: "\e91f";
+

@@ -1,6 +1,11 @@
 .top-panel {
+  width: 100%;
   background: #E3E5EC;
   box-shadow: 0 8px 15px rgba(95, 105, 142, 0.3);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
 }
 
 .top-panel-holder {
