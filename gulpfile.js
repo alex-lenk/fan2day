@@ -82,7 +82,7 @@ gulp.task('browser-sync', function () {
             baseDir: './build'
         },
         notify: false,
-        port: 3030,
+        port: 4010,
         // online: false, // Work offline without internet connection
         // tunnel: true, tunnel: 'projectname', // Demonstration page: http://projectname.localtunnel.me
     })

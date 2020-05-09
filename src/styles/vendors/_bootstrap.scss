@@ -3,12 +3,16 @@ $black: $black;
 
 // Links
 $link-color: $blue;
+$link-hover-decoration: none;
 
 // Typography
 $font-family-base: 'SFUIDisplay', Arial, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 $body-color: $grey;
 $head-color: $black;
 
+// Body
+
+$body-bg: $grey4;
 
 // Grid containers
 $container-max-widths: (
@@ -24,6 +28,7 @@ $container-max-widths: (
 @import "bootstrap-4.4.1/scss/mixins/breakpoints";
 @import "bootstrap-4.4.1/scss/reboot";
 @import "bootstrap-4.4.1/scss/utilities/screenreaders";
+@import "bootstrap-4.4.1/scss/grid";
 
 // Row
 
