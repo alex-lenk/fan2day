@@ -9,6 +9,7 @@ $border-radius: 30px;
 // Links
 $link-color: $blue;
 $link-hover-decoration: none;
+$link-hover-color: $blue2;
 
 
 // Typography
@@ -38,13 +39,14 @@ $input-focus-border-color: rgba(#fff, .3);
 $input-color: $black;
 $input-font-weight: 500;
 $input-font-size: 14px;
-
+$input-padding-x: 1.2rem;
+$form-group-margin-bottom: 1.2rem;
 
 // Buttons
 $btn-border-width: 0;
 $btn-font-weight: 700;
 $btn-disabled-opacity: .5;
-
+$btn-padding-x: 2.5rem;
 
 @import "bootstrap-4.4.1/scss/functions";
 @import "bootstrap-4.4.1/scss/variables";
@@ -53,6 +55,7 @@ $btn-disabled-opacity: .5;
 @import "bootstrap-4.4.1/scss/reboot";
 @import "bootstrap-4.4.1/scss/utilities/screenreaders";
 //@import "bootstrap-4.4.1/scss/grid";
+//@import "bootstrap-4.4.1/scss/custom-forms";
 @import "bootstrap-4.4.1/scss/forms";
 @import "bootstrap-4.4.1/scss/buttons";
 

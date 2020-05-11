@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Главная страница - Fan2Day</title>
 
-    <link rel="stylesheet" href="/css/vendors.min.css?ver=1.1">
-    <link rel="stylesheet" href="/css/styles.min.css?ver=1.1">
+    <link rel="stylesheet" href="/css/vendors.min.css?ver=1.7">
+    <link rel="stylesheet" href="/css/styles.min.css?ver=1.6">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -40,7 +40,7 @@
             <span class="top-panel-compare__counter">2</span>
         </div>
 
-        <div class="top-panel-enter btn btn-bright">
+        <div class="top-panel-enter btn btn-bright js__login">
             <span class="btn-text">Войти</span>
         </div>
     </div>
@@ -78,6 +78,98 @@
         </li>
     </ul>
 </nav>
+
+<div class="container">
+    <div class="card-item">
+        <a href="#" class="card">
+            <div class="card-media">
+                <img src="img/example/card-01@2x.jpg" class="card-media__img" alt="">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+<!-- BEGIN: Floating panels -->
+
+<div class="modal-wrapper" id="modal-auth">
+    <div class="modal-box">
+        <div class="modal-close circle-btn icon-close"></div>
+
+        <div id="modal-login" class="modal-form modal-form__active">
+            <form action="/">
+                <h2 class="modal-title">Вход</h2>
+                <div class="modal-subtitle">Для входа используйте ваш е-mail и&nbsp;пароль</div>
+                <div class="form-group">
+                    <input type="text" class="form-control hide-placeholder" placeholder="Введите e-mail *">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control hide-placeholder" placeholder="Пароль *">
+                </div>
+                <div class="form-group__btn">
+                    <button class="btn btn-primary"><span class="btn-text">Войти</span></button>
+                    <div class="form-group__link as-link js__forgot">Забыли пароли?</div>
+                </div>
+            </form>
+
+            <div class="modal-box__bottom">
+                <div class="modal-box__bottom-text">У вас нет аккаунта на Fun2Day?</div>
+                <div class="as-link js__register">Зарегистрироваться</div>
+            </div>
+        </div>
+
+        <div id="modal-forgot" class="modal-form">
+            <form action="/">
+                <h2 class="modal-title">Восстановления пароля</h2>
+                <div class="modal-subtitle">Укажите адрес электронной почты, который вы&nbsp;использовали при регистрации.</div>
+                <div class="form-group">
+                    <input type="text" class="form-control hide-placeholder" placeholder="E-mail *">
+                </div>
+                <div class="form-group__btn">
+                    <button class="btn btn-primary"><span class="btn-text">Восстановить</span></button>
+                    <div class="form-group__link as-link js__login">Вспомнили пароль?</div>
+                </div>
+            </form>
+
+            <div class="modal-box__bottom">
+                <div class="modal-box__bottom-text">У вас нет аккаунта на Fun2Day?</div>
+                <div class="as-link js__register">Зарегистрироваться</div>
+            </div>
+        </div>
+
+        <div id="modal-register" class="modal-form">
+            <form action="/">
+                <h2 class="modal-title">Регистрация</h2>
+                <div class="modal-subtitle">
+                    Укажите адрес электронной почты, мы&nbsp;отправим вам
+                    пароль для входа в&nbsp;личный кабинет
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control hide-placeholder" placeholder="Укажите Ваш E-mail *">
+                </div>
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                        <input type="checkbox" id="USER_REMEMBER" name="USER_REMEMBER" value="Y" class="custom-control-input" required="">
+                        <span class="custom-control-label icon-check">Согласие на обработку</span>
+                    </label>
+                </div>
+                <div class="form-group__btn">
+                    <button class="btn btn-primary"><span class="btn-text">Зарегистрироваться</span></button>
+                </div>
+            </form>
+
+            <div class="modal-box__bottom">
+                <div class="modal-box__bottom-text">Уже есть аккаунт на Fun2Day?</div>
+                <div class="as-link js__login">Войти</div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="search-area">
     <div class="search-area-holder">
@@ -444,7 +536,11 @@
     </div>
 </div>
 
+<!-- END:> Floating panels -->
 
-<script src="js/scripts.min.js?ver=1.0"></script>
+
+<script src="js/scripts.min.js?ver=1.2"></script>
+
+
 </body>
 </html>

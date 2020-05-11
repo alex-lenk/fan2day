@@ -23,6 +23,7 @@
     box-shadow: inset 3px 3px 10px rgba(56, 72, 114, 0.25), inset -3px -3px 10px #fff;
   }
 }
+
 .form-control__prepend {
   position: relative;
 
@@ -34,5 +35,84 @@
 
   .form-control {
     padding-left: 40px;
+  }
+}
+
+/* custom-control */
+
+.custom-control {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+
+  &::before {
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 25px;
+    height: 25px;
+    pointer-events: none;
+    background: linear-gradient(135deg, #EEEFF4 0%, #F6F7FC 100%);
+    box-shadow: inset 3px 3px 6px rgba(56, 72, 114, 0.25), inset -3px -3px 6px #FFFFFF;
+    transition: background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    content: "";
+  }
+}
+
+.custom-control-input {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 35px;
+  height: 1.25rem;
+  opacity: 0;
+
+  &:checked ~ .custom-control-label {
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.custom-control-label {
+  padding-left: 35px;
+  position: relative;
+  margin-bottom: 0;
+  vertical-align: top;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: $grey2;
+  display: block;
+
+  &::before,
+  &::after {
+    font-weight: normal;
+    display: block;
+    position: absolute;
+    opacity: 0;
+    transition: opacity .3s;
+  }
+
+  &::before {
+    color: #fff;
+    top: 4px;
+    left: 5px;
+    font-size: 17px;
+    z-index: 1;
+  }
+
+  &::after {
+    border-radius: 5px;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background: $blue-gradient2;
+    box-shadow: inset 3px 3px 6px rgba(56, 72, 114, 0.25), inset -3px -3px 6px rgba(255, 255, 255, 0.25);
+    content: "";
   }
 }

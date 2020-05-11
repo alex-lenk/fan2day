@@ -27,6 +27,16 @@
   }
 }
 
+.as-link {
+  color: $blue;
+  cursor: pointer;
+  transition: color .3s;
+
+  &:hover {
+    color: $blue2;
+  }
+}
+
 .tab-content > .tab-pane {
   display: none;
 }

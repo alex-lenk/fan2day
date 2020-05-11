@@ -15,7 +15,6 @@ $(document).ready(function () {
     /* BEGIN: Клик по кнопке "все роазвлечения" .top-panel-all */
     let entertainmentPanel = '.entertainment-panel';
     let entertainmentPanelOpened = 'entertainment-panel-opened';
-
     $('.top-panel-all').click(function () {
         if ($(entertainmentPanel).hasClass(entertainmentPanelOpened)) {
             $(document).mouseup(function (e) {
@@ -79,5 +78,47 @@ $(document).ready(function () {
             searchArea.removeClass('active')
         }
     });
+    /* END */
+
+
+    /* BEGIN: For logic on modals login, forgot and register */
+    $('.js__login').click(function () {
+        $('#modal-auth').addClass('modal-opened');
+        $('.modal-form').removeClass('modal-form__active');
+        $('#modal-login').addClass('modal-form__active');
+    });
+
+    $('.modal-close').click(function () {
+        $('#modal-auth').removeClass('modal-opened');
+    });
+
+    $('.js__forgot').click(function () {
+        $('.modal-form').removeClass('modal-form__active');
+        $('#modal-forgot').addClass('modal-form__active');
+    });
+
+    $('.js__register').click(function () {
+        $('.modal-form').removeClass('modal-form__active');
+        $('#modal-register').addClass('modal-form__active');
+    });
+
+
+    let hash = window.location.hash;
+
+    if (hash === '#modal-forgot' || hash === '/#modal-forgot') {
+        $('#modal-auth').addClass('modal-opened');
+        $('.modal-form').removeClass('modal-form__active');
+        $('#modal-forgot').addClass('modal-form__active');
+    } else if (hash === '#modal-login' || hash === '/#modal-login') {
+        $('#modal-auth').addClass('modal-opened');
+        $('.modal-form').removeClass('modal-form__active');
+        $('#modal-login').addClass('modal-form__active');
+    } else if (hash === '#modal-register' || hash === '/#modal-register') {
+        $('#modal-auth').addClass('modal-opened');
+        $('.modal-form').removeClass('modal-form__active');
+        $('#modal-register').addClass('modal-form__active');
+    }
+
+    console.log(hash);
     /* END */
 });
