@@ -1,9 +1,19 @@
 @import "core/variables";
 @import "core/mixin";
+@import "core/fonts";
 @import "core/typography";
 @import "core/core";
+@import "core/btn";
 @import "core/forms";
 @import "core/icons";
 @import "core/nav-section";
+
+@import "components/result-list";
+@import "components/tag-list";
+@import "components/link-offer";
+
 @import "blocks/top-panel";
+@import "blocks/main-info";
 @import "blocks/entertainment-panel";
+@import "blocks/search-area";
+

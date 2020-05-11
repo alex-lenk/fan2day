@@ -180,9 +180,9 @@ gulp.task('default', gulp.parallel('styles', 'scripts', 'browser-sync', 'code', 
 
 gulp.task('deploy', function () {
     var conn = ftp.create({
-        host: 'rudnap.beget.tech',
-        user: 'rudnap_stroimegabaza',
-        password: 'C5*tir6h&v7ficWs',
+        host: 'artlen0t.beget.tech',
+        user: 'artlen0t_depfill2',
+        password: '4uUA&pYB6kZH7&gP',
         parallel: 10
     });
 

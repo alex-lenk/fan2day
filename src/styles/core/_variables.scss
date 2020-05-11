@@ -12,11 +12,12 @@ $grey3: #E1E1E1;
 
 //- Цвет текста ссылок ( #0575E6 )
 $blue: #0575E6;
+$blue2: #021B79;
 
 $grey4: #E3E5EC;
 $grey5: #D3D9ED;
 
-$blue-gradient: linear-gradient(135deg, $blue 0%, #021B79 100%);
+$blue-gradient: linear-gradient(135deg, $blue 0%, $blue2 100%);
 $blue-gradient2: linear-gradient(135deg, #36D1DC 0%, #5B86E5 100%);
 $blue-gradient3: linear-gradient(135deg, #C2E9FB 0%, #A1C4FD 100%);
 $grey-gradient: linear-gradient(135deg, #EEEFF4 0%, #F6F7FC 100%);

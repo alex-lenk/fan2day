@@ -1,26 +1,50 @@
 // Color system
 $black: $black;
 
+
+// Components
+$border-radius: 30px;
+
+
 // Links
 $link-color: $blue;
 $link-hover-decoration: none;
+
 
 // Typography
 $font-family-base: 'SFUIDisplay', Arial, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
 $body-color: $grey;
 $head-color: $black;
 
-// Body
 
+// Body
 $body-bg: $grey4;
+
 
 // Grid containers
 $container-max-widths: (
         sm: 540px,
         md: 960px,
-        lg: 1100px,
+        lg: 1200px,
         xl: 1400px
 );
+
+
+// Forms
+$input-height: 44px;
+$input-border-color: rgba(#fff, .3);
+$input-box-shadow: inset 3px 3px 10px rgba(56, 72, 114, 0.25), inset -3px -3px 10px #FFFFFF;
+$input-focus-border-color: rgba(#fff, .3);
+$input-color: $black;
+$input-font-weight: 500;
+$input-font-size: 14px;
+
+
+// Buttons
+$btn-border-width: 0;
+$btn-font-weight: 700;
+$btn-disabled-opacity: .5;
+
 
 @import "bootstrap-4.4.1/scss/functions";
 @import "bootstrap-4.4.1/scss/variables";
@@ -28,17 +52,18 @@ $container-max-widths: (
 @import "bootstrap-4.4.1/scss/mixins/breakpoints";
 @import "bootstrap-4.4.1/scss/reboot";
 @import "bootstrap-4.4.1/scss/utilities/screenreaders";
-@import "bootstrap-4.4.1/scss/grid";
+//@import "bootstrap-4.4.1/scss/grid";
+@import "bootstrap-4.4.1/scss/forms";
+@import "bootstrap-4.4.1/scss/buttons";
+
 
 // Row
-
 .row {
   @include make-row();
 }
 
 
 // Lists
-
 .list-unstyled {
   margin-bottom: 0;
   @include list-unstyled();

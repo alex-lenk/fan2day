@@ -1,17 +1,38 @@
 .hide-placeholder {
   @include hidePlaceholder {
     opacity: 1;
-    font-weight: 400;
-    font-size: 11px;
-    color: $grey2;
-    text-transform: uppercase;
-    transition: opacity 0.3s ease;
+    font-size: 14px;
+    line-height: 16px;
+    color: $grey;
+    transition: opacity .3s;
   }
 
   &:focus {
     @include hidePlaceholder {
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity .3s;
     }
+  }
+}
+
+.form-control {
+  background: $grey-gradient;
+  box-shadow: inset 3px 3px 10px rgba(56, 72, 114, 0.25), inset -3px -3px 10px #fff;
+
+  &:focus {
+    box-shadow: inset 3px 3px 10px rgba(56, 72, 114, 0.25), inset -3px -3px 10px #fff;
+  }
+}
+.form-control__prepend {
+  position: relative;
+
+  &::before {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+  }
+
+  .form-control {
+    padding-left: 40px;
   }
 }

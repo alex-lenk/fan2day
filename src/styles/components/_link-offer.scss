@@ -1,0 +1,43 @@
+.link-offer {
+  margin-left: -20px;
+  margin-right: -20px;
+  display: flex;
+}
+
+.link-offer-item {
+  max-width: calc(100% / 5);
+  flex-basis: calc(100% / 5);
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+
+.link-offer-link {
+  padding: 14px 10px 10px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  color: $black;
+  background-color: $grey4;
+  box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
+  border-radius: 10px;
+  display: block;
+  transition: background-color .3s;
+
+  &::before {
+    width: 30px;
+    height: 30px;
+    line-height: 28px;
+    margin: 0 auto 8px;
+    display: block;
+    background: $grey-gradient;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
+  }
+
+  &:hover {
+    color: $black;
+    background-color: $grey5;
+  }
+}

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Главная страница - Fan2Day</title>
 
-    <link rel="stylesheet" href="/css/vendors.min.css">
-    <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/vendors.min.css?ver=1.0">
+    <link rel="stylesheet" href="/css/styles.min.css?ver=1.0">
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -22,7 +22,9 @@
 <nav class="top-panel">
     <div class="top-panel-holder container">
         <div class="top-panel-all icon-menu-list top-panel-all__JS">Все развлечения</div>
-        <div class="top-panel-search icon-search"></div>
+
+        <div class="top-panel-search circle-btn icon-search"></div>
+
         <ul class="top-panel-nav list-unstyled">
             <li class="top-panel-nav__item"><a href="#" class="top-panel-nav__link">О проекте</a></li>
             <li class="top-panel-nav__item"><a href="#" class="top-panel-nav__link">Гарантии</a></li>
@@ -31,19 +33,160 @@
             <li class="top-panel-nav__item"><a href="#" class="top-panel-nav__link">Блог</a></li>
             <li class="top-panel-nav__item"><a href="#" class="top-panel-nav__link">Стать организатором</a></li>
         </ul>
+
         <a href="tel:+74951234556" class="top-panel-phone" rel="nofollow">+7 (495) 123-45-56</a>
-        <div class="top-panel-compare icon-compare" data-compare-counter="2"></div>
-        <div class="top-panel-enter"><span class="top-panel-enter__text">Войти</span></div>
+
+        <div class="top-panel-compare circle-btn icon-compare">
+            <span class="top-panel-compare__counter">2</span>
+        </div>
+
+        <div class="top-panel-enter btn btn-bright">
+            <span class="btn-text">Войти</span>
+        </div>
     </div>
 </nav>
 
+<header class="main-info">
+    <h1 class="main-info-title">Сервис поиска и бронирования досуга в Москве<br> и Московской области</h1>
+</header>
 
+<div class="search-area">
+    <div class="search-area-holder">
+        <!-- Begin: search form -->
+        <div class="search-form__wrap">
+            <form class="search-form" action="/" method="GET">
+                <div class="search-form-box form-control__prepend icon-search">
+                    <input type="search" class="search-form-box__input form-control hide-placeholder" placeholder="Найдите любимое развлечение">
 
+                    <div class="search-form-box__back icon-arrow-long-left"></div>
 
+                    <div class="search-form-box__clear icon-close"></div>
 
+                    <button type="submit" class="btn btn-primary"><span class="btn-text">Найти</span></button>
+                </div>
+            </form>
 
+            <!-- Begin: result panel -->
+            <div class="search-area__result">
+                <div class="search-area__result--list">
+                    <a href="#" class="result-item">
+                        <img src="img/example/search-result-01.png" class="result-item__img" alt="">
+                        <div class="result-item__text">
+                            Мастер класс по приготовлению зелёного чая собранного в горах Индии ручным методом
+                        </div>
+                    </a>
+                    <a href="#" class="result-item">
+                        <img src="img/example/search-result-02.png" class="result-item__img" alt="">
+                        <div class="result-item__text">
+                            Мастер класс по приготовлению зелёного чая собранного в горах Индии ручным методом
+                        </div>
+                    </a>
+                    <a href="#" class="result-item">
+                        <img src="img/example/search-result-03.png" class="result-item__img" alt="">
+                        <div class="result-item__text">
+                            Мастер класс по приготовлению зелёного чая собранного в горах Индии ручным методом
+                        </div>
+                    </a>
+                    <a href="#" class="result-item">
+                        <img src="img/example/search-result-04.png" class="result-item__img" alt="">
+                        <div class="result-item__text">
+                            Мастер класс по приготовлению зелёного чая собранного в горах Индии ручным методом
+                        </div>
+                    </a>
+                </div>
 
+                <div class="result-all">
+                    <a href="#" class="btn btn-bright"><span class="btn-text">Посмотреть все предложения</span></a>
+                </div>
+            </div>
+            <!-- END: result panel -->
+        </div>
+        <!-- END: search form -->
 
+        <!-- Begin: component tag-list -->
+        <ul class="search-area__tag tag-list list-unstyled">
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Мини тэг</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Короткий тэг</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Тэг</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Тэг 11</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Длинный тэг</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Короткий тэг</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Ещё какой-то тэг</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Короткий тэг</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Ещё какой-то тэг</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Короткий тэг</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Это тэг</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Мини тэг</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Тэг 11</a></li>
+            <li class="tag-list__item"><a href="#" class="tag-list__link">Тэг</a></li>
+        </ul>
+        <!-- END: component tag-list -->
+
+        <!-- Begin: component link-offer -->
+        <div class="search-area__popular">
+            <h2>Популярные предложения</h2>
+
+            <ul class="link-offer list-unstyled">
+                <li class="link-offer-item"><a href="#" class="icon-education link-offer-link link-offer-link__active">Новые</a></li>
+                <li class="link-offer-item"><a href="#" class="icon-balloon link-offer-link">Детские</a></li>
+                <li class="link-offer-item"><a href="#" class="icon-gift link-offer-link">Подарок</a></li>
+                <li class="link-offer-item"><a href="#" class="icon-time link-offer-link">Вечерние</a></li>
+                <li class="link-offer-item"><a href="#" class="icon-user link-offer-link">Групповые</a></li>
+            </ul>
+        </div>
+        <!-- END: component link-offer -->
+
+        <!-- Begin: result-item -->
+        <div class="search-area__viewed">
+            <h2 class="search-area__viewed-title">Недавно просмотренные</h2>
+            <div>
+                <a href="#" class="result-item result-item__discount">
+                    <img src="img/example/search-result-01.png" class="result-item__img" alt="">
+                    <div class="result-item__text">
+                        Мастер класс по приготовлению зелёного чая собранного в горах Индии ручным методом
+                    </div>
+                    <div class="result-item__price">
+                        <div class="result-item__price-old">100 ₽</div>
+                        <div class="result-item__price-new">50 ₽</div>
+                    </div>
+                </a>
+                <a href="#" class="result-item">
+                    <img src="img/example/search-result-02.png" class="result-item__img" alt="">
+                    <div class="result-item__text">
+                        Лепка глинянных горшком при помощи гончарного круга
+                    </div>
+                    <div class="result-item__price">
+                        <div class="result-item__price-old">1 000 ₽</div>
+                        <div class="result-item__price-new">500 ₽</div>
+                    </div>
+                </a>
+                <a href="#" class="result-item">
+                    <img src="img/example/search-result-03.png" class="result-item__img" alt="">
+                    <div class="result-item__text">
+                        Катание на лошадях по красной площади
+                    </div>
+                    <div class="result-item__price">
+                        <div class="result-item__price-old">10 000 ₽</div>
+                        <div class="result-item__price-new">5 000 ₽</div>
+                    </div>
+                </a>
+                <a href="#" class="result-item">
+                    <img src="img/example/search-result-04.png" class="result-item__img" alt="">
+                    <div class="result-item__text">
+                        Тайский массаж в 4 руки
+                    </div>
+                    <div class="result-item__price">
+                        <div class="result-item__price-old">100 000 ₽</div>
+                        <div class="result-item__price-new">50 000 ₽</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- END: component result-item -->
+
+        <div class="search-area__close circle-btn icon-close"></div>
+    </div>
+</div>
 
 
 <div class="entertainment-panel">

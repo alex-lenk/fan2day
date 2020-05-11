@@ -1,0 +1,17 @@
+.main-info {
+  height: 440px;
+  padding-top: 8%;
+  background: url(../img/media/bg-main-info.jpg) no-repeat top center;
+  display: flex;
+
+  @media (min-width: 1921px) {
+    height: 65vh;
+    padding-top: 17vh;
+    background: url(../img/media/bg-main-info@2x.jpg) no-repeat top center;
+  }
+}
+
+.main-info-title {
+  margin: 0 auto auto;
+  text-align: center;
+}

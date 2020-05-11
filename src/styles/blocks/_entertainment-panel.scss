@@ -45,24 +45,22 @@
   flex-basis: 30%;
   margin-bottom: 27px;
   padding-right: 30px;
+  line-height: 1.2;
 }
 
 .entertainment-box__title {
+  margin-bottom: 7px;
   font-weight: 700;
-  line-height: 24px;
   color: $black;
   letter-spacing: 0.03em;
+  display: inline-block;
 }
 
 .entertainment-box__list {
 }
 
-.entertainment-box__item {
-  line-height: 1.2;
-
-  &:not(:last-child) {
-    margin-bottom: 7px;
-  }
+.entertainment-box__item:not(:last-child) {
+  margin-bottom: 7px;
 }
 
 .entertainment-box__link {
