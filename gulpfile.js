@@ -19,9 +19,10 @@ var gulp = require('gulp'),
 const paths = {
     js: {
         src: [
-            'src/js/vendors/jquery.min.js',
-            'src/js/snippets/tab.js',
-            'src/js/scripts.js'
+            './src/js/vendors/jquery.min.js',
+            './src/js/vendors/slick.min.js',
+            './src/js/snippets/tab.js',
+            './src/js/scripts.js'
         ],
         build: './build/js',
         watch: './src/js/**/*.js'

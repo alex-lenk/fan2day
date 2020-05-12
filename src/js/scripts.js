@@ -6,9 +6,8 @@ function documentMouseup(elClass, twoClass) {
         }
     });
 }
-
-
 /* END */
+
 
 $(document).ready(function () {
 
@@ -118,7 +117,16 @@ $(document).ready(function () {
         $('.modal-form').removeClass('modal-form__active');
         $('#modal-register').addClass('modal-form__active');
     }
+    /* END */
 
-    console.log(hash);
+
+    /* BEGIN: Initialization carousel */
+    $('.popular-carousel').slick({
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        prevArrow: '<button type="button" class="slick-prev btn-circle"><span class="icon-arrow-left btn-text"></span></button>',
+        nextArrow: '<button type="button" class="slick-next btn-circle"><span class="icon-arrow-right btn-text"></span></button>'
+    });
     /* END */
 });
