@@ -6,6 +6,7 @@ function documentMouseup(elClass, twoClass) {
         }
     });
 }
+
 /* END */
 
 
@@ -14,16 +15,15 @@ $(document).ready(function () {
     /* BEGIN: Клик по кнопке "все роазвлечения" .top-panel-all */
     let entertainmentPanel = '.entertainment-panel';
     let entertainmentPanelOpened = 'entertainment-panel-opened';
-    $('.top-panel-all').click(function () {
-        if ($(entertainmentPanel).hasClass(entertainmentPanelOpened)) {
-            $(document).mouseup(function (e) {
-                if (!$(entertainmentPanel).is(e.target) && $(entertainmentPanel).has(e.target).length === 0 && !$('.top-panel-all').is(e.target)) {
-                    $(entertainmentPanel).removeClass(entertainmentPanelOpened)
-                }
-            });
-        }
 
+    $('.top-panel-all').click(function () {
         $(entertainmentPanel).toggleClass(entertainmentPanelOpened);
+    });
+
+    $(entertainmentPanel).on('click', function (e) {
+        if ($(entertainmentPanel).has(e.target).length === 0 && !$('.top-panel-all').is(e.target)) {
+            $(entertainmentPanel).removeClass(entertainmentPanelOpened)
+        }
     });
     /* END */
 

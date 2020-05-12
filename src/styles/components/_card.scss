@@ -1,7 +1,7 @@
 .card {
   overflow: hidden;
   display: block;
-  background: $grey-gradient;
+  background-color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 3px 3px 8px #C7C9D2, -2px -2px 6px #FAFBFF;
   border-radius: 15px;
@@ -9,6 +9,10 @@
 
   &:hover {
     box-shadow: none;
+
+    .card-media__img {
+      opacity: .85;
+    }
   }
 
   &:focus {
@@ -25,11 +29,11 @@
 .card-media__img {
   object-fit: contain;
   height: inherit;
+  transition: opacity .3s;
 }
 
 .card-body {
-  padding: 15px 20px 18px;
-  background-color: #fff;
+  padding: 15px 15px 18px 20px;
 }
 
 .card-title {
@@ -37,7 +41,6 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  letter-spacing: 0.03em;
   color: $black;
 }
 
@@ -49,6 +52,7 @@
 }
 
 .card-footer {
+  padding-right: 5px;
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;

@@ -1,5 +1,5 @@
 .popular-section {
-  margin-bottom: 100px;
+  margin-bottom: 90px;
 }
 
 .popular-carousel {
@@ -8,8 +8,7 @@
 }
 
 .popular-carousel__item {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 5px 15px 10px;
 
   &:focus {
     outline: 0;
