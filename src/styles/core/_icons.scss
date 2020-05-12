@@ -15,200 +15,173 @@
   }
 }
 
+.icon-arrow-very-long {
+  &:before {
+    content: $icon-arrow-very-long;
+  }
+}
 .icon-extreme {
   &:before {
     content: $icon-extreme;
   }
 }
-
-.icon-guitar {
-  &:before {
-    content: $icon-guitar;
-  }
-}
-
-.icon-food-tray {
-  &:before {
-    content: $icon-food-tray;
-  }
-}
-
-.icon-hair-dye {
-  &:before {
-    content: $icon-hair-dye;
-  }
-}
-
-.icon-running {
-  &:before {
-    content: $icon-running;
-  }
-}
-
-.icon-education {
-  &:before {
-    content: $icon-education;
-  }
-}
-
-.icon-paint {
-  &:before {
-    content: $icon-paint;
-  }
-}
-
-.icon-balloon {
-  &:before {
-    content: $icon-balloon;
-  }
-}
-
-.icon-attention {
-  &:before {
-    content: $icon-attention;
-  }
-}
-
-.icon-chat {
-  &:before {
-    content: $icon-chat;
-  }
-}
-
-.icon-notification {
-  &:before {
-    content: $icon-notification;
-  }
-}
-
-.icon-time {
-  &:before {
-    content: $icon-time;
-  }
-}
-
-.icon-user {
-  &:before {
-    content: $icon-user;
-  }
-}
-
-.icon-check-circle {
-  &:before {
-    content: $icon-check-circle;
-  }
-}
-
-.icon-check {
-  &:before {
-    content: $icon-check;
-  }
-}
-
-.icon-close {
-  &:before {
-    content: $icon-close;
-  }
-}
-
-.icon-comment {
-  &:before {
-    content: $icon-comment;
-  }
-}
-
-.icon-menu {
-  &:before {
-    content: $icon-menu;
-  }
-}
-
-.icon-menu-list {
-  &:before {
-    content: $icon-menu-list;
-  }
-}
-
-.icon-menu-circle {
-  &:before {
-    content: $icon-menu-circle;
-  }
-}
-
-.icon-minus {
-  &:before {
-    content: $icon-minus;
-  }
-}
-
-.icon-like {
-  &:before {
-    content: $icon-like;
-  }
-}
-
-.icon-plus {
-  &:before {
-    content: $icon-plus;
-  }
-}
-
-.icon-gift {
-  &:before {
-    content: $icon-gift;
-  }
-}
-
-.icon-search {
-  &:before {
-    content: $icon-search;
-  }
-}
-
-.icon-compare {
-  &:before {
-    content: $icon-compare;
-  }
-}
-
-.icon-arrow-long-left {
-  &:before {
-    content: $icon-arrow-long-left;
-  }
-}
-
 .icon-arrow-left {
   &:before {
     content: $icon-arrow-left;
   }
 }
-
+.icon-arrow-long-left {
+  &:before {
+    content: $icon-arrow-long-left;
+  }
+}
 .icon-arrow-right {
   &:before {
     content: $icon-arrow-right;
   }
 }
-
-.icon-increase {
+.icon-attention {
   &:before {
-    content: $icon-increase;
+    content: $icon-attention;
   }
 }
-
+.icon-balloon {
+  &:before {
+    content: $icon-balloon;
+  }
+}
+.icon-chat {
+  &:before {
+    content: $icon-chat;
+  }
+}
+.icon-check {
+  &:before {
+    content: $icon-check;
+  }
+}
+.icon-check-circle {
+  &:before {
+    content: $icon-check-circle;
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close;
+  }
+}
+.icon-comment {
+  &:before {
+    content: $icon-comment;
+  }
+}
+.icon-compare {
+  &:before {
+    content: $icon-compare;
+  }
+}
 .icon-decrease {
   &:before {
     content: $icon-decrease;
   }
 }
-
-.icon-arrow-down {
+.icon-education {
   &:before {
-    content: $icon-arrow-down;
+    content: $icon-education;
   }
 }
-
+.icon-food-tray {
+  &:before {
+    content: $icon-food-tray;
+  }
+}
+.icon-gift {
+  &:before {
+    content: $icon-gift;
+  }
+}
+.icon-guitar {
+  &:before {
+    content: $icon-guitar;
+  }
+}
+.icon-hair-dye {
+  &:before {
+    content: $icon-hair-dye;
+  }
+}
+.icon-increase {
+  &:before {
+    content: $icon-increase;
+  }
+}
+.icon-like {
+  &:before {
+    content: $icon-like;
+  }
+}
+.icon-menu {
+  &:before {
+    content: $icon-menu;
+  }
+}
+.icon-menu-circle {
+  &:before {
+    content: $icon-menu-circle;
+  }
+}
+.icon-menu-list {
+  &:before {
+    content: $icon-menu-list;
+  }
+}
+.icon-minus {
+  &:before {
+    content: $icon-minus;
+  }
+}
+.icon-notification {
+  &:before {
+    content: $icon-notification;
+  }
+}
+.icon-paint {
+  &:before {
+    content: $icon-paint;
+  }
+}
+.icon-plus {
+  &:before {
+    content: $icon-plus;
+  }
+}
 .icon-refresh {
   &:before {
     content: $icon-refresh;
+  }
+}
+.icon-running {
+  &:before {
+    content: $icon-running;
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search;
+  }
+}
+.icon-time {
+  &:before {
+    content: $icon-time;
+  }
+}
+.icon-user {
+  &:before {
+    content: $icon-user;
+  }
+}
+.icon-arrow-down {
+  &:before {
+    content: $icon-arrow-down;
   }
 }
