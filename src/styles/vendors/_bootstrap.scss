@@ -9,7 +9,7 @@ $border-radius: 30px;
 // Links
 $link-color: $blue;
 $link-hover-decoration: none;
-$link-hover-color: $blue2;
+$link-hover-color: inherit;
 
 
 // Typography
@@ -20,6 +20,7 @@ $head-color: $black;
 
 // Body
 $body-bg: $grey4;
+$font-weight-base: 500;
 
 
 // Grid containers

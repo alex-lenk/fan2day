@@ -15,7 +15,6 @@
 }
 
 .top-panel-all {
-  font-weight: 500;
   line-height: 24px;
   display: flex;
   align-items: center;
@@ -25,6 +24,7 @@
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
   border-radius: 15px;
+  flex-shrink: 0;
 
   &::before {
     margin-right: 5px;
@@ -34,10 +34,10 @@
 
 .top-panel-search {
   margin-right: 30px;
+  flex-shrink: 0;
 }
 
 .top-panel-nav {
-  font-weight: 500;
   font-size: 16px;
   line-height: 24px;
   color: $black;
@@ -47,6 +47,7 @@
 
 .top-panel-nav__item {
   margin-right: 20px;
+  white-space: nowrap;
 
   &:nth-child(4) .top-panel-nav__link {
     width: 50px;
@@ -56,19 +57,26 @@
     display: block;
     background: url(../img/logo.svg) no-repeat center;
     background-size: contain;
+
+    &::after {
+      display: none;
+    }
   }
 }
 
 .top-panel-nav__link {
   color: inherit;
-  transition: color .3s ease-out;
 }
 
 .top-panel-phone {
   font-weight: 700;
   line-height: 24px;
   color: $black;
-  transition: color .4s ease-out;
+  flex-shrink: 0;
+
+  &:hover {
+    color: $black;
+  }
 }
 
 .top-panel-compare__counter {
@@ -84,16 +92,11 @@
   border-radius: 50%;
   color: #fff;
   font-size: 14px;
-  font-weight: 500;
   z-index: 2;
 
   &:empty {
     display: none;
   }
-}
-
-.top-panel-enter {
-  letter-spacing: 0.03em;
 }
 
 @media (max-width: 1399px) {
