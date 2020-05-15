@@ -1,0 +1,40 @@
+.detail {
+  &__head {
+    margin-top: 31px;
+    margin-bottom: 31px;
+    .row {
+      padding-left: 7px;
+      padding-right: 7px;
+    }
+
+    @include w-to($screen-md) {
+      margin-bottom: 27px;
+    }
+  }
+  &__title {
+    font-family: $font-family-GothamProBold;
+    font-size: 24px;
+    line-height: 120%;
+    color: $black;
+    margin-bottom: 0;
+    @include w-to($screen-md) {
+      font-size: 18px;
+      margin-bottom: 13px;
+    }
+  }
+  &__recall-top {
+    @include display-flex(row, flex-end);
+    font-size: 12px;
+    line-height: 139.7%;
+    color: $grey;
+    span {
+      display: inline-block;
+      margin-right: 25px;
+    }
+
+    @include w-to($screen-md) {
+      width: 100%;
+      justify-content: space-between;
+    }
+  }
+}

@@ -1,0 +1,202 @@
+@import "../general/mixin";
+
+.card-recommended {
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 35px;
+  background-color: #e6e6e6;
+
+  a:focus,
+  a:hover {
+    outline: 0;
+  }
+
+  @media (max-width: 1279px) {
+    position: relative;
+    @include clearfix;
+  }
+}
+
+.card-recommended .slick-slider {
+  width: 100%;
+}
+
+.card-recommended__head {
+  margin-bottom: 25px;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.card-recommended__item {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.card-recommended__inner {
+  min-height: 400px;
+  padding: 20px 15px 30px;
+  background-color: #fff;
+}
+
+.card-recommended__media {
+  height: 250px;
+  margin-bottom: 15px;
+  position: relative;
+  display: block;
+  text-align: center;
+  background-size: 0;
+
+  img {
+    max-height: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.card-recommended__title {
+  margin-bottom: 10px;
+  line-height: 1.3;
+  font-size: 14px;
+  min-height: 54px;
+  display: block;
+  font-weight: 700;
+  color: inherit;
+  transition: color .3s ease;
+}
+
+.card-recommended__bottom {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .lds-balls {
+    width: 60px !important;
+    height: 60px !important;
+    position: absolute;
+    bottom: 18px;
+    right: 16px;
+    z-index: 5;
+    background-color: #fff;
+    pointer-events: none;
+  }
+}
+
+.card-recommended__btn {
+  margin-top: auto;
+  padding: 2px 6px 2px 5px;
+  flex: none;
+  background-color: #ff6709;
+  border: 2px solid #ff6709;
+
+  .basket-icon {
+    width: 26px;
+    height: 26px;
+    fill: #fff;
+  }
+}
+
+.card-recommended__arrow {
+  position: absolute;
+  display: block;
+  height: 40px;
+  width: 40px;
+  background-color: #808080;
+  line-height: 0;
+  font-size: 0;
+  color: transparent;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none;
+  z-index: 5;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color .4s ease;
+
+  &::before {
+    width: 17px;
+    height: 17px;
+    border: 2px solid transparent;
+    border-right-color: #fff;
+    border-top-color: #fff;
+    position: absolute;
+    content: '';
+  }
+}
+
+.card-recommended__prev::before {
+  top: 12px;
+  left: 16px;
+  transform: rotate(-135deg);
+}
+
+.card-recommended__next::before {
+  top: 11px;
+  left: 8px;
+  transform: rotate(45deg);
+}
+
+.card-recommended__added {
+  .card-recommended__btn-add {
+    background-color: #43A047;
+    border-color: #43A047;
+    position: relative;
+    pointer-events: none;
+
+    &::after {
+      position: absolute;
+      display: block;
+      content: "";
+      top: 2px;
+      left: 15px;
+      width: 10px;
+      height: 22px;
+      opacity: 1;
+      transform: rotate(45deg);
+      border-right: 3px solid #fff;
+      border-bottom: 3px solid #fff;
+    }
+  }
+
+  .basket-icon {
+    opacity: 0;
+  }
+}
+
+.card-recommended__loader {
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -50px;
+}
+
+@media (min-width: 1280px) {
+  .card-recommended__arrow:hover {
+    background-color: #ff6709;
+  }
+  .card-recommended__prev {
+    left: -35px;
+  }
+  .card-recommended__next {
+    right: -35px;
+  }
+}
+
+@media (max-width: 1279px) {
+  .card-recommended__prev {
+    left: 0;
+  }
+  .card-recommended__next {
+    right: 0;
+  }
+}

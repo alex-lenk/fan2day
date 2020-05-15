@@ -1,0 +1,47 @@
+.bx-ie9 {
+  .header-country__current {
+    padding-top: 20px;
+  }
+
+  .header-country__link {
+    display: block;
+  }
+
+  .header-phones li {
+    float: left;
+  }
+
+  .header-phones,
+  .header-search,
+  .header-personal__unauthorized {
+    padding-top: 18px;
+  }
+
+
+  .personal-block {
+    margin-right: 20px;
+  }
+
+  .nav-head__list {
+    padding-top: 18px;
+    float: right;
+  }
+
+  .device-slide-list__item {
+    width: 33%;
+    display: inline-block;
+  }
+
+  .buy-button,
+  .buy-one-click {
+    display: inline-block;
+  }
+
+  .service-centers__list .col-xs-12 {
+    min-height: 250px;
+  }
+}
+
+.bx-ie .user-group {
+  max-width: 100px;
+}

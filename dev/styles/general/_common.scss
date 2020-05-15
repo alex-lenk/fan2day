@@ -1,0 +1,191 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+b,
+strong,
+.text-bold {
+  font-weight: 500;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 700;
+  font-family: "Gotham Pro Bold", Roboto, -apple-system, Arial, sans-serif;
+}
+
+h1, .h1 {
+  font-size: 30px;
+  margin-bottom: .3em;
+  padding: 0;
+}
+
+h2, .h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+h3, .h3 {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 425px) {
+  h1, .h1 {
+    font-size: 26px;
+  }
+}
+
+p {
+  margin-bottom: 1rem;
+  text-rendering: optimizeLegibility;
+}
+
+/**************************/
+
+.as-link__blue {
+  color: $blue-2;
+}
+
+.clearfix::after {
+  display: table;
+  content: " ";
+  clear: both;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-nowrap {
+  white-space: nowrap;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-red {
+  color: $red;
+}
+
+.text-grey {
+  color: $grey;
+}
+
+.text-green {
+  color: $green;
+}
+
+.list-unstyled {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.close {
+  padding: 8px;
+  box-sizing: content-box;
+
+  &:active svg {
+    fill: $green;
+  }
+
+  svg {
+    width: 17px;
+    height: 17px;
+    fill: $grey-2;
+    display: block;
+    transition: fill .3s ease;
+  }
+}
+
+/*
+.card-b
+*/
+
+.card-b {
+  padding: 17px;
+  background: #fff;
+  box-shadow: 0 2px 6px #E6E6EF;
+  border-radius: 4px;
+  line-height: 1.4;
+  transition: box-shadow .3s ease;
+}
+
+.card-b-text {
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.card-b-text__small {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.4;
+
+}
+
+small.card-b-text__small {
+  font-size: 10px;
+}
+
+/*
+END .card-b
+*/
+
+@media (min-width: 1200px) {
+  .as-link__blue {
+    cursor: pointer;
+    transition: color .3s ease;
+
+    &:hover {
+      color: $blue-3;
+    }
+  }
+
+  .close {
+    cursor: pointer;
+
+    &:hover svg {
+      fill: $black;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .visible-xs {
+    display: none;
+  }
+}

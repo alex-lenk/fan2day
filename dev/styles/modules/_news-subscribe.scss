@@ -1,0 +1,85 @@
+.news-subscribe {
+  padding-top: 95px;
+  padding-bottom: 95px;
+  border-top: 1px solid #e6e6e6;
+  color: #6c7575;
+}
+
+.news-subscribe-form,
+.news-subscribe-text {
+  max-width: 495px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.news-subscribe-text {
+  margin-bottom: 25px;
+
+  .icon-email {
+    fill: #ff6700;
+    flex: none;
+  }
+}
+
+.news-subscribe-form {
+  justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+  .news-subscribe-form,
+  .news-subscribe-text {
+    max-width: 495px;
+  }
+  .news-subscribe-text {
+    font-size: 25px;
+
+    .text-nowrap {
+      margin-left: 10px;
+    }
+
+    .icon-email {
+      width: 32px;
+      height: 20px;
+      margin-right: 15px;
+    }
+  }
+  .news-subscribe-field,
+  .news-subscribe-button {
+    width: calc(50% - 7px);
+  }
+}
+
+@media (max-width: 767px) {
+  .news-subscribe-form,
+  .news-subscribe-text {
+    max-width: 240px;
+  }
+  .news-subscribe-text {
+    font-size: 21px;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .text-nowrap {
+      width: 100%;
+    }
+
+    .icon-email {
+      width: 26px;
+      height: 15px;
+      margin-right: 10px;
+    }
+  }
+  .news-subscribe-form {
+    flex-direction: column;
+  }
+  .news-subscribe-field,
+  .news-subscribe-button {
+    width: 100%;
+  }
+  .news-subscribe-field {
+    margin-bottom: 10px;
+  }
+}

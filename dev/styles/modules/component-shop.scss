@@ -1,0 +1,106 @@
+.component-shop {
+  &__card {
+    min-height: 95px;
+    box-shadow: 0 2px 6px #E6E6EF;
+    border-radius: 4px;
+    align-items: center;
+    @include font-size(12px, initial, 135%);
+    color: $black;
+    margin-bottom: 13px;
+
+    @include w-to($screen-md) {
+      padding: 11px 11px 20px 9px;
+    }
+
+    &-wrap {
+      @include display-flex(row, center);
+      @include w-to($screen-md) {
+        margin-bottom: 13px;
+      }
+
+      img {
+        max-width: 50px;
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  &__metro, &__address, &__worktime {
+    @include display-flex(column);
+    @include w-to($screen-md) {
+      flex-direction: row;
+    }
+  }
+
+  &__address {
+    @include w-to($screen-md) {
+      flex-direction: column;
+    }
+
+    & span:first-child {
+      font-weight: 600;
+    }
+  }
+
+  &__worktime {
+    @include w-to($screen-md) {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__metro {
+    @include display-flex(row, center);
+    @include w-to($screen-md) {
+      margin-bottom: 15px;
+      span {
+        margin-right: 18px;
+      }
+    }
+
+    span {
+      @include display-flex(row, center);
+    }
+
+    .mod-metro-color {
+      content: '';
+      border-radius: 50%;
+      width: 12px;
+      min-width: 12px;
+      height: 12px;
+      margin-right: 5px;
+    }
+  }
+
+  &__available {
+    @include display-flex(row, center);
+    @include w-from($screen-md) {
+      justify-content: flex-end;
+    }
+
+    svg {
+      margin-right: 7px;
+    }
+
+    .mod-color-grey {
+      color: $grey;
+    }
+  }
+
+  &__rating {
+    @include w-to($screen-md) {
+      margin-right: 8px;
+      span {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__icon {
+    margin-right: 5px;
+    @include w-to($screen-md) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

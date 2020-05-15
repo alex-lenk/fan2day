@@ -1,0 +1,33 @@
+.video-block {
+  text-align: center;
+}
+
+.video-title {
+  margin-top: 20px;
+  line-height: 19px;
+  color: #212121;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.video-wrap {
+  cursor: pointer;
+}
+
+.video-list {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+@media (min-width: 568px) {
+  .video-slide-item {
+    position: relative;
+  }
+}
+
+@media (max-width: 567px) {
+  .video-slide-item:not(:last-of-type) {
+    margin-bottom: 50px;
+  }
+}

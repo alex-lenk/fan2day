@@ -1,0 +1,18 @@
+.card-panel__option {
+  margin-bottom: 27px;
+  line-height: 1;
+  display: flex;
+  cursor: default;
+  flex-direction: column;
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  max-width: 90px;
+}
+
+.card-panel__item {
+  background-color: #feefd8;
+  margin-right: 10px;
+  padding: 5px 10px;
+  font-size: 15px;
+}

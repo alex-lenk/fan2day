@@ -1,0 +1,1 @@
+import {validRegister} from "../js/script";$(document).ready(function () {  validRegister.initValidate(function () {    if ($('.input-error').length <= 0) {      $('.js-register').submit();    }  });});

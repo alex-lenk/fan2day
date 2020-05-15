@@ -1,0 +1,83 @@
+.component-stars {
+  /*sprite with stars*/
+  #reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+    background: url('/local/templates/main/images/stars.png') no-repeat;
+    background-size: 23px;
+  }
+
+  #reviewStars-input {
+
+    /*fix floating problems*/
+    overflow: hidden;
+    *zoom: 1;
+    /*end of fix floating problems*/
+
+    position: relative;
+    float: left;
+  }
+
+  #reviewStars-input input {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+
+    width: 23px;
+    height: 23px;
+
+    position: absolute;
+    top: 0;
+    z-index: 0;
+  }
+
+  #reviewStars-input input:checked ~ label {
+    background-position: 0 -23px;
+    height: 23px;
+    width: 23px;
+  }
+
+  #reviewStars-input label {
+    background-position: 0 0;
+    height: 23px;
+    width: 23px;
+    float: right;
+    cursor: pointer;
+    margin-right: 4px;
+
+    position: relative;
+    z-index: 1;
+  }
+
+  #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+    background-position: 0 -23px;
+    height: 23px;
+    width: 23px;
+  }
+}
+
+.mod-deals {
+  align-items: center;
+  .component-stars {
+    height: 12px;
+    #reviewStars-input input:checked ~ label, #reviewStars-input label, #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+      background: url('/local/templates/main/images/stars.png') no-repeat;
+      background-size: 12px;
+    }
+    #reviewStars-input input {
+      width: 12px;
+      height: 12px;
+    }
+    #reviewStars-input input:checked ~ label {
+      background-position: 0 -12px;
+      height: 12px;
+      width: 12px;
+    }
+    #reviewStars-input label {
+      height: 12px;
+      width: 12px;
+    }
+    #reviewStars-input label:hover, #reviewStars-input label:hover ~ label {
+      background-position: 0 -12px;
+      height: 12px;
+      width: 12px;
+    }
+  }
+}

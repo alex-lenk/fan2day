@@ -1,0 +1,71 @@
+.button-to-top {
+  position: fixed;
+  cursor: pointer;
+  bottom: 30px;
+  background-color: #ff6709;
+  border-radius: 50%;
+  outline: none;
+  z-index: 9998;
+  transform: translateX(180px);
+  transition: 1s all;
+
+  &::before {
+    border: 2px solid transparent;
+    border-right-color: #fff;
+    border-top-color: #fff;
+    position: absolute;
+    transform: rotate(-45deg);
+    content: '';
+  }
+}
+
+@media (min-width: 1280px) {
+  .button-to-top {
+    width: 50px;
+    height: 50px;
+
+    &::before {
+      width: 20px;
+      height: 20px;
+      top: 21px;
+      left: 16px;
+    }
+
+    &:hover {
+      background-color: #333;
+      outline: none;
+    }
+  }
+}
+
+@media (min-width: 1560px) {
+  .button-to-top {
+    right: 5%;
+  }
+}
+
+@media (max-width: 1279px) {
+  .button-to-top {
+    bottom: 50%;
+  }
+}
+
+@media (max-width: 1279px) {
+  .button-to-top {
+    width: 31px;
+    height: 31px;
+
+    &::before {
+      width: 10px;
+      height: 10px;
+      top: 13px;
+      left: 11px;
+    }
+  }
+}
+
+@media (max-width: 1559px) {
+  .button-to-top {
+    right: 2%;
+  }
+}

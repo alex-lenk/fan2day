@@ -1,0 +1,29 @@
+@import "../general/settings";
+@import "../general/mixin";
+
+.not-found {
+  &__text {
+    font-family: $font-family-GothamProBold;
+    font-size: 24px;
+    line-height: 120%;
+    color: $black;
+    margin: 24px auto 30px;
+    display: none;
+    @include w-from($screen-sm) {
+      display: block;
+      text-align: center;
+    }
+  }
+  & &__btn {
+    display: block;
+    margin: auto;
+    max-width: 195px;
+    width: 100%;
+    line-height: 50px;
+    font-size: 12px;
+    padding: 0;
+    @include w-to($screen-sm) {
+      margin-top: 47px;
+    }
+  }
+}
