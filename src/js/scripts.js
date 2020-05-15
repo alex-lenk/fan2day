@@ -1,3 +1,13 @@
+// Импортируем jQuery
+import 'jquery';
+
+// Импортируем slick
+import 'slick';
+
+// Импортируем другие js-файлы
+import './snippets/tab.js';
+
+
 /* BEGIN фунция для закрытия панелей вне области */
 function documentMouseup(elClass, twoClass) {
     $(document).mouseup(function (e) {

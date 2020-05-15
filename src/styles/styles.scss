@@ -1,12 +1,13 @@
 @import "core/variables";
 @import "core/mixin";
+@import "vendors/bootstrap";
+@import "vendors/slick";
 @import "core/fonts";
 @import "core/typography";
 @import "core/core";
 @import "core/btn";
 @import "core/forms";
 @import "core/icons";
-@import "blocks/nav-section";
 
 @import "components/result-list";
 @import "components/tag-list";
@@ -16,6 +17,7 @@
 @import "components/subscription";
 
 @import "blocks/top-panel";
+@import "blocks/nav-section";
 @import "blocks/main-info";
 @import "blocks/nav-direction";
 @import "blocks/entertainment-panel";
