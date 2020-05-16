@@ -42,8 +42,9 @@
 
 .custom-control {
   position: relative;
-  display: block;
   min-height: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
 
   &::before {
     border-radius: 5px;
@@ -114,4 +115,29 @@
     box-shadow: inset 3px 3px 6px rgba(56, 72, 114, 0.25), inset -3px -3px 6px rgba(255, 255, 255, 0.25);
     content: "";
   }
+}
+
+/* Validation */
+.error {
+  &.form-control {
+    border: 1px solid $red !important;
+  }
+
+  + label {
+    font-size: 14px;
+    line-height: 16px;
+    display: block;
+    margin-top: 5px;
+    color: $red;
+  }
+
+  &.custom-control-input + label {
+    width: 100%;
+    order: 1;
+  }
+}
+
+
+.valid.form-control {
+  border: 1px solid $green !important;
 }

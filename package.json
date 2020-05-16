@@ -15,8 +15,6 @@
   "author": "Alex Lenk",
   "license": "ISC",
   "dependencies": {
-    "@babel/core": "latest",
-    "@babel/preset-env": "latest",
     "autoprefixer": "^9.7.6",
     "babel-loader": "latest",
     "browser-sync": "^2.26.7",
@@ -50,7 +48,11 @@
     "webpack": "latest"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "@htmlacademy/editorconfig-cli": "^1.0.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "chrome-launcher": "^0.12.0",
     "circular-dependency-plugin": "^5.2.0",
     "del": "^5.1.0",
@@ -63,6 +65,7 @@
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
+    "gulp-babel": "^6.1.3",
     "gulp-concat": "^2.6.1",
     "gulp-eslint": "^6.0.0",
     "gulp-html-bem-validator": "^1.0.5",

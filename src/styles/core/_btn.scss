@@ -53,18 +53,17 @@
   border-radius: 15px;
   cursor: pointer;
   position: relative;
-  transition: color .3s, box-shadow .3s;
+  transition: color .4s ease-out, box-shadow .4s ease-out;
 
   &::after {
-    width: 100%;
+    width: 0;
     height: 100%;
     top: 0;
     left: 0;
     position: absolute;
-    opacity: 0;
     border-radius: inherit;
     background: $blue-gradient2;
-    transition: opacity .3s;
+    transition: width .4s ease-out;
     content: '';
   }
 
@@ -74,7 +73,7 @@
     box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
 
     &::after {
-      opacity: 1;
+      width: 100%;
     }
   }
 }

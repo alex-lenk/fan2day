@@ -21,6 +21,7 @@ const twig = require('gulp-twig');
 const htmlbeautify = require('gulp-html-beautify');
 const sourcemaps = require('gulp-sourcemaps');
 const gulpif = require('gulp-if');
+const babel = require('gulp-babel');
 const webpack = require('webpack-stream');
 const strip = require('gulp-strip-comments');
 
@@ -136,11 +137,34 @@ function scripts() {
     .pipe(gulpif(production, strip()))
     .pipe(gulp.dest(paths.dist.js));
 }
+/*
+gulp.task('js:auth', () => {
+  pipeJS(
+    './src/js/scripts.js',
+    './dist/js',
+    {script: './src/js/scripts.js'}
+    );
+});
+//js
+function pipeJS(entry, out, name) {
+  gulp.src(entry)
+    //.pipe(plumber(handleError))
+    .pipe(webpack({
+      entry: name,
+      output: {filename: '[name].js'},
+      optimization: {minimize: false}
+    }))
+    .pipe(babel({presets: ['env']}))
+    //.pipe(uglify({mangle: false}))
+    .pipe(gulp.dest(out));
+}
+*/
 
 
 function scripts_libs() {
   return gulp.src([
     './src/js/vendors/jquery.min.js',
+    './src/js/vendors/jquery.validate.min.js',
     './src/js/vendors/slick.min.js'
   ])
     .pipe(concat('libs.js'))

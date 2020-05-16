@@ -8,7 +8,7 @@
     <title>{{ title }}</title>
 
     {% block styles %}
-      <link rel="stylesheet" href="/css/styles.min.css?ver=2.4">
+      <link rel="stylesheet" href="/css/styles.min.css?ver=2.6">
     {% endblock %}
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -41,73 +41,76 @@
   <div class="modal-box">
     <div class="modal-close btn-circle icon-close"></div>
 
-    <div id="modal-login" class="modal-form modal-form__active">
-      <form action="/">
-        <h2 class="modal-title">Вход</h2>
-        <div class="modal-subtitle">Для входа используйте ваш е-mail и&nbsp;пароль</div>
-        <div class="form-group">
-          <input type="text" class="form-control hide-placeholder" placeholder="Введите e-mail *">
-        </div>
-        <div class="form-group">
-          <input type="password" class="form-control hide-placeholder" placeholder="Пароль *">
-        </div>
-        <div class="form-group__btn">
-          <button class="btn btn-primary"><span class="btn-text">Войти</span></button>
-          <div class="form-group__link as-link js__forgot">Забыли пароли?</div>
-        </div>
-      </form>
+    <form id="modal-login" class="modal-form">
+      <h2 class="modal-title">Вход</h2>
+
+      <div class="modal-subtitle">Для входа используйте ваш е-mail и&nbsp;пароль</div>
+
+      <div class="form-group">
+        <input type="email" name="email" class="form-control hide-placeholder" placeholder="Введите e-mail *">
+      </div>
+
+      <div class="form-group">
+        <input type="password" name="password" class="form-control hide-placeholder" placeholder="Пароль *">
+      </div>
+
+      <div class="form-group__btn">
+        <button class="btn btn-primary"><span class="btn-text">Войти</span></button>
+        <div class="form-group__link as-link js__forgot">Забыли пароли?</div>
+      </div>
 
       <div class="modal-box__bottom">
         <div class="modal-box__bottom-text">У вас нет аккаунта на Fun2Day?</div>
         <div class="as-link js__register">Зарегистрироваться</div>
       </div>
-    </div>
+    </form>
 
-    <div id="modal-forgot" class="modal-form">
-      <form action="/">
-        <h2 class="modal-title">Восстановления пароля</h2>
-        <div class="modal-subtitle">Укажите адрес электронной почты, который вы&nbsp;использовали при регистрации.</div>
-        <div class="form-group">
-          <input type="text" class="form-control hide-placeholder" placeholder="E-mail *">
-        </div>
-        <div class="form-group__btn">
-          <button class="btn btn-primary"><span class="btn-text">Восстановить</span></button>
-          <div class="form-group__link as-link js__login">Вспомнили пароль?</div>
-        </div>
-      </form>
+    <form id="modal-forgot" class="modal-form">
+      <h2 class="modal-title">Восстановления пароля</h2>
+
+      <div class="modal-subtitle">Укажите адрес электронной почты, который вы&nbsp;использовали при регистрации.</div>
+
+      <div class="form-group">
+        <input type="email" name="inputForgotEmail" class="form-control hide-placeholder" placeholder="E-mail *">
+      </div>
+
+      <div class="form-group__btn">
+        <button class="btn btn-primary"><span class="btn-text">Восстановить</span></button>
+        <div class="form-group__link as-link js__login">Вспомнили пароль?</div>
+      </div>
 
       <div class="modal-box__bottom">
         <div class="modal-box__bottom-text">У вас нет аккаунта на Fun2Day?</div>
         <div class="as-link js__register">Зарегистрироваться</div>
       </div>
-    </div>
+    </form>
 
-    <div id="modal-register" class="modal-form">
-      <form action="/">
-        <h2 class="modal-title">Регистрация</h2>
-        <div class="modal-subtitle">
-          Укажите адрес электронной почты, мы&nbsp;отправим вам
-          пароль для входа в&nbsp;личный кабинет
-        </div>
-        <div class="form-group">
-          <input type="text" class="form-control hide-placeholder" placeholder="Укажите Ваш E-mail *">
-        </div>
-        <div class="form-group">
-          <label class="custom-control custom-checkbox">
-            <input type="checkbox" name="USER_REMEMBER" value="Y" class="custom-control-input" required="">
-            <span class="custom-control-label icon-check">Согласие на обработку</span>
-          </label>
-        </div>
-        <div class="form-group__btn">
-          <button class="btn btn-primary"><span class="btn-text">Зарегистрироваться</span></button>
-        </div>
-      </form>
+    <form id="modal-register" class="modal-form">
+      <h2 class="modal-title">Регистрация</h2>
+
+      <div class="modal-subtitle">
+        Укажите адрес электронной почты, мы&nbsp;отправим вам
+        пароль для входа в&nbsp;личный кабинет
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="inputRegisterEmail" class="form-control hide-placeholder" placeholder="Укажите Ваш E-mail *">
+      </div>
+
+      <label class="form-group custom-control custom-checkbox">
+        <input type="checkbox" name="agreeRegister" class="custom-control-input">
+        <span class="custom-control-label icon-check">Согласие на обработку</span>
+      </label>
+
+      <div class="form-group__btn">
+        <button class="btn btn-primary"><span class="btn-text">Зарегистрироваться</span></button>
+      </div>
 
       <div class="modal-box__bottom">
         <div class="modal-box__bottom-text">Уже есть аккаунт на Fun2Day?</div>
         <div class="as-link js__login">Войти</div>
       </div>
-    </div>
+    </form>
   </div>
 </div>
 
@@ -491,8 +494,8 @@
 <!-- END:> Floating panels -->
 
 {% block scripts %}
-  <script src="/js/libs.js"></script>
-  <script src="/js/scripts.min.js"></script>
+  <script src="/js/libs.js?ver=1.1"></script>
+  <script src="/js/scripts.min.js?ver=2.1"></script>
 {% endblock %}
 </body>
 </html>
