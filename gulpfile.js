@@ -24,6 +24,9 @@ const gulpif = require('gulp-if');
 const webpack = require('webpack-stream');
 const strip = require('gulp-strip-comments');
 
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify-es').default;
+
 const argv = require('yargs').argv;
 const developer = !!argv.developer;
 const production = !developer;
@@ -135,6 +138,17 @@ function scripts() {
 }
 
 
+function scripts_libs() {
+  return gulp.src([
+    './src/js/vendors/jquery.min.js',
+    './src/js/vendors/slick.min.js'
+  ])
+    .pipe(concat('libs.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest(paths.dist.js));
+}
+
+
 // fonts
 function fonts() {
   return gulp.src(paths.src.fonts)
@@ -167,6 +181,7 @@ function images() {
 
 
 // инициализируем задачи
+exports.scripts_libs = scripts_libs;
 exports.templates = templates;
 exports.styles = styles;
 exports.scripts = scripts;

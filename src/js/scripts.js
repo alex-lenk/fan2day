@@ -1,9 +1,3 @@
-// Импортируем jQuery
-import 'jquery';
-
-// Импортируем slick
-import 'slick';
-
 // Импортируем другие js-файлы
 import './snippets/tab.js';
 
