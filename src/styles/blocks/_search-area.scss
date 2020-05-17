@@ -107,9 +107,8 @@
 }
 
 .search-form-box__input {
-  height: 34px;
-  padding-bottom: 4px;
-  padding-right: 0;
+  height: rem(34);
+  padding: rem(8) 0 ;
 }
 
 .search-form-box__back {
@@ -117,7 +116,7 @@
   height: 100%;
   padding: 8px 5px 3px 15px;
   font-size: 17px;
-  top: 0;
+  top: -2px;
   left: 0;
   position: absolute;
   color: #143098;

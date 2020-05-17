@@ -2,9 +2,33 @@
 import './snippets/tab.js';
 //import './snippets/scripts.js';
 
-/* BEGIN фунция для закрытия панелей вне области */
+
+/* BEGIN для мобильной версии */
+if ($(window).width() <= 1199) {
+
+  $(document).ready(function () {
+
+    $('.header-toggle').click(function () {
+      $('body').toggleClass('menu-open');
+    });
+
+    $('.menu-entertainment__item').click(function () {
+      $('body').addClass('menu-entertainment__open');
+    });
+
+    $('.menu-entertainment__close').click(function () {
+      $('body').removeClass('menu-entertainment__open');
+      $('.menu-entertainment__item').removeClass('active');
+    });
+
+  });
+
+}
 /* END */
 
+
+if ($(window).width() >= 1200) {
+}
 
 $(document).ready(function () {
   /* BEGIN: Глабальные перменные */
@@ -35,7 +59,7 @@ $(document).ready(function () {
     searchFormBox = $('.search-form-box'),
     searchFormBoxClear = $('.search-form-box__clear'),
     searchFormBoxBack = $('.search-form-box__back'),
-    searchArea = $('.search-area'),
+    searchArea = '.search-area',
     searchResultPanel = $('.search-area__result');
 
   searchFormBoxInput.keyup(function () {
@@ -66,17 +90,18 @@ $(document).ready(function () {
     searchFormBoxInput.val('');
   });
 
-  $('.top-panel-search').click(function () {
-    searchArea.addClass('active');
+  $('.js__search').click(function () {
+    $(searchArea).addClass('active');
+    $(entertainment).removeClass(entertainmentOpened);
   });
 
   $('.search-area__close').click(function () {
-    searchArea.removeClass('active');
+    $(searchArea).removeClass('active');
   });
 
-  searchArea.click(function (e) {
-    if (searchArea.has(e.target).length === 0) {
-      searchArea.removeClass('active')
+  $(searchArea).click(function (e) {
+    if ($(searchArea).has(e.target).length === 0) {
+      $(searchArea).removeClass('active')
     }
   });
   /* END */
@@ -192,6 +217,28 @@ $(document).ready(function () {
         minlength: "Пожалуйста, введите не менее 7 символов"
       },
       agreeRegister: {
+        required: "Вы должны согласиться на обработку персональных данных"
+      }
+    }
+  });
+  $('#subscription-form').validate({
+    rules: {
+      inputSubscriptionEmail: {
+        required: true,
+        email: true,
+        minlength: 8
+      },
+      agreeSubscription: {
+        required: true
+      }
+    },
+    messages: {
+      inputSubscriptionEmail: {
+        required: "Поле e-mail обязательно к заполнению",
+        email: "Необходим формат адреса e-mail",
+        minlength: "Пожалуйста, введите не менее 7 символов"
+      },
+      agreeSubscription: {
         required: "Вы должны согласиться на обработку персональных данных"
       }
     }

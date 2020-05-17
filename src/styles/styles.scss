@@ -28,6 +28,21 @@
 @import "blocks/steps";
 @import "blocks/instagram";
 @import "blocks/footer";
+@import "blocks/mini-card";
+@import "blocks/menu";
+
+@media (max-width: 1199px) {
+  .top-panel {
+    display: none;//@todo delete this on production
+  }
+}
+
+@media (min-width: 1200px) {
+  .menu,
+  .header {
+    display: none;//@todo delete this on production
+  }
+}
 
 .lead {
   font-weight: 700;

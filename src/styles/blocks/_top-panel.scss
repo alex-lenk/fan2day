@@ -1,108 +1,96 @@
-.top-panel {
-  width: 100%;
-  background: #E3E5EC;
-  box-shadow: 0 8px 15px rgba(95, 105, 142, 0.3);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 50;
-}
-
-.top-panel-holder {
-  height: 70px;
-  display: flex;
-  align-items: center;
-}
-
-.top-panel-all {
-  flex-shrink: 0;
-
-  &::before {
-    margin-right: 5px;
-    font-size: 20px;
-    position: relative;
-    z-index: 2;
+@media (min-width: 1200px) {
+  .top-panel {
+    width: 100%;
+    background: #E3E5EC;
+    box-shadow: 0 8px 15px rgba(95, 105, 142, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
   }
-}
 
-.top-panel-search {
-  margin-right: 30px;
-  flex-shrink: 0;
-}
+  .top-panel-holder {
+    display: flex;
+    height: 70px;
+    align-items: center;
+  }
 
-.top-panel-nav {
-  font-size: 16px;
-  line-height: 24px;
-  color: $black;
-  display: flex;
-  align-items: center;
-}
+  .top-panel-all {
+    flex-shrink: 0;
 
-.top-panel-nav__item {
-  margin-right: 20px;
-  white-space: nowrap;
-
-  &:nth-child(4) .top-panel-nav__link {
-    width: 50px;
-    height: 50px;
-    text-indent: -100px;
-    overflow: hidden;
-    display: block;
-    background: url(../img/logo.svg) no-repeat center;
-    background-size: contain;
-
-    &::after {
-      display: none;
+    &::before {
+      margin-right: 5px;
+      font-size: 20px;
+      position: relative;
+      z-index: 2;
     }
   }
-}
 
-.top-panel-nav__link {
-  color: inherit;
-}
+  .top-panel-search {
+    flex-shrink: 0;
+  }
 
-.top-panel-phone {
-  font-weight: 700;
-  line-height: 24px;
-  color: $black;
-  flex-shrink: 0;
-
-  &:hover {
+  .top-panel-nav {
     color: $black;
+    display: flex;
+    align-items: center;
   }
-}
 
-.top-panel-compare__counter {
-  text-align: center;
-  width: 18px;
-  height: 18px;
-  position: absolute;
-  top: -6px;
-  right: -5px;
-  line-height: 1;
-  padding-top: 2px;
-  background-color: #ba1f1f;
-  border-radius: 50%;
-  color: #fff;
-  font-size: 14px;
-  z-index: 2;
+  .top-panel-nav__item {
+    margin-right: 20px;
+    white-space: nowrap;
 
-  &:empty {
-    display: none;
+    &:nth-child(4) .top-panel-nav__link {
+      width: 50px;
+      height: 50px;
+      text-indent: -100px;
+      overflow: hidden;
+      display: block;
+      background: url(../img/logo.svg) no-repeat center;
+      background-size: contain;
+
+      &::after {
+        display: none;
+      }
+    }
   }
-}
 
-@media (max-width: 1399px) {
+  .top-panel-nav__link {
+    color: inherit;
+  }
+
   .top-panel-phone {
-    margin-right: 20px;
+    font-weight: 700;
+    color: $black;
+    flex-shrink: 0;
+
+    &:hover {
+      color: $black;
+    }
   }
+
   .top-panel-compare {
-    margin-right: 20px;
+    flex-shrink: 0;
   }
-  .top-panel-all {
-    width: 180px;
-    margin-right: 20px;
-    padding: 4px 10px 4px 13px;
+
+  .top-panel-compare__counter {
+    text-align: center;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: -6px;
+    right: -5px;
+    line-height: 1;
+    padding-top: 2px;
+    background-color: #ba1f1f;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 14px;
+    z-index: 2;
+
+    &:empty {
+      display: none;
+    }
   }
 }
 
@@ -111,6 +99,9 @@
     width: 203px;
     margin-right: 30px;
     padding: 4px 10px 4px 23px;
+  }
+  .top-panel-search {
+    margin-right: 30px;
   }
   .top-panel-nav__item:nth-child(4) {
     margin-right: 80px;
@@ -122,5 +113,49 @@
   }
   .top-panel-compare {
     margin-right: 30px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .top-panel-all {
+    width: 180px;
+    margin-right: 20px;
+    padding: 4px 10px;
+    font-size: 15px;
+  }
+  .top-panel-search {
+    margin-right: 20px;
+  }
+  .top-panel-nav__link {
+    font-size: 15px;
+  }
+  .top-panel-phone {
+    font-size: 14px;
+    margin-right: 20px;
+  }
+  .top-panel-compare {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .header {
+    width: 100%;
+    background: #E3E5EC;
+    box-shadow: 0 8px 15px rgba(95, 105, 142, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+  }
+  .header-holder {
+    height: 70px;
+    align-items: center;
+  }
+  .top-panel-logo {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    display: block;
   }
 }

@@ -8,7 +8,7 @@
     <title>{{ title }}</title>
 
     {% block styles %}
-      <link rel="stylesheet" href="/css/styles.min.css?ver=2.6">
+      <link rel="stylesheet" href="/css/styles.min.css?ver=2.7">
     {% endblock %}
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
@@ -27,15 +27,137 @@
   {% include '../partials/header.twig' %}
 {% endblock %}
 
-
-        {% block content %}{% endblock %}
-
+{% block content %}{% endblock %}
 
 {% block footer %}
   {% include '../partials/footer.twig' %}
 {% endblock %}
 
-<!-- BEGIN: Floating panels -->
+
+
+<!-- BEGIN: mobile component -->
+<div class="menu">
+  <div class="container">
+    <ul class="menu-tab-nav list-unstyled" role="tablist">
+      <li class="menu-tab-nav__item tab-links js__tab-nav active" data-tab="menu-tab-1">
+        <div class="menu-tab-nav__item-text">Главное меню</div>
+      </li>
+      <li class="menu-tab-nav__item tab-links js__tab-nav" data-tab="menu-tab-2">
+        <div class="menu-tab-nav__item-text">Все развлечения</div>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane js__tab-panel active" id="menu-tab-1">
+        <div class="menu-compare menu-link icon-arrow-right">
+          Сравнение мероприятий
+          <span class="menu-compare__counter">2</span>
+        </div>
+
+        <ul class="menu-list list-unstyled">
+          <li class="menu-item"><a href="#" class="menu-link icon-arrow-right">О проекте</a></li>
+          <li class="menu-item"><a href="#" class="menu-link icon-arrow-right">Гарантии</a></li>
+          <li class="menu-item"><a href="#" class="menu-link icon-arrow-right">Staycation</a></li>
+          <li class="menu-item"><a href="#" class="menu-link icon-arrow-right">Блог</a></li>
+          <li class="menu-item"><a href="#" class="menu-link icon-arrow-right">Стать организатором</a></li>
+        </ul>
+      </div>
+
+      <div class="tab-pane js__tab-panel" id="menu-tab-2">
+        <ul class="list-unstyled" role="tablist">
+          <li class="menu-entertainment__item tab-links js__tab-item icon-paint" data-tab="menu-entertainment-01">
+            <span class="menu-entertainment__text">Творчество</span>
+          </li>
+          <li class="menu-entertainment__item tab-links js__tab-item icon-guitar" data-tab="menu-entertainment-02">
+            <span class="menu-entertainment__text">Музыка</span>
+          </li>
+          <li class="menu-entertainment__item tab-links js__tab-item icon-food-tray" data-tab="menu-entertainment-03">
+            <span class="menu-entertainment__text">Еда и напитки</span>
+          </li>
+          <li class="menu-entertainment__item tab-links js__tab-item icon-hair-dye" data-tab="menu-entertainment-04">
+            <span class="menu-entertainment__text">Уход за собой</span>
+          </li>
+          <li class="menu-entertainment__item tab-links js__tab-item icon-extreme" data-tab="menu-entertainment-05">
+            <span class="menu-entertainment__text">Экстрим</span>
+          </li>
+          <li class="menu-entertainment__item tab-links js__tab-item icon-running" data-tab="menu-entertainment-06">
+            <span class="menu-entertainment__text">Спорт</span>
+          </li>
+          <li class="menu-entertainment__item tab-links js__tab-item icon-education" data-tab="menu-entertainment-07">
+            <span class="menu-entertainment__text">Развитие</span>
+          </li>
+          <li class="menu-entertainment__item tab-links js__tab-item icon-balloon" data-tab="menu-entertainment-08">
+            <span class="menu-entertainment__text">Разное</span>
+          </li>
+        </ul>
+
+        <div class="menu-entertainment tab-content">
+          <div class="tab-pane js__tab-box" id="menu-entertainment-01">
+            <h2><a href="#" class="menu-entertainment__title-link">Хобби</a></h2>
+
+            <ul class="mini-card list-unstyled">
+              <li class="mini-card-item">
+                <a href="#" class="mini-card-link">
+                  <img src="img/example/entertainment-01.jpg" class="mini-card-img" alt="">
+                  Творчество
+                </a>
+              </li>
+              <li class="mini-card-item">
+                <a href="#" class="mini-card-link">
+                  <img src="img/example/entertainment-02.jpg" class="mini-card-img" alt="">
+                  Музыкальное
+                </a>
+              </li>
+              <li class="mini-card-item">
+                <a href="#" class="mini-card-link">
+                  <img src="img/example/entertainment-03.jpg" class="mini-card-img" alt="">
+                  Танцевальное
+                </a>
+              </li>
+              <li class="mini-card-item">
+                <a href="#" class="mini-card-link">
+                  <img src="img/example/entertainment-04.jpg" class="mini-card-img" alt="">
+                  Кулинария
+                </a>
+              </li>
+              <li class="mini-card-item">
+                <a href="#" class="mini-card-link">
+                  <img src="img/example/entertainment-05.jpg" class="mini-card-img" alt="">
+                  Детям
+                </a>
+              </li>
+              <li class="mini-card-item">
+                <a href="#" class="mini-card-link">
+                  <img src="img/example/entertainment-06.jpg" class="mini-card-img" alt="">
+                  Разное
+                </a>
+              </li>
+            </ul>
+
+            <a href="#">Посмотреть все предложения >>></a>
+          </div>
+
+          <div class="tab-pane js__tab-box" id="menu-entertainment-02">2</div>
+
+          <div class="tab-pane js__tab-box" id="menu-entertainment-03">3</div>
+
+          <div class="tab-pane js__tab-box" id="menu-entertainment-04">4</div>
+
+          <div class="tab-pane js__tab-box" id="menu-entertainment-05">5</div>
+
+          <div class="tab-pane js__tab-box" id="menu-entertainment-06">6</div>
+
+          <div class="tab-pane js__tab-box" id="menu-entertainment-07">7</div>
+
+          <div class="tab-pane js__tab-box" id="menu-entertainment-08">8</div>
+
+          <div class="menu-entertainment__close btn-circle icon-arrow-long-left"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END: mobile component -->
 
 <div class="modal-wrapper" id="modal-auth">
   <div class="modal-box">
@@ -252,250 +374,17 @@
   </div>
 </div>
 
-<div class="entertainment">
-  <div class="entertainment-holder container">
-    <ul class="entertainment-sidebar nav-section nav nav-tabs" id="myTab" role="tablist">
-      <li class="nav-section-item icon-paint tab-links active" data-tab="nav-section-item-01">
-        <span class="nav-section-item__text">Творчество</span>
-      </li>
-      <li class="nav-section-item icon-guitar tab-links" data-tab="nav-section-item-02">
-        <span class="nav-section-item__text">Музыка</span>
-      </li>
+<!-- BEGIN: This panel only desktop version -->
+{% block footer %}
+  {% include '../partials/entertainment.twig' %}
+{% endblock %}
+<!-- END -->
 
-      <li class="nav-section-item icon-food-tray tab-links" data-tab="nav-section-item-03">
-        <span class="nav-section-item__text">Еда и напитки</span>
-      </li>
-      <li class="nav-section-item icon-hair-dye tab-links" data-tab="nav-section-item-04">
-        <span class="nav-section-item__text">Уход за собой</span>
-      </li>
-      <li class="nav-section-item icon-extreme tab-links" data-tab="nav-section-item-05">
-        <span class="nav-section-item__text">Экстрим</span>
-      </li>
-      <li class="nav-section-item icon-running tab-links" data-tab="nav-section-item-06">
-        <span class="nav-section-item__text">Спорт</span>
-      </li>
-      <li class="nav-section-item icon-education tab-links" data-tab="nav-section-item-07">
-        <span class="nav-section-item__text">Развитие</span>
-      </li>
-      <li class="nav-section-item icon-balloon tab-links" data-tab="nav-section-item-08">
-        <span class="nav-section-item__text">Разное</span>
-      </li>
-    </ul>
-    <div class="entertainment-content tab-content" id="myTabContent">
-      <div class="entertainment-section tab-pane fade show active" id="nav-section-item-01">
-        <h2 class="entertainment-title">
-          <a href="#" class="entertainment-title__link link-decor">Хобби</a>
-        </h2>
 
-        <div class="entertainment-boxed">
-          <div class="entertainment-box">
-            <div class="entertainment-box__title">
-              <a href="#" class="entertainment-box__title-link link-decor">Творчество</a>
-            </div>
-            <ul class="entertainment-box__list list-unstyled">
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Роспись по стеклу</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Валяние из войлока</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Приготовление мыла</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Создание авторских украшений</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс по живописи</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс по флористике</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="entertainment-box">
-            <div class="entertainment-box__title">
-              <a href="#" class="entertainment-box__title-link link-decor">Танцевальное</a>
-            </div>
-            <ul class="entertainment-box__list list-unstyled">
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс по восточным танцам</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс по хип-хопу</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс по балету</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс по танго</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс по бачате</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс по брейкдансу</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="entertainment-box">
-            <div class="entertainment-box__title">
-              <a href="#" class="entertainment-box__title-link link-decor">Музыкальное</a>
-            </div>
-            <ul class="entertainment-box__list list-unstyled">
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс по вокалу</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс игры на барабанах</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс DJ</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс игры на фортепиано</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс игры на гитаре</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс игры на флейте</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="entertainment-box">
-            <div class="entertainment-box__title">
-              <a href="#" class="entertainment-box__title-link link-decor">Кулинария</a>
-            </div>
-            <ul class="entertainment-box__list list-unstyled">
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс бармена</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Приготовление суши</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Кондитерское искусство</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер-класс по приготовлению пряников</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс по шоколадоварению</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Церемония приготовления какао</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="entertainment-box">
-            <div class="entertainment-box__title">
-              <a href="#" class="entertainment-box__title-link link-decor">Детям</a>
-            </div>
-            <ul class="entertainment-box__list list-unstyled">
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Аквапарк</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Картинг</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Батуты</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Парк игрового обучения</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Развивающие игры</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Детский лагерь</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="entertainment-box">
-            <div class="entertainment-box__title">
-              <a href="#" class="entertainment-box__title-link link-decor">Разное</a>
-            </div>
-            <ul class="entertainment-box__list list-unstyled">
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс жонглирования</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Курс по файершоу</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс макияжа</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Мастер класс прически</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Рыбалка</a>
-              </li>
-              <li class="entertainment-box__item">
-                <a href="#" class="entertainment-box__link">Актерское мастерство</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="entertainment-section tab-pane fade" id="nav-section-item-02">
-        <h2 class="entertainment-title">
-          <a href="#" class="entertainment-title__link link-decor">Музыка</a>
-        </h2>
-      </div>
-
-      <div class="entertainment-section tab-pane fade" id="nav-section-item-03">
-        <h2 class="entertainment-title">
-          <a href="#" class="entertainment-title__link link-decor">Еда и напитки</a>
-        </h2>
-      </div>
-
-      <div class="entertainment-section tab-pane fade" id="nav-section-item-04">
-        <h2 class="entertainment-title">
-          <a href="#" class="entertainment-title__link link-decor">Уход за собою</a>
-        </h2>
-      </div>
-
-      <div class="entertainment-section tab-pane fade" id="nav-section-item-05">
-        <h2 class="entertainment-title">
-          <a href="#" class="entertainment-title__link link-decor">Экстрим</a>
-        </h2>
-      </div>
-
-      <div class="entertainment-section tab-pane fade" id="nav-section-item-06">
-        <h2 class="entertainment-title">
-          <a href="#" class="entertainment-title__link link-decor">Спорт</a>
-        </h2>
-      </div>
-
-      <div class="entertainment-section tab-pane fade" id="nav-section-item-07">
-        <h2 class="entertainment-title">
-          <a href="#" class="entertainment-title__link link-decor">Развитие</a>
-        </h2>
-      </div>
-
-      <div class="entertainment-section tab-pane fade" id="nav-section-item-08">
-        <h2 class="entertainment-title">
-          <a href="#" class="entertainment-title__link link-decor">Разное</a>
-        </h2>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- END:> Floating panels -->
 
 {% block scripts %}
-  <script src="/js/libs.js?ver=1.1"></script>
-  <script src="/js/scripts.min.js?ver=2.1"></script>
+  <script src="/js/libs.js?ver=1.2"></script>
+  <script src="/js/scripts.min.js?ver=2.2"></script>
 {% endblock %}
 </body>
 </html>

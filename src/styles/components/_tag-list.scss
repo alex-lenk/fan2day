@@ -20,5 +20,11 @@
   font-size: 14px;
   line-height: 20px;
   display: block;
-  transition: color .3s, border .3s;
+  transition: color .3s, background-color .3s, color .3s, border-color .3s;
+
+  &:hover {
+    color: $black;
+    border-color: $grey5;
+    background-color: $grey5;
+  }
 }
