@@ -33,19 +33,3 @@
 @import "blocks/menu";
 @import "blocks/search-form";
 @import "mobile-blocks/header";
-
-@media (min-width: 767px) {
-  .header .search-form__wrap {
-    display: none;
-  }
-  .search-panel {
-    display: none;
-  }
-}
-
-@media (min-width: 1200px) {
-  .menu,
-  .header {
-    display: none;
-  }
-}

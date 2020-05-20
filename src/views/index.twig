@@ -1,6 +1,6 @@
-{% extends "layout/desktop.twig" %}
-
+{% extends "layout/layout.twig" %}
 {% set title = "Главная страница - Fan2Day" %}
+{% block topPanel %}{% include 'desktop-table/top-panel.twig' %}{% endblock %}
 
 {% block content %}
     <header class="main-info">
