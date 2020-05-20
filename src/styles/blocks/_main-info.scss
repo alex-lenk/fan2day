@@ -1,17 +1,25 @@
 .main-info {
   height: 440px;
-  padding-top: 8%;
+  padding: 8% 15px 0;
   background: url(../img/media/bg-main-info.jpg) no-repeat top center;
   display: flex;
+}
 
-  @media (min-width: 1921px) {
+.main-info-title {
+  margin: 0 auto auto;
+  text-align: center;
+}
+
+@media (min-width: 1921px) {
+  .main-info {
     height: 65vh;
     padding-top: 17vh;
     background: url(../img/media/bg-main-info@2x.jpg) no-repeat top center;
   }
 }
 
-.main-info-title {
-  margin: 0 auto auto;
-  text-align: center;
+@media (max-width: 1199px) {
+  .main-info {
+    margin-bottom: 15px;
+  }
 }

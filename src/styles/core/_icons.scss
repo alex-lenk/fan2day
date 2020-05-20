@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?li9zaa') format('woff');
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?m4v5iz') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -15,6 +15,11 @@
   }
 }
 
+.icon-arrow-bend {
+  &:before {
+    content: $icon-arrow-bend;
+  }
+}
 .icon-phone {
   &:before {
     content: $icon-phone;

@@ -28,16 +28,6 @@
   &:first-of-type::before {
     opacity: 1;
   }
-
-  &:hover {
-    .result-item__text {
-      color: $blue;
-    }
-
-    .result-item__img {
-      opacity: .9;
-    }
-  }
 }
 
 .result-item__img {
@@ -48,18 +38,11 @@
 }
 
 .result-item__text {
-  font-size: 14px;
-  line-height: 20px;
-  transition: color .3s;
   flex-grow: 1;
 }
 
 .result-all {
   text-align: center;
-}
-
-
-.result-item__discount {
 }
 
 .result-item__price {
@@ -93,5 +76,26 @@
   }
 }
 
-.result-item__price-new {
+@media (min-width: 767px) {
+  .result-item:hover {
+    .result-item__text {
+      color: $blue;
+    }
+
+    .result-item__img {
+      opacity: .9;
+    }
+  }
+  .result-item__text {
+    font-size: 14px;
+    line-height: 20px;
+    transition: color .3s;
+  }
+}
+
+@media (max-width: 766px) {
+  .result-item__text {
+    font-size: 13px;
+    line-height: 18px;
+  }
 }

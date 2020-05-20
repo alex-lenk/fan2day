@@ -21,7 +21,6 @@
 }
 
 .card-media {
-  height: 213px;
   overflow: hidden;
   border-radius: 15px 15px 0 0;
 }
@@ -39,15 +38,12 @@
 .card-title {
   margin-bottom: 6px;
   font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
   color: $black;
 }
 
 .card-text {
   margin-bottom: 15px;
   color: $grey;
-  line-height: 24px;
 }
 
 .card-footer {
@@ -58,4 +54,40 @@
   text-align: right;
   color: $black;
   letter-spacing: 0.03em;
+}
+
+@media (min-width: 1400px) {
+  .card-media {
+    height: 213px;
+  }
+  .card-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .card-text {
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 1399px) {
+  .card-media {
+    height: 169px;
+  }
+  .card-media__img {
+    object-fit: cover;
+  }
+  .card-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .card-text {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 991px) {
+  .card {
+    height: 100%
+  }
 }

@@ -2,7 +2,7 @@
   margin-bottom: 100px
 }
 
-.instagram-item {
+.instagram-inner {
   background-color: #fff;
   padding: 30px 25px;
   box-shadow: 3px 3px 8px #C7C9D2, -2px -2px 6px #FAFBFF;
@@ -21,4 +21,10 @@
 
 .instagram-img {
   transition: opacity .4s;
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .instagram-item {
+    margin-bottom: 30px;
+  }
 }

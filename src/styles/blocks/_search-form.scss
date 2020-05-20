@@ -1,0 +1,123 @@
+.search-form {
+  z-index: 2;
+  position: relative;
+}
+
+.search-form-box {
+  display: flex;
+
+  .btn-primary {
+    max-width: 87px;
+    flex-basis: 87px;
+    min-width: auto;
+    height: 34px;
+    margin-left: -20px;
+    flex-shrink: 0;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.search-form-box__input {
+  height: rem(34);
+  padding-top: rem(8);
+  padding-bottom: rem(8);
+}
+
+.search-form-box__back {
+  width: 35px;
+  height: 100%;
+  font-size: 17px;
+  position: absolute;
+  color: #143098;
+  cursor: pointer;
+  transition: opacity .3s;
+  pointer-events: none;
+  opacity: 0;
+
+  &.active {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.search-form-box__clear {
+  position: absolute;
+  top: 7px;
+  right: 109px;
+  border-radius: 50%;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 25px;
+  font-size: 12px;
+  cursor: pointer;
+  background: linear-gradient(93.96deg, #DDDDDD 0%, #CACACA 100%);
+  box-shadow: 2px 2px 4px #C0C0C0, -2px -2px 4px #F3F3F3;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .3s;
+
+  &.active {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 766px) {
+  .search-form__wrap {
+    width: 83.33333%;
+    height: 70px;
+    padding-top: 18px;
+    padding-right: 15px;
+    background-color: $grey4;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .3s;
+  }
+  .search-form-btn {
+    margin-left: -25px;
+    color: #fff;
+    background: $blue-gradient;
+  }
+  .menu-open {
+    .search-form__wrap {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  .search-form-box::before {
+    display: none;
+  }
+  .search-form-box__back {
+    padding: 5px 5px 3px 7px;
+    top: 0;
+    left: -48px;
+  }
+}
+
+@media (min-width: 767px) {
+  .search-form__wrap {
+    max-width: 58%;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .search-form-box__back {
+    padding: 8px 5px 3px 15px;
+    top: -2px;
+    left: 0;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1199px) {
+  .search-form__wrap {
+    max-width: 75%;
+  }
+}

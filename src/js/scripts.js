@@ -3,12 +3,15 @@ import './snippets/tab.js';
 //import './snippets/scripts.js';
 
 
-/* BEGIN для мобильной версии */
+if ($(window).width() < 992 && $(window).width() > 766) {
+  $('.footer-nav__wrap + div').appendTo('.footer-nav__wrap .row');
+}
+/* BEGIN For mobile version */
 if ($(window).width() <= 1199) {
 
   $(document).ready(function () {
-
     $('.header-toggle').click(function () {
+      $(this).toggleClass('icon-menu icon-close');
       $('body').toggleClass('menu-open');
     });
 
@@ -27,8 +30,10 @@ if ($(window).width() <= 1199) {
 /* END */
 
 
+/* BEGIN For desktop version */
 if ($(window).width() >= 1200) {
 }
+/* END */
 
 $(document).ready(function () {
   /* BEGIN: Глабальные перменные */
@@ -60,7 +65,7 @@ $(document).ready(function () {
     searchFormBoxClear = $('.search-form-box__clear'),
     searchFormBoxBack = $('.search-form-box__back'),
     searchArea = '.search-area',
-    searchResultPanel = $('.search-area__result');
+    searchResult = $('.search-result');
 
   searchFormBoxInput.keyup(function () {
     let value = $(this).val().length;
@@ -69,31 +74,46 @@ $(document).ready(function () {
       searchFormBox.removeClass('icon-search');
       searchFormBoxBack.addClass('active');
       searchFormBoxClear.addClass('active');
-      searchResultPanel.addClass('active');
+      searchResult.addClass('active');
     } else {
       searchFormBoxClear.removeClass('active');
-      searchResultPanel.removeClass('active');
+      searchResult.removeClass('active');
     }
   });
 
   searchFormBoxClear.click(function () {
     searchFormBoxInput.val('').focus();
     $(this).removeClass('active');
-    searchResultPanel.removeClass('active');
+    searchResult.removeClass('active');
   });
 
   searchFormBoxBack.click(function () {
     searchFormBox.addClass('icon-search');
     $(this).removeClass('active');
     searchFormBoxClear.removeClass('active');
-    searchResultPanel.removeClass('active');
+    searchResult.removeClass('active');
     searchFormBoxInput.val('');
   });
 
-  $('.js__search').click(function () {
-    $(searchArea).addClass('active');
-    $(entertainment).removeClass(entertainmentOpened);
-  });
+
+  /* BEGIN For desktop version */
+  if ($(window).width() >= 767) {
+    $('.js__search').click(function () {
+      $(searchArea).addClass('active');
+      $(entertainment).removeClass(entertainmentOpened);
+    });
+  }
+  /* END */
+  /* BEGIN For desktop version */
+  if ($(window).width() <= 766) {
+    searchFormBoxBack.click(function () {
+      $('body').removeClass('search-panel__active')
+    });
+    $('.js__search').click(function () {
+      $('body').addClass('search-panel__active');
+    });
+  }
+  /* END */
 
   $('.search-area__close').click(function () {
     $(searchArea).removeClass('active');
@@ -153,7 +173,21 @@ $(document).ready(function () {
     slidesToShow: 4,
     slidesToScroll: 1,
     prevArrow: '<button type="button" class="slick-prev btn-circle"><span class="icon-arrow-left btn-text"></span></button>',
-    nextArrow: '<button type="button" class="slick-next btn-circle"><span class="icon-arrow-right btn-text"></span></button>'
+    nextArrow: '<button type="button" class="slick-next btn-circle"><span class="icon-arrow-right btn-text"></span></button>',
+    responsive: [
+      {
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2
+        }
+      }
+    ]
   });
   /* END */
 

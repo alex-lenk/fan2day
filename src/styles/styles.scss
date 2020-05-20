@@ -22,6 +22,7 @@
 @import "blocks/nav-direction";
 @import "blocks/entertainment-panel";
 @import "blocks/search-area";
+@import "blocks/search-panel";
 @import "blocks/modal";
 @import "blocks/popular-section";
 @import "blocks/novelty";
@@ -30,17 +31,34 @@
 @import "blocks/footer";
 @import "blocks/mini-card";
 @import "blocks/menu";
+@import "blocks/search-form";
 
 @media (max-width: 1199px) {
   .top-panel {
-    display: none;//@todo delete this on production
+    display: none; //@todo delete this on production
   }
 }
+
+@media (max-width: 766px) {
+  .search-area {
+    display: none; //@todo delete this on production
+  }
+}
+
+@media (min-width: 767px) {
+  .header .search-form__wrap {
+    display: none; //@todo delete this on production
+  }
+  .search-panel {
+    display: none; //@todo delete this on production
+  }
+}
+
 
 @media (min-width: 1200px) {
   .menu,
   .header {
-    display: none;//@todo delete this on production
+    display: none; //@todo delete this on production
   }
 }
 

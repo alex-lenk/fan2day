@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  {% block head %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>{{ title }}</title>
+
+    {% block styles %}
+      <link rel="stylesheet" href="/css/styles.min.css?ver=2.7">
+    {% endblock %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#111111">
+    <link rel="shortcut icon" href="/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#e3e5ec">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#e3e5ec">
+  {% endblock %}
+</head>
+<body>
+{% block header %}
+  {% include '../partials/header.twig' %}
+{% endblock %}
+
+{% block content %}{% endblock %}
+
+{% block footer %}
+  {% include '../partials/footer.twig' %}
+{% endblock %}
+
+
+<!-- BEGIN: mobile component -->
+{% block menu %}
+  {% include '../mobile/menu.twig' %}
+{% endblock %}
+
+
+{% block searchPanel %}
+  {% include '../mobile/search-panel.twig' %}
+{% endblock %}
+<!-- END: mobile component -->
+
+
+<div class="modal-wrapper" id="modal-auth">
+  <div class="modal-box">
+    <div class="modal-close btn-circle icon-close"></div>
+
+    <form id="modal-login" class="modal-form">
+      <h2 class="modal-title">Вход</h2>
+
+      <div class="modal-subtitle">Для входа используйте ваш е-mail и&nbsp;пароль</div>
+
+      <div class="form-group">
+        <input type="email" name="email" class="form-control hide-placeholder" placeholder="Введите e-mail *">
+      </div>
+
+      <div class="form-group">
+        <input type="password" name="password" class="form-control hide-placeholder" placeholder="Пароль *">
+      </div>
+
+      <div class="form-group__btn">
+        <button class="btn btn-primary"><span class="btn-text">Войти</span></button>
+        <div class="form-group__link as-link js__forgot">Забыли пароли?</div>
+      </div>
+
+      <div class="modal-box__bottom">
+        <div class="modal-box__bottom-text">У вас нет аккаунта на Fun2Day?</div>
+        <div class="as-link js__register">Зарегистрироваться</div>
+      </div>
+    </form>
+
+    <form id="modal-forgot" class="modal-form">
+      <h2 class="modal-title">Восстановления пароля</h2>
+
+      <div class="modal-subtitle">Укажите адрес электронной почты, который вы&nbsp;использовали при регистрации.</div>
+
+      <div class="form-group">
+        <input type="email" name="inputForgotEmail" class="form-control hide-placeholder" placeholder="E-mail *">
+      </div>
+
+      <div class="form-group__btn">
+        <button class="btn btn-primary"><span class="btn-text">Восстановить</span></button>
+        <div class="form-group__link as-link js__login">Вспомнили пароль?</div>
+      </div>
+
+      <div class="modal-box__bottom">
+        <div class="modal-box__bottom-text">У вас нет аккаунта на Fun2Day?</div>
+        <div class="as-link js__register">Зарегистрироваться</div>
+      </div>
+    </form>
+
+    <form id="modal-register" class="modal-form">
+      <h2 class="modal-title">Регистрация</h2>
+
+      <div class="modal-subtitle">
+        Укажите адрес электронной почты, мы&nbsp;отправим вам
+        пароль для входа в&nbsp;личный кабинет
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="inputRegisterEmail" class="form-control hide-placeholder" placeholder="Укажите Ваш E-mail *">
+      </div>
+
+      <label class="form-group custom-control custom-checkbox">
+        <input type="checkbox" name="agreeRegister" class="custom-control-input">
+        <span class="custom-control-label icon-check">Согласие на обработку</span>
+      </label>
+
+      <div class="form-group__btn">
+        <button class="btn btn-primary"><span class="btn-text">Зарегистрироваться</span></button>
+      </div>
+
+      <div class="modal-box__bottom">
+        <div class="modal-box__bottom-text">Уже есть аккаунт на Fun2Day?</div>
+        <div class="as-link js__login">Войти</div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<!-- BEGIN: This panel only desktop version -->
+{% block searcArea %}
+  {% include '../desktop-table/search-area.twig' %}
+{% endblock %}
+
+{% block entertainment %}
+  {% include '../desktop-table/entertainment.twig' %}
+{% endblock %}
+<!-- END -->
+
+
+{% block scripts %}
+  <script src="/js/libs.js?ver=1.2"></script>
+  <script src="/js/scripts.min.js?ver=2.2"></script>
+{% endblock %}
+</body>
+</html>

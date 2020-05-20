@@ -1,10 +1,11 @@
-{% extends "layout/desktop.twig" %}
+{% extends "layout/mobile.twig" %}
 
 {% set title = "Главная страница - Fan2Day" %}
 
 {% block content %}
+
     <header class="main-info">
-      <h1 class="main-info-title">Сервис поиска и&nbsp;бронирования досуга в&nbsp;Москве<br> и&nbsp;Московской области</h1>
+      <h1 class="main-info-title">Сервис поиска и бронирования досуга в Москве<br> и Московской области</h1>
     </header>
 
     <nav class="nav-direction container">
@@ -232,25 +233,25 @@
       <h2 class="steps-title">Экономим ваше время на поиск развлечений. Бесплатно.</h2>
       <div class="steps-text">Вы ничего не переплачиваете, бронируя у нас заранее свой отдых. </div>
       <ul class="steps-list list-unstyled">
-        <li class="steps-item">
-          <div class="steps-item__text">Выберите подходящее<br>
-            мероприятие</div>
+        <li class="steps-item steps-item__first icon-arrow-very-long">
+          Выберите подходящее<br>
+          мероприятие
         </li>
-        <li class="steps-item">
-          <div class="steps-item__text">Задайте любые вопросы<br>
-            организатору</div>
+        <li class="steps-item steps-item__second icon-arrow-very-long">
+          Задайте любые вопросы<br>
+          организатору
         </li>
-        <li class="steps-item">
-          <div class="steps-item__text">Внесите&nbsp;10% от&nbsp;стоимости развлечения,<br>
-            чтобы забронировать место и&nbsp;время</div>
+        <li class="steps-item steps-item__third icon-arrow-very-long">
+          Внесите 10% от стоимости развлечения,<br>
+          чтобы забронировать место и время
         </li>
-        <li class="steps-item">
-          <div class="steps-item__text">Получите электронный<br>
-            билет</div>
+        <li class="steps-item steps-item__fourth icon-arrow-very-long">
+          Получите электронный<br>
+          билет
         </li>
-        <li class="steps-item">
-          <div class="steps-item__text">Наслаждайтесь мероприятием,<br>
-            оплатив оставшуюся стоимость на&nbsp;месте</div>
+        <li class="steps-item steps-item__fifth">
+          Наслаждайтесь мероприятием,<br>
+          оплатив оставшуюся стоимость на месте
         </li>
       </ul>
 
@@ -280,17 +281,17 @@
     <div class="instagram container">
       <h2>Наш инстаграм</h2>
       <div class="row">
-        <div class="instagram-item col-lg-3 col-sm-6">
-          <a href="#" class="instagram-inner"><img src="img/example/insta-01.jpg" class="instagram-img" alt=""></a>
+        <div class="col-lg-3">
+          <a href="#" class="instagram-item"><img src="img/example/insta-01.jpg" class="instagram-img" alt=""></a>
         </div>
-        <div class="instagram-item col-lg-3 col-sm-6">
-          <a href="#" class="instagram-inner"><img src="img/example/insta-02.jpg" class="instagram-img" alt=""></a>
+        <div class="col-lg-3">
+          <a href="#" class="instagram-item"><img src="img/example/insta-02.jpg" class="instagram-img" alt=""></a>
         </div>
-        <div class="instagram-item col-lg-3 col-sm-6">
-          <a href="#" class="instagram-inner"><img src="img/example/insta-03.jpg" class="instagram-img" alt=""></a>
+        <div class="col-lg-3">
+          <a href="#" class="instagram-item"><img src="img/example/insta-03.jpg" class="instagram-img" alt=""></a>
         </div>
-        <div class="instagram-item col-lg-3 col-sm-6">
-          <a href="#" class="instagram-inner"><img src="img/example/insta-04.jpg" class="instagram-img" alt=""></a>
+        <div class="col-lg-3">
+          <a href="#" class="instagram-item"><img src="img/example/insta-04.jpg" class="instagram-img" alt=""></a>
         </div>
       </div>
     </div>
@@ -322,7 +323,6 @@
             бихевиоризм. Политическое учение Монтескье самопроизвольно.
           </p>
         </div>
-
         <div class="col-lg-6">
           <p class="lead">
             Тема: &laquo;Почему нормально распределен абсолютно сходящийся ряд?&raquo;
@@ -347,4 +347,5 @@
         </div>
       </div>
     </div>
+
 {% endblock %}

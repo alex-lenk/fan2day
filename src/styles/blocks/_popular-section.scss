@@ -14,3 +14,9 @@
     outline: 0;
   }
 }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .popular-carousel__item .card-media__img {
+    width: 100%;
+  }
+}

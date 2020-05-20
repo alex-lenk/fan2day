@@ -9,8 +9,6 @@
     margin-bottom: 18px;
     padding-left: rem(7.5);
     padding-right: rem(7.5);
-    max-width: 50%;
-    flex-basis: 50%;
   }
   .mini-card-link {
     font-size: 14px;
@@ -21,5 +19,26 @@
     margin: 0 auto 3px;
     border-radius: 7px;
     display: block;
+  }
+}
+
+@media (max-width: 991px) {
+  .mini-card-item {
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .mini-card-item {
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .mini-card-item {
+    max-width: 33.3333%;
+    flex-basis: 33.3333%;
   }
 }
