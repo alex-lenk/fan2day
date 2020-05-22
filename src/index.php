@@ -1,6 +1,7 @@
 <?
 // определение мобильного устройства
-function check_mobile_device() {
+function check_mobile_device()
+{
   $mobile_agent_array = array('ipad', 'iphone', 'android', 'pocket', 'palm', 'windows ce', 'windowsce', 'cellphone', 'opera mobi', 'ipod', 'small', 'sharp', 'sonyericsson', 'symbian', 'opera mini', 'nokia', 'htc_', 'samsung', 'motorola', 'smartphone', 'blackberry', 'playstation portable', 'tablet browser');
   $agent = strtolower($_SERVER['HTTP_USER_AGENT']);
   // var_dump($agent);exit;
@@ -11,8 +12,9 @@ function check_mobile_device() {
 }
 
 $is_mobile_device = check_mobile_device();
-if($is_mobile_device){
-  include ("index-m.html");
-}else{
-  include ("index-desk-tab.html");
+
+if ($is_mobile_device) {
+  include("index-mob.html");
+} else {
+  include("index-desk.html");
 }
