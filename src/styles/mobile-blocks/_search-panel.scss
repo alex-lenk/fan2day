@@ -36,10 +36,12 @@
 
 .search-result {
   width: 100%;
-  padding: 43px 15px 28px;
+  padding: 30px 15px;
+  top: 70px;
+  left: 0;
+  position: fixed;
   background-color: $grey4;
   box-shadow: 0 8px 15px rgba(95, 105, 142, 0.3);
-  left: 0;
   z-index: 1;
   transition: opacity .3s ease-out;
 
@@ -54,25 +56,6 @@
 
   .result-item__img {
     margin-right: 10px;
-  }
-}
-
-@media (min-width: 766px) {
-  .search-result {
-    padding: 43px 15px 28px;
-    position: absolute;
-    top: 10px;
-    border-radius: 17px;
-    border: 1px solid rgba(#fff, .3);
-  }
-}
-
-@media (max-width: 765px) {
-  .search-result {
-    padding: 30px 15px;
-    top: 70px;
-    left: 0;
-    position: fixed;
   }
 }
 

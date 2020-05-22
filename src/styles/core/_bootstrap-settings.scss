@@ -1,0 +1,64 @@
+// Color system
+$black: $black;
+
+
+// Components
+$border-radius: 30px;
+
+
+// Links
+$link-color: $blue;
+$link-hover-decoration: none;
+$link-hover-color: inherit;
+
+
+// Typography
+$font-family-base: 'SFUIDisplay', Arial, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+$body-color: $grey;
+$head-color: $black;
+
+
+// Body
+$body-bg: $grey4;
+$font-weight-base: 500;
+
+
+// Grid containers
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1400px
+);
+
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 767px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+
+// Forms
+$input-height: 44px;
+$input-border-color: rgba(#fff, .3);
+$input-box-shadow: inset 3px 3px 10px rgba(56, 72, 114, 0.25), inset -3px -3px 10px #FFFFFF;
+$input-focus-border-color: rgba(#fff, .3);
+$input-color: $black;
+$input-font-weight: 500;
+$input-font-size: 14px;
+$input-padding-x: 1.2rem;
+$form-group-margin-bottom: 1.2rem;
+$input-padding-y: .8rem;
+
+
+// Buttons
+$btn-border-width: 0;
+$btn-font-weight: 700;
+$btn-disabled-opacity: .5;
+$btn-padding-x: 2.5rem;

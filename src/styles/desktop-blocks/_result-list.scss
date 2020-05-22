@@ -1,0 +1,90 @@
+.result-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  color: $black;
+  display: flex;
+  align-items: center;
+
+  &::before,
+  &::after {
+    width: 100%;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    background: $blue-gradient;
+    content: '';
+  }
+
+  &::before {
+    top: 0;
+    opacity: 0;
+  }
+
+  &::after {
+    bottom: 0;
+  }
+
+  &:first-of-type::before {
+    opacity: 1;
+  }
+
+  &:hover {
+    .result-item__text {
+      color: $blue;
+    }
+
+    .result-item__img {
+      opacity: .9;
+    }
+  }
+}
+
+.result-item__img {
+  margin-right: 30px;
+  border-radius: 5px;
+  flex-shrink: 1;
+  transition: opacity .3s;
+}
+
+.result-item__text {
+  font-size: 14px;
+  line-height: 20px;
+  transition: color .3s;
+  flex-grow: 1;
+}
+
+.result-all {
+  text-align: center;
+}
+
+.result-item__price {
+  min-width: 27%;
+  margin-left: 30px;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.03em;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.result-item__price-old {
+  margin-right: 8px;
+  padding-left: 59px;
+  font-weight: 700;
+  text-decoration-line: line-through;
+  position: relative;
+
+  &::before {
+    width: 49px;
+    height: 28px;
+    top: 0;
+    left: 0;
+    background: url(../img/icons/discount.svg) no-repeat center;
+    background-size: contain;
+    position: absolute;
+    content: '';
+  }
+}

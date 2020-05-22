@@ -89,9 +89,7 @@
   background: $blue-gradient;
 }
 
-.menu-open {
-  .search-form__wrap {
-    opacity: 1;
-    pointer-events: auto;
-  }
+.menu-open .search-form__wrap {
+  opacity: 1;
+  pointer-events: auto;
 }

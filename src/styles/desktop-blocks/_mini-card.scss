@@ -24,8 +24,8 @@
 
 @media (max-width: 991px) {
   .mini-card-item {
-    max-width: 50%;
-    flex-basis: 50%;
+    max-width: 33.3333%;
+    flex-basis: 33.3333%;
   }
 }
 
@@ -33,12 +33,5 @@
   .mini-card-item {
     max-width: 25%;
     flex-basis: 25%;
-  }
-}
-
-@media (min-width: 766px) and (max-width: 991px) {
-  .mini-card-item {
-    max-width: 33.3333%;
-    flex-basis: 33.3333%;
   }
 }

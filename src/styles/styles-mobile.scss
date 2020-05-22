@@ -1,19 +1,22 @@
 @import "core/variables";
 @import "core/mixin";
-@import "vendors/bootstrap";
-@import "vendors/slick";
 @import "core/fonts";
+
+@import "vendors/bootstrap";
+
 @import "core/typography";
 @import "core/core";
 @import "core/btn";
 @import "core/forms";
 @import "core/icons";
 
-@import "components/result-list";
+/* mobile blocks */
+@import "mobile-blocks/result-list";
 @import "mobile-blocks/card";
-@import "blocks/search-panel";
 @import "mobile-blocks/tag-list";
+@import "mobile-blocks/header";
 @import "mobile-blocks/main-info";
+@import "mobile-blocks/search-panel";
 @import "mobile-blocks/nav-direction";
 @import "mobile-blocks/popular-section";
 @import "mobile-blocks/novelty";
@@ -23,7 +26,5 @@
 @import "mobile-blocks/footer";
 @import "mobile-blocks/search-form";
 @import "mobile-blocks/modal";
-@import "blocks/menu";
-
-@import "blocks/mini-card";
-@import "mobile-blocks/header";
+@import "mobile-blocks/menu";
+@import "mobile-blocks/mini-card";

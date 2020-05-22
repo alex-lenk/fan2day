@@ -14,6 +14,8 @@
   margin-bottom: 15px;
   padding-left: rem(7.5);
   padding-right: rem(7.5);
+  max-width: 33.3333%;
+  flex-basis: 33.3333%;
 }
 
 .nav-direction-link {
@@ -41,13 +43,6 @@
     line-height: 28px;
     font-size: 14px;
     margin: 0 auto 8px;
-  }
-}
-
-@media (max-width: 575px) {
-  .nav-direction-item {
-    max-width: 33.3333%;
-    flex-basis: 33.3333%;
   }
 }
 

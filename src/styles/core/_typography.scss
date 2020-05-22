@@ -18,6 +18,10 @@ h1, h2, h3, h4 {
   letter-spacing: 0.03em;
 }
 
+img {
+  max-width: 100%;
+}
+
 @media (min-width: 766px) {
   h1 {
     font-size: 32px;
