@@ -89,7 +89,6 @@
 
   .menu-entertainment {
     width: calc(100% - 30px);
-    height: 512px;
     padding: 20px 12px 20px 15px;
     position: absolute;
     top: -59px;
@@ -173,10 +172,5 @@
     .menu-entertainment__text {
       display: none;
     }
-  }
-}
-
-@media (max-width: 766px) {
-  .menu-open {
   }
 }

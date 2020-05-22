@@ -10,26 +10,20 @@
 @import "core/icons";
 
 @import "components/result-list";
-@import "components/tag-list";
-@import "components/link-offer";
-@import "components/card";
-@import "components/slick-arrow";
-@import "components/subscription";
-
-@import "blocks/top-panel";
-@import "blocks/nav-section";
-@import "blocks/main-info";
-@import "blocks/nav-direction";
-@import "blocks/entertainment-panel";
-@import "blocks/search-area";
+@import "mobile-blocks/card";
 @import "blocks/search-panel";
-@import "blocks/modal";
-@import "blocks/popular-section";
-@import "blocks/novelty";
-@import "blocks/steps";
-@import "blocks/instagram";
-@import "blocks/footer";
-@import "blocks/mini-card";
+@import "mobile-blocks/tag-list";
+@import "mobile-blocks/main-info";
+@import "mobile-blocks/nav-direction";
+@import "mobile-blocks/popular-section";
+@import "mobile-blocks/novelty";
+@import "mobile-blocks/steps";
+@import "mobile-blocks/subscription";
+@import "mobile-blocks/instagram";
+@import "mobile-blocks/footer";
+@import "mobile-blocks/search-form";
+@import "mobile-blocks/modal";
 @import "blocks/menu";
-@import "blocks/search-form";
+
+@import "blocks/mini-card";
 @import "mobile-blocks/header";

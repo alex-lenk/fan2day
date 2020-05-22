@@ -1,0 +1,28 @@
+.tag-list {
+  margin-right: -15px;
+  overflow-x: scroll;
+  display: flex;
+}
+
+.tag-list__item {
+  padding-right: 15px;
+  margin-bottom: 16px;
+}
+
+.tag-list__link {
+  padding: 2px 18px;
+  color: inherit;
+  border: 2px solid;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 20px;
+  display: block;
+  white-space: nowrap;
+  transition: color .3s, background-color .3s, color .3s, border-color .3s;
+
+  &:hover {
+    color: $black;
+    border-color: $grey5;
+    background-color: $grey5;
+  }
+}

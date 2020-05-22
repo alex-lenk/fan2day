@@ -148,3 +148,13 @@ input[type='search']::-webkit-search-results-decoration {
 .valid.form-control {
   border: 1px solid $green !important;
 }
+
+@media (max-width: 765px) {
+  .btn {
+    font-size: 14px;
+  }
+  .btn-primary,
+  .form-control {
+    height: 40px;
+  }
+}

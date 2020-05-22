@@ -1,5 +1,5 @@
 .popular-section {
-  margin-bottom: 90px;
+  margin-bottom: 35px;
 }
 
 .popular-section__list {
@@ -8,17 +8,7 @@
 }
 
 .popular-section__box {
-  padding: 0 15px 10px;
-
-  &:focus {
-    outline: 0;
-  }
-}
-
-@media (max-width: 576px) {
-  .popular-section {
-    overflow-x: hidden;
-  }
+  padding: 0 15px 15px;
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {

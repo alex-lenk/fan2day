@@ -10,7 +10,7 @@
   max-width: 50%;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 766px) {
   .subscription {
     background: $grey5 url(../img/media/bg-subscription.svg) no-repeat 97% center;
     background-size: 370px 275px;
@@ -23,7 +23,7 @@
   }
 }
 
-@media (min-width: 767px) and (max-width: 991px) {
+@media (min-width: 766px) and (max-width: 991px) {
   .subscription {
     background-size: 290px 200px;
     background-position: 100% 95%;

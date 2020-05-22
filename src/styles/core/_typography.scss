@@ -2,11 +2,6 @@ body {
   padding-top: 70px;
 }
 
-h1 {
-  font-size: 32px;
-  line-height: 42px;
-}
-
 h3 {
   font-size: 18px;
   line-height: 24px;
@@ -23,6 +18,13 @@ h1, h2, h3, h4 {
   letter-spacing: 0.03em;
 }
 
+@media (min-width: 766px) {
+  h1 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
 @media (min-width: 1200px) {
   h2 {
     margin-bottom: 23px;
@@ -36,5 +38,12 @@ h1, h2, h3, h4 {
     margin-bottom: 15px;
     font-size: 20px;
     line-height: 28px;
+  }
+}
+
+@media (max-width: 765px) {
+  h1 {
+    font-size: 24px;
+    line-height: 32px;
   }
 }

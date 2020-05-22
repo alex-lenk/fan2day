@@ -37,10 +37,6 @@ const dataMode = require(`./src/data/${isMode}.json`);
 const dataSite = require(`./src/data/site.json`);
 
 /* пути */
-const dirDist = 'dist';
-const dirAssets = 'assets';
-const dirSrc = 'src';
-
 const paths = {
   root: './dist',
   clean: './dist',
@@ -54,8 +50,8 @@ const paths = {
   },
   src: {
     twig: './src/views/*.twig',
-    script: './src/js/scripts.js',
-    style: './src/styles/styles.scss',
+    script: './src/js/*.js',
+    style: './src/styles/*.scss',
     img: './src/img/**/*.*',
     fonts: './src/fonts/**/*.*',
     favicon: './src/favicon/**/*.*'
@@ -137,29 +133,6 @@ function scripts() {
     .pipe(gulpif(production, strip()))
     .pipe(gulp.dest(paths.dist.js));
 }
-/*
-gulp.task('js:auth', () => {
-  pipeJS(
-    './src/js/scripts.js',
-    './dist/js',
-    {script: './src/js/scripts.js'}
-    );
-});
-//js
-function pipeJS(entry, out, name) {
-  gulp.src(entry)
-    //.pipe(plumber(handleError))
-    .pipe(webpack({
-      entry: name,
-      output: {filename: '[name].js'},
-      optimization: {minimize: false}
-    }))
-    .pipe(babel({presets: ['env']}))
-    //.pipe(uglify({mangle: false}))
-    .pipe(gulp.dest(out));
-}
-*/
-
 
 function scripts_libs() {
   return gulp.src([

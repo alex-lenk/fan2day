@@ -47,6 +47,10 @@
   left: 0;
   z-index: 1;
   transition: opacity .3s ease-out;
+  position: absolute;
+  top: 10px;
+  border-radius: 17px;
+  border: 1px solid rgba(#fff, .3);
 
   &:not(.active) {
     opacity: 0;
@@ -62,23 +66,8 @@
   }
 }
 
-@media (min-width: 767px) {
-  .search-result {
-    padding: 43px 15px 28px;
-    position: absolute;
-    top: 10px;
-    border-radius: 17px;
-    border: 1px solid rgba(#fff, .3);
-  }
-}
+@media (max-width: 765px) {
 
-@media (max-width: 766px) {
-  .search-result {
-    padding: 30px 15px;
-    top: 70px;
-    left: 0;
-    position: fixed;
-  }
 }
 
 .search-area__tag {

@@ -1,48 +1,14 @@
 // Импортируем другие js-файлы
 import './snippets/tab.js';
-//import './snippets/scripts.js';
+import './snippets/login.js';
+import './snippets-mobile/header-toggle.js';
 
-
-if ($(window).width() < 992 && $(window).width() > 766) {
+if ($(window).width() < 992 && $(window).width() > 765) {
   $('.footer-nav__wrap + div').appendTo('.footer-nav__wrap .row');
 }
-/* BEGIN For mobile version */
-if ($(window).width() <= 1199) {
 
-  $(document).ready(function () {
-    $('.header-toggle').click(function () {
-      $(this).toggleClass('icon-menu icon-close');
-      $('body').toggleClass('menu-open');
-    });
-
-    $('.menu-entertainment__item').click(function () {
-      $('body').addClass('menu-entertainment__open');
-    });
-
-    $('.menu-entertainment__close').click(function () {
-      $('body').removeClass('menu-entertainment__open');
-      $('.menu-entertainment__item').removeClass('active');
-    });
-
-  });
-
-}
-/* END */
-
-
-/* BEGIN For desktop version */
-if ($(window).width() >= 1200) {
-}
-/* END */
 
 $(document).ready(function () {
-  /* BEGIN: Глабальные перменные */
-  let modalLogin = '#modal-login';
-  let modalForgot = '#modal-forgot';
-  let modalRegister = '#modal-register';
-  /* END */
-
-
   /* BEGIN: Клик по кнопке "все роазвлечения" .top-panel-all */
   let entertainment = '.entertainment';
   let entertainmentOpened = 'entertainment-opened';
@@ -97,15 +63,15 @@ $(document).ready(function () {
 
 
   /* BEGIN For desktop version */
-  if ($(window).width() >= 767) {
+
     $('.js__search').click(function () {
       $(searchArea).addClass('active');
       $(entertainment).removeClass(entertainmentOpened);
     });
-  }
+
   /* END */
   /* BEGIN For desktop version */
-  if ($(window).width() <= 766) {
+  if ($(window).width() < 765) {
     searchFormBoxBack.click(function () {
       $('body').removeClass('search-panel__active')
     });
@@ -127,48 +93,8 @@ $(document).ready(function () {
   /* END */
 
 
-  /* BEGIN: For logic on modals login, forgot and register */
-  $('.js__login').click(function () {
-    $('#modal-auth').addClass('modal-opened');
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalLogin).addClass('modal-form__active');
-  });
-
-  $('.modal-close').click(function () {
-    $('#modal-auth').removeClass('modal-opened');
-  });
-
-  $('.js__forgot').click(function () {
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalForgot).addClass('modal-form__active');
-  });
-
-  $('.js__register').click(function () {
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalRegister).addClass('modal-form__active');
-  });
-
-
-  let hash = window.location.hash;
-
-  if (hash === modalForgot || hash === '/#modal-forgot') {
-    $('#modal-auth').addClass('modal-opened');
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalForgot).addClass('modal-form__active');
-  } else if (hash === modalLogin || hash === '/#modal-login') {
-    $('#modal-auth').addClass('modal-opened');
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalLogin).addClass('modal-form__active');
-  } else if (hash === modalRegister || hash === '/#modal-register') {
-    $('#modal-auth').addClass('modal-opened');
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalRegister).addClass('modal-form__active');
-  }
-  /* END */
-
-
   /* BEGIN: Initialization carousel */
-  $('.popular-carousel').slick({
+  $('.popular-section__list').slick({
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -182,7 +108,7 @@ $(document).ready(function () {
         }
       },
       {
-        breakpoint: 767,
+        breakpoint: 765,
         settings: {
           slidesToShow: 2
         }
@@ -193,68 +119,6 @@ $(document).ready(function () {
 
 
   /* BEGIN: Валидация инпут полей */
-  $(modalLogin).validate({
-    rules: {
-      email: {
-        required: true,
-        email: true,
-        minlength: 8
-      },
-      password: {
-        required: true,
-        minlength: 6
-      }
-    },
-    messages: {
-      email: {
-        required: "Поле e-mail обязательно к заполнению",
-        email: "Необходим формат адреса e-mail",
-        minlength: "Пожалуйста, введите не менее 7 символов"
-      },
-      password: {
-        required: "Обязательно введите пароль",
-        email: "Пароль не может быть менее 6 символов"
-      }
-    }
-  });
-  $(modalForgot).validate({
-    rules: {
-      inputForgotEmail: {
-        required: true,
-        email: true,
-        minlength: 8
-      }
-    },
-    messages: {
-      inputForgotEmail: {
-        required: "Поле e-mail обязательно к заполнению",
-        email: "Необходим формат адреса e-mail",
-        minlength: "Пожалуйста, введите не менее 7 символов"
-      }
-    }
-  });
-  $(modalRegister).validate({
-    rules: {
-      inputRegisterEmail: {
-        required: true,
-        email: true,
-        minlength: 8
-      },
-      agreeRegister: {
-        required: true
-      }
-    },
-    messages: {
-      inputRegisterEmail: {
-        required: "Поле e-mail обязательно к заполнению",
-        email: "Необходим формат адреса e-mail",
-        minlength: "Пожалуйста, введите не менее 7 символов"
-      },
-      agreeRegister: {
-        required: "Вы должны согласиться на обработку персональных данных"
-      }
-    }
-  });
   $('#subscription-form').validate({
     rules: {
       inputSubscriptionEmail: {
