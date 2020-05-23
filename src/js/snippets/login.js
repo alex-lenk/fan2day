@@ -1,44 +1,50 @@
-let modalLogin = '#modal-login';
-let modalForgot = '#modal-forgot';
-let modalRegister = '#modal-register';
+let modalLogin = '#modal-login',
+  modalForgot = '#modal-forgot',
+  modalRegister = '#modal-register',
+  modalAuth = '#modal-auth',
+  modalOpened = 'modal-opened',
+  modalForm = 'modal-form',
+  modalFormActive = 'modal-form__active';
 
 $(document).ready(function () {
   /* BEGIN: For logic on modals login, forgot and register */
   $('.js__login').click(function () {
-    $('#modal-auth').addClass('modal-opened');
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalLogin).addClass('modal-form__active');
-  });
-
-  $('.modal-close').click(function () {
-    $('#modal-auth').removeClass('modal-opened');
+    $(modalAuth).addClass(modalOpened);
+    $(modalForm).removeClass(modalFormActive);
+    $(modalLogin).addClass(modalFormActive);
   });
 
   $('.js__forgot').click(function () {
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalForgot).addClass('modal-form__active');
+    $(modalAuth).addClass(modalOpened);
+    $(modalForm).removeClass(modalFormActive);
+    $(modalForgot).addClass(modalFormActive);
   });
 
   $('.js__register').click(function () {
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalRegister).addClass('modal-form__active');
+    $(modalAuth).addClass(modalOpened);
+    $(modalForm).removeClass(modalFormActive);
+    $(modalRegister).addClass(modalFormActive);
+  });
+
+  $('.modal-close').click(function () {
+    $(modalAuth).removeClass(modalOpened);
   });
 
 
   let hash = window.location.hash;
 
   if (hash === modalForgot || hash === '/#modal-forgot') {
-    $('#modal-auth').addClass('modal-opened');
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalForgot).addClass('modal-form__active');
+    $(modalAuth).addClass(modalOpened);
+    $(modalForm).removeClass(modalFormActive);
+    $(modalForgot).addClass(modalFormActive);
   } else if (hash === modalLogin || hash === '/#modal-login') {
-    $('#modal-auth').addClass('modal-opened');
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalLogin).addClass('modal-form__active');
+    $(modalAuth).addClass(modalOpened);
+    $(modalForm).removeClass(modalFormActive);
+    $(modalLogin).addClass(modalFormActive);
   } else if (hash === modalRegister || hash === '/#modal-register') {
-    $('#modal-auth').addClass('modal-opened');
-    $('.modal-form').removeClass('modal-form__active');
-    $(modalRegister).addClass('modal-form__active');
+    $(modalAuth).addClass(modalOpened);
+    $(modalForm).removeClass(modalFormActive);
+    $(modalRegister).addClass(modalFormActive);
   }
   /* END */
 
@@ -64,7 +70,7 @@ $(document).ready(function () {
       },
       password: {
         required: "Обязательно введите пароль",
-        email: "Пароль не может быть менее 6 символов"
+        minlength: "Пароль не может быть менее 6 символов"
       }
     }
   });

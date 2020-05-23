@@ -8,13 +8,12 @@
 @import "core/btn";
 @import "core/forms";
 @import "core/icons";
+@import "core/slick-arrow";
 
-/* components */
 @import "desktop-blocks/result-list";
 @import "desktop-blocks/tag-list";
 @import "desktop-blocks/link-offer";
 @import "desktop-blocks/card";
-@import "components/slick-arrow";
 @import "desktop-blocks/top-panel";
 @import "desktop-blocks/nav-section";
 @import "desktop-blocks/main-info";
@@ -32,6 +31,7 @@
 @import "desktop-blocks/search-form";
 @import "mobile-blocks/menu";
 @import "mobile-blocks/header";
+@import "core/breadcrumb";
 
 .header .search-form__wrap {
   display: none;

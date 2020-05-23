@@ -11,12 +11,10 @@
 @import "core/icons";
 
 /* mobile blocks */
-@import "mobile-blocks/result-list";
 @import "mobile-blocks/card";
 @import "mobile-blocks/tag-list";
 @import "mobile-blocks/header";
 @import "mobile-blocks/main-info";
-@import "mobile-blocks/search-panel";
 @import "mobile-blocks/nav-direction";
 @import "mobile-blocks/popular-section";
 @import "mobile-blocks/novelty";
@@ -24,7 +22,9 @@
 @import "mobile-blocks/subscription";
 @import "mobile-blocks/instagram";
 @import "mobile-blocks/footer";
+@import "mobile-blocks/search-panel";
 @import "mobile-blocks/search-form";
+@import "mobile-blocks/result-list";
 @import "mobile-blocks/modal";
 @import "mobile-blocks/menu";
 @import "mobile-blocks/mini-card";

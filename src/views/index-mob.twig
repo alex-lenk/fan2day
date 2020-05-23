@@ -162,14 +162,20 @@
       </div>
     </div>
   </div>
+{% endblock %}
 
-  {% block footer %}
-    {% include 'partials/footer-mobile.twig' %}
-  {% endblock %}
+{% block footer %}
+  {% include 'mobile/footer.twig' %}
+{% endblock %}
 
-  {% block modal %}
-    {% include 'mobile/modal.twig' %}
-  {% endblock %}
+{% block modal %}
+  {% include 'mobile/modal.twig' %}
+{% endblock %}
 
+{% block searchPanel %}
   {% include 'mobile/search-panel.twig' %}
+{% endblock %}
+
+{% block searchResult %}
+  {% include 'mobile/search-result.twig' %}
 {% endblock %}

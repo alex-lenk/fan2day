@@ -187,9 +187,11 @@ a {
   color: $link-color;
   text-decoration: $link-decoration;
 
-  @include hover() {
-    color: $link-hover-color;
-    text-decoration: $link-hover-decoration;
+  @media (min-width: 1200px) {
+    @include hover() {
+      color: $link-hover-color;
+      text-decoration: $link-hover-decoration;
+    }
   }
 }
 

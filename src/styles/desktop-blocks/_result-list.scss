@@ -30,24 +30,24 @@
   }
 
   &:hover {
-    .result-item__text {
+    .result-text {
       color: $blue;
     }
 
-    .result-item__img {
+    .result-img {
       opacity: .9;
     }
   }
 }
 
-.result-item__img {
+.result-img {
   margin-right: 30px;
   border-radius: 5px;
   flex-shrink: 1;
   transition: opacity .3s;
 }
 
-.result-item__text {
+.result-text {
   font-size: 14px;
   line-height: 20px;
   transition: color .3s;
@@ -58,7 +58,7 @@
   text-align: center;
 }
 
-.result-item__price {
+.result-price {
   min-width: 27%;
   margin-left: 30px;
   font-size: 18px;
@@ -70,7 +70,7 @@
   align-items: center;
 }
 
-.result-item__price-old {
+.result-price__old {
   margin-right: 8px;
   padding-left: 59px;
   font-weight: 700;

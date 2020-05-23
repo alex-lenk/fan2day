@@ -51,6 +51,8 @@ $(document).ready(function () {
     searchFormBoxInput.val('').focus();
     $(this).removeClass('active');
     searchResult.removeClass('active');
+    searchFormBoxBack.removeClass('active');
+    searchFormBox.addClass('icon-search');
   });
 
   searchFormBoxBack.click(function () {
@@ -67,18 +69,15 @@ $(document).ready(function () {
     $('.js__search').click(function () {
       $(searchArea).addClass('active');
       $(entertainment).removeClass(entertainmentOpened);
+      searchFormBoxInput.val('').focus();
     });
 
-  /* END */
-  /* BEGIN For desktop version */
-  if ($(window).width() < 765) {
     searchFormBoxBack.click(function () {
       $('body').removeClass('search-panel__active')
     });
-    $('.js__search').click(function () {
+/*    $('.js__search').click(function () {
       $('body').addClass('search-panel__active');
-    });
-  }
+    });*/
   /* END */
 
   $('.search-area__close').click(function () {

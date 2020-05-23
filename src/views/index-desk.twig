@@ -6,7 +6,9 @@
     <header class="main-info">
       <h1 class="main-info-title">Сервис поиска и бронирования досуга в&nbsp;Москве<br> и&nbsp;Московской области</h1>
     </header>
+
   {% include 'partials/nav-direction.twig' %}
+
   {% include 'partials/popular-section.twig' %}
 
     <div class="novelty container">
@@ -212,17 +214,20 @@
         </div>
       </div>
     </div>
+{% endblock %}
 
-  {% block footer %}
-    {% include 'partials/footer.twig' %}
-  {% endblock %}
+{% block footer %}
+  {% include 'desktop-table/footer.twig' %}
+{% endblock %}
 
-  {% block modal %}
-    {% include 'mobile/modal.twig' %}
-  {% endblock %}
+{% block modal %}
+  {% include 'desktop-table/modal.twig' %}
+{% endblock %}
 
+{% block search %}
   {% include 'desktop-table/search-area.twig' %}
+{% endblock %}
 
+{% block entertainment %}
   {% include 'desktop-table/entertainment.twig' %}
-
 {% endblock %}

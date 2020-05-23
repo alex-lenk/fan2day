@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>{{ title }}</title>
     {% block styles %}
-      <link rel="stylesheet" href="/css/styles{{ versionDevice }}.min.css?ver=3.2">
+      <link rel="stylesheet" href="/css/styles{{ versionDevice }}.min.css?ver=3.4">
     {% endblock %}
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -22,6 +22,7 @@
 </head>
 <body>
 {% block topPanel %}{% endblock %}
+{% block breadcrumb %}{% endblock %}
 
 {% include '../mobile/header.twig' %}
 
@@ -31,11 +32,19 @@
 
 {% block modal %}{% endblock %}
 
+{% block search %}{% endblock %}
+
+{% block entertainment %}{% endblock %}
+
+{% block searchPanel %}{% endblock %}
+
+{% block searchResult %}{% endblock %}
+
 {% include '../mobile/menu.twig' %}
 
 {% block scripts %}
   <script src="/js/libs.js?ver=1.3"></script>
-  <script src="/js/scripts{{ versionDevice }}.min.js?ver=2.8"></script>
+  <script src="/js/scripts{{ versionDevice }}.min.js?ver=2.9"></script>
 {% endblock %}
 </body>
 </html>

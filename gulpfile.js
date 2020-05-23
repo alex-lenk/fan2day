@@ -195,7 +195,6 @@ gulp.task('default', gulp.series(
 
 
 gulp.task('build', gulp.series(
-  clean,
   gulp.parallel(fonts, favicon, images, styles, scripts, templates)
 ));
 

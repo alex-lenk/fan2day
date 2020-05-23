@@ -1,6 +1,18 @@
 {% extends "layout/layout.twig" %}
-{% set title = "Главная страница - Fan2Day" %}
+{% set title = "Каталог - Fan2Day" %}
+{% set breadcrumbCurrent = "Мастер класс по приготовлению чая" %}
 {% block topPanel %}{% include 'desktop-table/top-panel.twig' %}{% endblock %}
+{% block breadcrumb %}{% include 'partials/breadcrumb.twig' %}{% endblock %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3">
+      <aside>
+
+      </aside>
+    </div>
+  </div>
+</div>
 
 {% block content %}
     <div class="main-content container">
@@ -49,17 +61,20 @@
           Тем не&nbsp;менее, лемма традиционно обуславливает функциональный анализ.
         </p>
     </div>
+{% endblock %}
 
-  {% block footer %}
-    {% include 'partials/footer.twig' %}
-  {% endblock %}
+{% block footer %}
+  {% include 'desktop-table/footer.twig' %}
+{% endblock %}
 
-  {% block modal %}
-    {% include 'mobile/modal.twig' %}
-  {% endblock %}
+{% block modal %}
+  {% include 'desktop-table/modal.twig' %}
+{% endblock %}
 
+{% block search %}
   {% include 'desktop-table/search-area.twig' %}
+{% endblock %}
 
+{% block entertainment %}
   {% include 'desktop-table/entertainment.twig' %}
-
 {% endblock %}

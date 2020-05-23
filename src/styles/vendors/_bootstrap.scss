@@ -6,8 +6,8 @@
 @import "bootstrap-4.4.1/scss/reboot";
 @import "bootstrap-4.4.1/scss/utilities/screenreaders";
 @import "bootstrap-4.4.1/scss/grid";
-//@import "bootstrap-4.4.1/scss/custom-forms";
 @import "bootstrap-4.4.1/scss/forms";
+//@import "bootstrap-4.4.1/scss/custom-forms";
 @import "bootstrap-4.4.1/scss/buttons";
 @import "bootstrap-4.4.1/scss/utilities";
 
@@ -32,12 +32,16 @@
 
 
 // custom style
-@media (max-width: 765px) {
+@media (min-width: 576px) {
+  .form-control {
+    height: calc(1.5em + 1.44rem);
+    padding: .72rem 1.2rem;
+  }
+}
+
+@media (max-width: 575px) {
   .btn {
     font-size: 14px;
-  }
-  .btn-primary,
-  .form-control {
     height: 40px;
   }
 }

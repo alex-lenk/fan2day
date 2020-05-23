@@ -42,7 +42,7 @@
   position: fixed;
   background-color: $grey4;
   box-shadow: 0 8px 15px rgba(95, 105, 142, 0.3);
-  z-index: 1;
+  z-index: 45;
   transition: opacity .3s ease-out;
 
   &:not(.active) {

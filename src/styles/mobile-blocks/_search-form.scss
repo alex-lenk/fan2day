@@ -84,9 +84,17 @@
 }
 
 .search-form-btn {
+  padding-left: 0;
+  padding-right: 0;
   margin-left: -25px;
   color: #fff;
   background: $blue-gradient;
+
+  @media (max-width: 1199px) {
+    &:hover {
+      color: #fff;
+    }
+  }
 }
 
 .menu-open .search-form__wrap {

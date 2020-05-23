@@ -72,17 +72,17 @@
 }
 
 .menu-compare__counter {
+  width: 20px;
+  height: 20px;
   text-align: center;
-  width: 18px;
-  height: 18px;
   display: inline-block;
   margin-left: 6px;
   line-height: 1;
-  padding-top: 2px;
+  padding-top: 3px;
   background-color: #ba1f1f;
   border-radius: 50%;
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   z-index: 2;
 }
 
@@ -129,6 +129,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: color .3s, background-color .3s;
   }
 
   &.active::before {

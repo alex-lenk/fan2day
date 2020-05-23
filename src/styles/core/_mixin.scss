@@ -11,6 +11,9 @@
   &::-webkit-input-placeholder {
     @content;
   }
+  &::placeholder {
+    @content;
+  }
 }
 
 @mixin stitches-sprite($x: 0, $y: 0, $width: 0, $height: 0) {
