@@ -45,3 +45,43 @@
 .main-content {
   margin-bottom: 15px;
 }
+
+.list-circle {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.list-circle-link {
+  color: $grey;
+}
+
+.list-circle-item {
+  padding-left: 23px;
+  position: relative;
+
+  li::before,
+  &::before {
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 9px;
+    left: 10px;
+    border-radius: 50%;
+    background-color: $grey;
+    content: '';
+  }
+
+  ul {
+    margin-top: 3px;
+  }
+
+  li {
+    padding-left: 10px;
+    position: relative;
+
+    &::before {
+      left: -2px;
+    }
+  }
+}

@@ -3,13 +3,36 @@ import './snippets/tab.js';
 import './snippets/login.js';
 import './snippets-mobile/header-toggle.js';
 
+/* BEGIN: функция для закрытия разных панелей при нажатии на пустое пространство */
+function documentMouseup(elClass, twoClass) {
+  $(document).mouseup(function (e) {
+    if (!$(elClass).is(e.target) && $(elClass).has(e.target).length === 0) {
+      $(elClass).removeClass(twoClass)
+    }
+  });
+}
+
+/* END */
+
+
+/* BEGIN:  Условие для планшетных версий */
 if ($(window).width() < 992 && $(window).width() > 765) {
   $('.footer-nav__wrap + div').appendTo('.footer-nav__wrap .row');
 }
+/* END */
 
 
 $(document).ready(function () {
-  /* BEGIN: Клик по кнопке "все роазвлечения" .top-panel-all */
+  /* BEGIN: Клик по кнопке "выбрать развлечения", появится панель с навигацией */
+  $('.js__nav-catalog-btn').click(function () {
+    $('.nav-catalog-panel').addClass('nav-catalog-opened');
+  });
+
+  documentMouseup('.nav-catalog-panel', 'nav-catalog-opened');
+  /* END */
+
+
+  /* BEGIN: Клик по кнопке "все развлечения" .top-panel-all */
   let entertainment = '.entertainment';
   let entertainmentOpened = 'entertainment-opened';
 
@@ -56,29 +79,18 @@ $(document).ready(function () {
   });
 
   searchFormBoxBack.click(function () {
-    searchFormBox.addClass('icon-search');
     $(this).removeClass('active');
+    searchFormBox.addClass('icon-search');
     searchFormBoxClear.removeClass('active');
     searchResult.removeClass('active');
     searchFormBoxInput.val('');
   });
 
-
-  /* BEGIN For desktop version */
-
-    $('.js__search').click(function () {
-      $(searchArea).addClass('active');
-      $(entertainment).removeClass(entertainmentOpened);
-      searchFormBoxInput.val('').focus();
-    });
-
-    searchFormBoxBack.click(function () {
-      $('body').removeClass('search-panel__active')
-    });
-/*    $('.js__search').click(function () {
-      $('body').addClass('search-panel__active');
-    });*/
-  /* END */
+  $('.js__search').click(function () {
+    $(searchArea).addClass('active');
+    $(entertainment).removeClass(entertainmentOpened);
+    searchFormBoxInput.val('').focus();
+  });
 
   $('.search-area__close').click(function () {
     $(searchArea).removeClass('active');
@@ -113,32 +125,6 @@ $(document).ready(function () {
         }
       }
     ]
-  });
-  /* END */
-
-
-  /* BEGIN: Валидация инпут полей */
-  $('#subscription-form').validate({
-    rules: {
-      inputSubscriptionEmail: {
-        required: true,
-        email: true,
-        minlength: 8
-      },
-      agreeSubscription: {
-        required: true
-      }
-    },
-    messages: {
-      inputSubscriptionEmail: {
-        required: "Поле e-mail обязательно к заполнению",
-        email: "Необходим формат адреса e-mail",
-        minlength: "Пожалуйста, введите не менее 7 символов"
-      },
-      agreeSubscription: {
-        required: "Вы должны согласиться на обработку персональных данных"
-      }
-    }
   });
   /* END */
 });

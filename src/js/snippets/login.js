@@ -3,7 +3,7 @@ let modalLogin = '#modal-login',
   modalRegister = '#modal-register',
   modalAuth = '#modal-auth',
   modalOpened = 'modal-opened',
-  modalForm = 'modal-form',
+  modalForm = '.modal-form',
   modalFormActive = 'modal-form__active';
 
 $(document).ready(function () {
@@ -15,6 +15,7 @@ $(document).ready(function () {
   });
 
   $('.js__forgot').click(function () {
+    console.log('click');
     $(modalAuth).addClass(modalOpened);
     $(modalForm).removeClass(modalFormActive);
     $(modalForgot).addClass(modalFormActive);
@@ -108,6 +109,29 @@ $(document).ready(function () {
         minlength: "Пожалуйста, введите не менее 7 символов"
       },
       agreeRegister: {
+        required: "Вы должны согласиться на обработку персональных данных"
+      }
+    }
+  });
+
+  $('#subscription-form').validate({
+    rules: {
+      inputSubscriptionEmail: {
+        required: true,
+        email: true,
+        minlength: 8
+      },
+      agreeSubscription: {
+        required: true
+      }
+    },
+    messages: {
+      inputSubscriptionEmail: {
+        required: "Поле e-mail обязательно к заполнению",
+        email: "Необходим формат адреса e-mail",
+        minlength: "Пожалуйста, введите не менее 7 символов"
+      },
+      agreeSubscription: {
         required: "Вы должны согласиться на обработку персональных данных"
       }
     }

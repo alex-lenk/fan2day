@@ -4,17 +4,179 @@
 {% block topPanel %}{% include 'desktop-table/top-panel.twig' %}{% endblock %}
 {% block breadcrumb %}{% include 'partials/breadcrumb.twig' %}{% endblock %}
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-3">
-      <aside>
+{% block content %}
 
-      </aside>
+  <div class="container">
+    <div class="row">
+      <div class="catalog-aside col-lg-3">
+        <nav class="nav-catalog">
+          <a href="#" class="nav-catalog-title">Творчество</a>
+
+          <ul class="list-circle">
+            <li  class="list-circle-item">
+              <a href="#" class="list-circle-link">Живопись</a>
+
+              <ul class="list-unstyled">
+                <li>
+                  Мастер класс по приготовлению чая
+                </li>
+              </ul>
+            </li>
+          </ul>
+
+          <div class="nav-catalog-btn btn btn-bright icon-menu js__nav-catalog-btn">
+            <span class="btn-text">Выбрать развлечение</span>
+          </div>
+
+          <div class="nav-catalog-panel">
+            <div class="nav-catalog-holder">
+              <ul class="nav-catalog-menu list-unstyled">
+                <li class="nav-catalog-menu__item active">
+                  <a href="#" class="nav-catalog-menu__link icon-arrow-right">Живопись</a>
+                </li>
+                <li class="nav-catalog-menu__item">
+                  <a href="#" class="nav-catalog-menu__link icon-arrow-right">Рукоделие</a>
+                </li>
+                <li class="nav-catalog-menu__item">
+                  <a href="#" class="nav-catalog-menu__link icon-arrow-right">Флористика</a>
+                </li>
+                <li class="nav-catalog-menu__item">
+                  <a href="#" class="nav-catalog-menu__link icon-arrow-right">Декорирование</a>
+                </li>
+                <li class="nav-catalog-menu__item">
+                  <a href="#" class="nav-catalog-menu__link icon-arrow-right">Лепка и мозаика</a>
+                </li>
+                <li class="nav-catalog-menu__item">
+                  <a href="#" class="nav-catalog-menu__link icon-arrow-right">Необычное</a>
+                </li>
+              </ul>
+
+              <ul class="nav-catalog-list list-unstyled">
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Роспись по стеклу</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Валяние из войлока</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Приготовление мыла</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Создание авторских украшений</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс по живописи</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс по флористике</a>
+                </li>
+
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс бармена</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Приготовление суши</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Кондитерское искусство</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер-класс по приготовлению пряников</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс по шоколадоварению</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Церемония приготовления какао</a>
+                </li>
+
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс по восточным танцам</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс по хип-хопу</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс по балету</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс по танго</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс по бачате</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс по брейкдансу</a>
+                </li>
+
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Аквапарк</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Картинг</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Батуты</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Парк игрового обучения</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Развивающие игры</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Детский лагерь</a>
+                </li>
+
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс по вокалу</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс игры на барабанах</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс DJ</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс игры на фортепиано</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс игры на гитаре</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс игры на флейте</a>
+                </li>
+
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс жонглирования</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Курс по файершоу</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс макияжа</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Мастер класс прически</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Рыбалка</a>
+                </li>
+                <li class="nav-catalog-list__item">
+                  <a href="#" class="nav-catalog-list__link">Актерское мастерство</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
     </div>
   </div>
-</div>
 
-{% block content %}
+
+
+
     <div class="main-content container">
       <h2>Вот как мы создаём впечатления для вас!</h2>
         <p class="lead">

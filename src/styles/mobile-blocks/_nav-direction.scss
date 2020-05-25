@@ -46,6 +46,10 @@
     font-size: 14px;
     margin: 0 auto 8px;
   }
+
+  @media (max-width: 374px) {
+    font-size: 13px;
+  }
 }
 
 @media (min-width: 576px) and (max-width: 765px) {
