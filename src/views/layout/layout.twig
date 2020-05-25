@@ -7,16 +7,28 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>{{ title }}</title>
     {% block styles %}
-      <link rel="stylesheet" href="/css/styles{{ versionDevice }}.min.css?ver=3.5">
+      <link rel="stylesheet" href="/css/styles{{ versionDevice }}.min.css?ver=3.6">
     {% endblock %}
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#111111">
-    <link rel="shortcut icon" href="/favicon/favicon.ico">
+
+    <link rel="manifest" href="/favicon/manifest.json?v=8jMvgPwL0E">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png?v=8jMvgPwL0E">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png?v=8jMvgPwL0E">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png?v=8jMvgPwL0E">
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png?v=8jMvgPwL0E">
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/favicon/android-chrome-192x192.png?v=8jMvgPwL0E">
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png?v=8jMvgPwL0E">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="/favicon/android-chrome-512x512.png?v=8jMvgPwL0E">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg?v=8jMvgPwL0E" color="#111111">
+    <link rel="shortcut icon" href="/favicon/favicon.ico?v=8jMvgPwL0E">
     <meta name="msapplication-TileColor" content="#e3e5ec">
-    <meta name="msapplication-config" content="/favicon/browserconfig.xml">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="fan2day">
+    <meta name="apple-mobile-web-app-title" content="fan2day">
+    <meta name="msapplication-navbutton-color" content="#e3e5ec">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/">
+    <meta name="msapplication-config" content="/favicon/browserconfig.xml?v=8jMvgPwL0E">
     <meta name="theme-color" content="#e3e5ec">
   {% endblock %}
 </head>
@@ -44,7 +56,14 @@
 
 {% block scripts %}
   <script src="/js/libs.js?ver=1.3"></script>
-  <script src="/js/scripts{{ versionDevice }}.min.js?ver=3.0"></script>
+  <script src="/js/scripts{{ versionDevice }}.min.js?ver=3.1"></script>
 {% endblock %}
+
+<script type="module">
+  import 'https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate';
+
+  const el = document.createElement('pwa-update');
+  document.body.appendChild(el);
+</script>
 </body>
 </html>

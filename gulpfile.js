@@ -81,7 +81,11 @@ function watch() {
 
 // следим за dist и релоадим браузер
 function server() {
-  browserSync.init({server: './dist'});
+  browserSync.init({
+    server: './dist',
+    notify: false,
+    port: 5005
+  });
   browserSync.watch('./dist/**/*.*', browserSync.reload);
 }
 
