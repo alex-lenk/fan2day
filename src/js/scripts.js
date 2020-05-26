@@ -23,6 +23,23 @@ if ($(window).width() < 992 && $(window).width() > 765) {
 
 
 $(document).ready(function () {
+
+  /* BEGIN: Для панелей с фильтрами */
+  $('.catalog-filter__title').on('click', function () {
+    $(this).toggleClass('catalog-filter__active');
+    $(this).next().slideToggle();
+  });
+
+  $('.catalog-filter__clear').on('click', function () {
+    $(this).closest('.catalog-filter__panel').find('.custom-control-input').prop('checked', false);
+  });
+  /* END */
+
+
+  /* BEGIN: инициализация кастомизации селектов */
+  $('select').styler();
+  /* END */
+
   /* BEGIN: Клик по кнопке "выбрать развлечения", появится панель с навигацией */
   $('.js__nav-catalog-btn').click(function () {
     $('.nav-catalog-panel').addClass('nav-catalog-opened');

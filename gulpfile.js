@@ -142,7 +142,8 @@ function scripts_libs() {
   return gulp.src([
     './src/js/vendors/jquery.min.js',
     './src/js/vendors/jquery.validate.min.js',
-    './src/js/vendors/slick.min.js'
+    './src/js/vendors/slick.min.js',
+    './src/js/vendors/jquery.formstyler.js'
   ])
     .pipe(concat('libs.js'))
     .pipe(uglify())
