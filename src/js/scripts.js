@@ -23,6 +23,18 @@ if ($(window).width() < 992 && $(window).width() > 765) {
 
 
 $(document).ready(function () {
+  /* BEGIN: Сортировка по цене добавление и удаление иконок */
+  $('.filter-sorter__state-price').click(function () {
+    if ($(this).hasClass('icon-increase')) {
+      $(this).removeClass('icon-increase');
+      $(this).addClass('icon-decrease');
+    } else {
+      $(this).addClass('icon-increase');
+      $(this).removeClass('icon-decrease');
+    }
+  });
+  /* END */
+
 
   /* BEGIN: Для панелей с фильтрами */
   $('.catalog-filter__title').on('click', function () {

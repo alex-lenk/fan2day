@@ -66,6 +66,18 @@
   }
 }
 
+.search-area__popular {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+
+.search-area__popular-item {
+  max-width: 20%;
+  flex-basis: 20%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .search-area__tag {
   margin-bottom: 17px;
 }

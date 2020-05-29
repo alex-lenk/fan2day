@@ -1,0 +1,91 @@
+.filter-panel {
+  margin-bottom: 27px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-count {
+  margin-right: auto;
+  font-size: 18px;
+}
+
+.filter-sorter {
+  display: flex;
+  align-items: center;
+}
+
+.filter-sorter__state {
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: color .3s;
+
+  &::before {
+    margin-left: 2px;
+    order: 1;
+  }
+
+  &:hover {
+    color: $black;
+  }
+
+  &:not(:first-child) {
+    margin-left: 15px;
+  }
+}
+
+.filter-sorter__select {
+  color: $black;
+}
+
+.filter-more {
+  padding-left: 10px;
+  position: relative;
+
+  &::before {
+    color: $black;
+    cursor: pointer;
+    transition: color .3s;
+  }
+
+  &:hover {
+    .filter-more__list {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    &::before {
+      color: $blue;
+    }
+  }
+}
+
+.filter-more__list {
+  padding: 20px;
+  top: 100%;
+  right: 0;
+  z-index: 12;
+  position: absolute;
+  background: $grey4;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
+  border-radius: 15px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+.filter-more__item {
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color .3s;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &:hover {
+    color: $black;
+  }
+}

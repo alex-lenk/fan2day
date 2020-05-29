@@ -67,39 +67,6 @@
   }
 }
 
-.catalog-filter__rating {
-  width: 137px;
-  height: 25px;
-  background: url(../img/icons/star-line.svg) no-repeat left center;
-}
-
-.catalog-filter__rating-progress {
-  width: 0;
-  height: 100%;
-  position: absolute;
-  background: url(../img/icons/star-line-full.svg) no-repeat left center;
-
-  &[data-rating-progress="1"] {
-    width: 20%;
-  }
-
-  &[data-rating-progress="2"] {
-    width: 40%;
-  }
-
-  &[data-rating-progress="3"] {
-    width: 60%;
-  }
-
-  &[data-rating-progress="4"] {
-    width: 80%;
-  }
-
-  &[data-rating-progress="5"] {
-    width: 100%;
-  }
-}
-
 /* END */
 
 /* BEGIN: nav-catalog */
@@ -256,4 +223,66 @@
     color: $black;
   }
 }
+
 /* END: nav-catalog */
+
+.catalog-content {
+  margin-bottom: 15px;
+}
+
+.catalog-offer {
+  margin-left: -7px;
+  margin-right: -7px;
+  margin-bottom: 30px;
+
+  .link-offer-item {
+    max-width: 14.28%;
+    flex-basis: 14.28%;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+}
+
+.catalog-tag {
+  margin-bottom: 12px;
+}
+
+.catalog-wrap {
+  margin-bottom: 30px;
+}
+
+.rating-progress {
+  width: 137px;
+  height: 25px;
+  display: block;
+  position: relative;
+  background: url(../img/icons/star-line.svg) no-repeat left center;
+
+  &::before {
+    width: 0;
+    height: 100%;
+    position: absolute;
+    background: url(../img/icons/star-line-full.svg) no-repeat left center;
+    content: '';
+  }
+
+  &[data-rating-progress="1"]::before {
+    width: 20%;
+  }
+
+  &[data-rating-progress="2"]::before {
+    width: 40%;
+  }
+
+  &[data-rating-progress="3"]::before {
+    width: 60%;
+  }
+
+  &[data-rating-progress="4"]::before {
+    width: 80%;
+  }
+
+  &[data-rating-progress="5"]::before {
+    width: 100%;
+  }
+}

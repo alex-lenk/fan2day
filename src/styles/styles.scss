@@ -10,6 +10,7 @@
 @import "core/forms";
 @import "core/icons";
 @import "core/slick-arrow";
+@import "core/breadcrumb";
 
 @import "desktop-blocks/result-list";
 @import "desktop-blocks/tag-list";
@@ -30,11 +31,15 @@
 @import "desktop-blocks/footer";
 @import "desktop-blocks/mini-card";
 @import "desktop-blocks/search-form";
+
 @import "mobile-blocks/menu";
 @import "mobile-blocks/header";
-@import "core/breadcrumb";
-@import "desktop-blocks/catalog";
 
+@import "desktop-blocks/catalog";
+@import "desktop-blocks/sticker";
+@import "desktop-blocks/filter-panel";
+@import "desktop-blocks/pagination";
+@import "desktop-blocks/snippet";
 
 
 .header .search-form__wrap {
