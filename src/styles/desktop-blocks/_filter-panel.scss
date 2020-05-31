@@ -6,7 +6,6 @@
 
 .filter-count {
   margin-right: auto;
-  font-size: 18px;
 }
 
 .filter-sorter {
@@ -87,5 +86,17 @@
 
   &:hover {
     color: $black;
+  }
+}
+
+@media (min-width: 1200px) {
+  .filter-count {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .filter-panel {
+    font-size: 13px;
   }
 }

@@ -37,13 +37,13 @@ $(document).ready(function () {
 
 
   /* BEGIN: Для панелей с фильтрами */
-  $('.catalog-filter__title').on('click', function () {
-    $(this).toggleClass('catalog-filter__active');
+  $('.catalog-widget__title').on('click', function () {
+    $(this).toggleClass('catalog-widget__active');
     $(this).next().slideToggle();
   });
 
-  $('.catalog-filter__clear').on('click', function () {
-    $(this).closest('.catalog-filter__panel').find('.custom-control-input').prop('checked', false);
+  $('.catalog-widget__clear').on('click', function () {
+    $(this).closest('.catalog-widget__body').find('.custom-control-input').prop('checked', false);
   });
   /* END */
 

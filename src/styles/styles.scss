@@ -35,12 +35,13 @@
 @import "mobile-blocks/menu";
 @import "mobile-blocks/header";
 
+/* BEGIN: catalog */
 @import "desktop-blocks/catalog";
 @import "desktop-blocks/sticker";
 @import "desktop-blocks/filter-panel";
 @import "desktop-blocks/pagination";
 @import "desktop-blocks/snippet";
-
+/* END */
 
 .header .search-form__wrap {
   display: none;

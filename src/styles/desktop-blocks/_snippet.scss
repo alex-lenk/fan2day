@@ -59,11 +59,11 @@
 .snippet-title {
   margin-bottom: 4px;
   color: $black;
+  font-weight: 700;
 }
 
 .snippet-text {
   margin-bottom: 20px;
-  line-height: 24px;
 }
 
 .snippet-content__info {
@@ -78,20 +78,19 @@
 
 .snippet-price {
   display: flex;
+
+  &::before {
+    margin-right: 10px;
+  }
 }
 
 .snippet-price__old {
-  margin-left: 10px;
-  font-size: 18px;
-  color: $black;
+  margin-right: 10px;
   font-weight: 700;
 }
 
 .snippet-price__new {
-  margin-left: 10px;
   margin-right: 10px;
-  font-size: 18px;
-  color: $black;
 }
 
 .snippet-duration {
@@ -99,5 +98,51 @@
 
   &::before {
     margin-right: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .snippet-text {
+    line-height: 24px;
+  }
+  .snippet-price {
+    font-size: 18px;
+    color: $black;
+  }
+  .snippet-price__label {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .snippet-title {
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: .03em;
+  }
+}
+
+@media (max-width: 1199px) {
+  .snippet-review {
+    font-size: 14px;
+  }
+  .snippet-title {
+    font-size: 18px;
+  }
+  .snippet-price {
+    font-size: 14px;
+
+    &::before {
+      display: none;
+    }
+  }
+  .snippet-avatar {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .snippet-title {
+    font-size: 22px;
   }
 }
