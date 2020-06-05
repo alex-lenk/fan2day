@@ -268,10 +268,10 @@ class Fun2DayPackage
             foreach ($items as $alias => $item) {
                 $item['alias'] = $alias;
                 $item['context_key'] = $context;
-                $item['menuindex'] = $menuindex++;
+                $item['menuindex'] = ($item['menuindex'] ?: $menuindex++);
                 $objects = array_merge(
                     $objects,
-                    $this->_addResource($item, $alias)
+                    $this->_addResource($item, ($item['uri'] ?: $alias))
                 );
             }
         }
@@ -593,6 +593,7 @@ class Fun2DayPackage
             'published' => true,
             'deleted' => false,
             'hidemenu' => false,
+            'menuindex' => ($item['menuindex'] ?: $menuindex++),
             'createdon' => time(),
             'template' => 1,
             'isfolder' => !empty($data['isfolder']) || !empty($data['resources']),
@@ -600,6 +601,7 @@ class Fun2DayPackage
             'uri_override' => false,
             'richtext' => false,
             'searchable' => true,
+            'content_type' => !empty($data['content_type']) ? $data['content_type'] : 1,
             'content' => $this::_getContent($this->config['core'] . 'elements/resources/' . $file . '.tpl'),
         ], $data), '', true, true);
 
@@ -615,7 +617,7 @@ class Fun2DayPackage
             foreach ($data['resources'] as $alias => $item) {
                 $item['alias'] = $alias;
                 $item['context_key'] = $data['context_key'];
-                $item['menuindex'] = $menuindex++;
+                $item['menuindex'] = $item['menuindex'] ?: $menuindex++;
                 $resources = array_merge(
                     $resources,
                     $this->_addResource($item, $uri . '/' . $alias, $data['id'])
