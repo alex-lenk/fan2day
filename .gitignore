@@ -5,3 +5,4 @@ fan2day.iml
 .gitignore
 source
 dist
+public_html
