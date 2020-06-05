@@ -266,9 +266,6 @@ class Fun2DayPackage
         foreach ($resources as $context => $items) {
             $menuindex = 0;
             foreach ($items as $alias => $item) {
-                if (!isset($item['id'])) {
-                    $item['id'] = $this->_idx++;
-                }
                 $item['alias'] = $alias;
                 $item['context_key'] = $context;
                 $item['menuindex'] = $menuindex++;
@@ -588,7 +585,9 @@ class Fun2DayPackage
     {
         $file = $data['context_key'] . '/' . $uri;
         /** @var modResource $resource */
-        $resource = $this->modx->newObject('modResource');
+        if (!$resource = $this->modx->getObject('modResource', ['context_key' => $data['context_key'], 'uri' => $uri])) {
+            $resource = $this->modx->newObject('modResource');
+        }
         $resource->fromArray(array_merge([
             'parent' => $parent,
             'published' => true,
@@ -614,9 +613,6 @@ class Fun2DayPackage
         if (!empty($data['resources'])) {
             $menuindex = 0;
             foreach ($data['resources'] as $alias => $item) {
-                if (!isset($item['id'])) {
-                    $item['id'] = $this->_idx++;
-                }
                 $item['alias'] = $alias;
                 $item['context_key'] = $data['context_key'];
                 $item['menuindex'] = $menuindex++;

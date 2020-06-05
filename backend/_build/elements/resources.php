@@ -3,10 +3,16 @@
 return [
     'web' => [
         'index' => [
-            'pagetitle' => 'Home',
+            'pagetitle' => 'Главная',
             'template' => 1,
             'hidemenu' => false,
         ],
+        'catalog' => [
+            'pagetitle' => 'Каталог',
+            'template' => 1,
+            'hidemenu' => false,
+        ],
+        /*
         'service' => [
             'pagetitle' => 'Service',
             'template' => 0,
@@ -29,5 +35,6 @@ return [
                 ],
             ],
         ],
+        */
     ],
 ];
