@@ -49,7 +49,7 @@
 .nav-catalog-panel {
   width: 100%;
   height: 100%;
-  padding: 30px 15px 0;
+  padding: 23px 15px 0;
   position: fixed;
   left: 0;
   top: 70px;
@@ -69,108 +69,118 @@
   transform: translateX(0);
 }
 
-/*
-.nav-catalog-holder {
+.nav-catalog-menu__item {
+  padding-top: 14px;
+  padding-bottom: 14px;
   position: relative;
+  font-weight: 700;
+  color: $black;
+  border-bottom: 1px solid #c9c9c9;
 }
 
-.nav-catalog-select {
-  margin-bottom: 28px;
-  padding: 15px 30px;
-  display: block;
-  background: $grey5;
-  box-shadow: 0 8px 15px rgba(95, 105, 142, 0.3);
-}
-.nav-catalog-holder {
-  max-width: 1370px;
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 30px 30px 20px;
-  background-color: $grey5;
-  border-radius: 0 15px 15px 15px;
+/* BEGIN: nav-catalog-tab */
+
+.nav-catalog-tab {
+  margin-left: -7px;
+  margin-right: -15px;
+  margin-bottom: 12px;
+  overflow-x: scroll;
   display: flex;
 }
 
-.nav-catalog-menu {
-  width: 212px;
+.nav-catalog-tab__item {
+  padding: 7px;
   flex-shrink: 0;
-}
 
-.nav-catalog-menu__item {
-  border-radius: 15px;
-  cursor: pointer;
-  margin-right: auto;
-  font-weight: 700;
-  letter-spacing: .03em;
-  color: $black;
-  transition: background-color .3s ease-out;
-
-  &:not(:last-child) {
-    margin-bottom: 16px;
-  }
-
-  &:hover,
   &.active {
-    background-color: #fff;
+    color: $black;
+
+    .nav-catalog-tab__text {
+      background: linear-gradient(278.69deg, rgba(0, 0, 0, .6) 5.98%, rgba(255, 255, 255, 0) 97.09%), #e3e5ec;
+      background-blend-mode: soft-light, normal;
+      border-color: #e3e5ec;
+      box-shadow: 3px 3px 4px rgba(56, 72, 114, .2), -3px -3px 4px #fff, inset 3px 3px 4px rgba(56, 72, 114, .25), inset -3px -3px 4px #fff;
+    }
   }
 }
 
-.nav-catalog-menu__link {
-  height: 34px;
-  padding-left: 10px;
-  color: $black;
+.nav-catalog-tab__text {
+  padding: 7px 18px;
+  background: linear-gradient(135deg, #eeeff4 0, #f6f7fc 100%);
+  border: 2px solid rgba(255, 255, 255, .3);
+  box-shadow: 1px 1px 2px #c7c9d2, -1px -1px 2px #fafbff;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* END: nav-catalog-tab */
+
+/* BEGIN: nav-catalog-dropdown */
+
+.nav-catalog-dropdown {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 70px;
+  z-index: 48;
+  background-color: rgba($black, .35);
+  will-change: transform;
+  transform: translateX(-100%);
+  transition: transform .3s ease-out;
+
+  &.active {
+    transform: translateX(0);
+  }
+}
+
+.nav-catalog-dropdown__control {
+  padding-left: 15px;
+  padding-right: 75px;
+  height: 70px;
+  background: $grey-gradient;
   display: flex;
   align-items: center;
-
-  &::before {
-    margin-right: 9px;
-    margin-left: auto;
-    order: 1;
-  }
 }
 
-.nav-catalog-list {
-  height: 390px;
-  padding-left: 30px;
-  margin-left: 20px;
-  position: relative;
-  flex-shrink: 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+.nav-catalog-dropdown__title {
+  margin-top: 13px;
+  font-weight: 700;
+  font-size: 20px;
+  color: $black;
+}
 
-  &::before {
-    width: 1px;
-    height: 97%;
+.nav-catalog-dropdown__list {
+  padding-left: 15px;
+  padding-right: 15px;
+  background: $grey-gradient;
+  margin-left: 60px;
+  overflow-y: scroll;
+  height: 527px;
+  position: relative;
+
+  &::after {
     position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #c9c9c9;
     content: '';
   }
 }
 
-.nav-catalog-list__item {
-  width: 320px;
-  padding-right: 8px;
-  line-height: 1.1;
-
-  &:not(:last-child) {
-    margin-bottom: 11px;
-  }
-
-  &:nth-child(6n) {
-    margin-bottom: 29px;
-  }
+.nav-catalog-dropdown__item {
+  border-bottom: 1px solid #c9c9c9;
 }
 
-.nav-catalog-list__link {
-  color: inherit;
-  transition: color .3s;
+.nav-catalog-dropdown__link {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: 700;
+  color: $black;
+  display: block;
+  font-size: 14px;
+}
 
-  &:hover {
-    color: $black;
-  }
-}*/
-/* END: nav-catalog */
+.nav-catalog-dropdown__close {
+  margin-right: 26px;
+}
+
+/* END: nav-catalog-dropdown */

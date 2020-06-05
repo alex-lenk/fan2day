@@ -146,8 +146,12 @@
   transition: visibility .3s ease-out;
 }
 
-.menu-open .menu {
-  transform: translateX(0);
+.menu-open {
+  overflow: hidden;
+
+  .menu {
+    transform: translateX(0);
+  }
 }
 
 .menu-entertainment__open {
