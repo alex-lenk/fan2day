@@ -6,7 +6,6 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
-  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   @content;
@@ -15,6 +14,7 @@
 $icomoon-font-family: 'iconFan' !default;
 $icomoon-font-path: "../fonts" !default;
 
+$icon-filter: "\e924";
 $icon-arrow-bend: "\e923";
 $icon-phone: "\e922";
 $icon-arrow-very-long: "\e921";
@@ -35,7 +35,7 @@ $icon-education: "\e90c";
 $icon-food-tray: "\e90d";
 $icon-gift: "\e90e";
 $icon-guitar: "\e90f";
-$icon-hair-dye: "\e910";
+$icon-self-care: "\e910";
 $icon-increase: "\e911";
 $icon-like: "\e912";
 $icon-menu: "\e913";

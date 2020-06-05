@@ -1,8 +1,8 @@
 .sticker-hit,
 .sticker-new {
   position: absolute;
-  width: 77px;
-  height: 57px;
+  width: 60px;
+  height: 43px;
   top: 0;
   background-repeat: no-repeat;
   background-position: center;
@@ -22,7 +22,7 @@
 
 .sticker-recommendation {
   width: 100%;
-  height: 31px;
+  height: 25px;
   left: 0;
   bottom: 0;
   position: absolute;
@@ -48,8 +48,8 @@
 }
 
 .sticker-discount::before {
-  width: 43px;
-  height: 24px;
+  width: 34px;
+  height: 21px;
   display: block;
   background: url(../img/icons/discount.svg) no-repeat center;
   background-size: cover;
@@ -63,16 +63,6 @@
   background: url(../img/icons/bear.svg) no-repeat;
   background-size: contain;
   content: '';
-}
-
-.sticker-present {
-  width: 57px;
-  height: 116px;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background: url(../img/icons/present.svg) no-repeat;
 }
 
 @media (max-width: 1199px) {

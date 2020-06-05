@@ -28,18 +28,22 @@
   }
 }
 
-.tab-content > .tab-pane {
+.tab-panel {
   display: none;
 }
 
-.tab-content > .active {
+.tab-panel.active {
   display: block;
 }
 
 .lead {
   font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
+  color: $black;
+
+  @media (min-width: 992px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }
 
 .main-content {

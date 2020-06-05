@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?m4v5iz') format('woff');
+  src: url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?oq6opu') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -15,6 +15,11 @@
   }
 }
 
+.icon-filter {
+  &:before {
+    content: $icon-filter;
+  }
+}
 .icon-arrow-bend {
   &:before {
     content: $icon-arrow-bend;
@@ -115,9 +120,9 @@
     content: $icon-guitar;
   }
 }
-.icon-hair-dye {
+.icon-self-care {
   &:before {
-    content: $icon-hair-dye;
+    content: $icon-self-care;
   }
 }
 .icon-increase {

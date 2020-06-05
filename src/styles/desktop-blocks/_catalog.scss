@@ -234,14 +234,6 @@
   }
 }
 
-.catalog-tag {
-  margin-bottom: 12px;
-}
-
-.catalog-wrap {
-  margin-bottom: 30px;
-}
-
 .rating-progress {
   display: block;
   position: relative;
@@ -274,9 +266,6 @@
   &[data-rating-progress="5"]::before {
     width: 100%;
   }
-}
-
-@media (min-width: 992px) {
 }
 
 @media (min-width: 1200px) {

@@ -52,6 +52,7 @@ $(document).ready(function () {
   $('select').styler();
   /* END */
 
+
   /* BEGIN: Клик по кнопке "выбрать развлечения", появится панель с навигацией */
   $('.js__nav-catalog-btn').click(function () {
     $('.nav-catalog-panel').addClass('nav-catalog-opened');

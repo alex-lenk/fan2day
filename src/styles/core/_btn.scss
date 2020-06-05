@@ -9,31 +9,6 @@
   background: linear-gradient(165.41deg, #0575E6 0%, #021B79 100%);
   letter-spacing: 0.03em;
   box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
-
-  &::after {
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    position: absolute;
-    content: '';
-    opacity: 0;
-    z-index: 1;
-    background: linear-gradient(165.41deg, #36D1DC 0%, #5B86E5 100%);
-    transition: opacity .3s;
-  }
-
-  &.disabled,
-  &:disabled {
-    cursor: default;
-  }
-
-  &:not(.disabled),
-  &:not(:disabled) {
-    &:hover::after {
-      opacity: 1;
-    }
-  }
 }
 
 .btn-text {
@@ -50,34 +25,6 @@
   background: $grey-gradient;
   box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
   border-radius: 15px;
-  cursor: pointer;
-  position: relative;
-  transition: color .3s ease-out, box-shadow .3s ease-out;
-
-  &::after {
-    width: 100%;
-    height: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    position: absolute;
-    border-radius: inherit;
-    background: $blue-gradient2;
-    transition: height .3s ease-out;
-    content: '';
-  }
-
-  &:hover {
-    color: #fff;
-    border-color: #c7c9d2;
-    box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
-
-    &::after {
-      height: 100%;
-    }
-  }
 }
 
 .btn-circle {
@@ -94,27 +41,51 @@
 }
 
 @media (min-width: 1200px) {
-  .btn-circle {
-    cursor: pointer;
-    position: relative;
-    transition: color .3s, box-shadow .3s;
-
+  .btn-primary {
     &::after {
       width: 100%;
       height: 100%;
       top: 0;
       left: 0;
       position: absolute;
-      opacity: 0;
-      border-radius: inherit;
-      background: $blue-gradient2;
-      transition: opacity .3s;
       content: '';
+      opacity: 0;
+      z-index: 1;
+      background: linear-gradient(165.41deg, #36D1DC 0%, #5B86E5 100%);
+      transition: opacity .3s;
     }
 
-    &::before {
-      position: relative;
-      z-index: 1;
+    &.disabled,
+    &:disabled {
+      cursor: default;
+    }
+
+    &:not(.disabled),
+    &:not(:disabled) {
+      &:hover::after {
+        opacity: 1;
+      }
+    }
+  }
+
+  .btn-bright {
+    cursor: pointer;
+    position: relative;
+    transition: color .3s ease-out, box-shadow .3s ease-out;
+
+    &::after {
+      width: 100%;
+      height: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      position: absolute;
+      border-radius: inherit;
+      background: $blue-gradient2;
+      transition: height .3s ease-out;
+      content: '';
     }
 
     &:hover {
@@ -123,7 +94,7 @@
       box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
 
       &::after {
-        opacity: 1;
+        height: 100%;
       }
     }
   }
