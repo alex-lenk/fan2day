@@ -3,8 +3,6 @@
 }
 
 .btn-primary {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
   position: relative;
   overflow: hidden;
   background: linear-gradient(165.41deg, #0575E6 0%, #021B79 100%);
@@ -104,6 +102,10 @@
 }
 
 @media (max-width: 1199px) {
+  .btn-primary {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
   .btn-circle:hover {
     color: $black;
   }

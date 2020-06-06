@@ -67,19 +67,23 @@
 }
 
 .search-area__popular {
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.search-area__popular-title {
+  margin-bottom: 18px;
 }
 
 .search-area__popular-item {
-  max-width: 20%;
-  flex-basis: 20%;
-  padding-left: 20px;
-  padding-right: 20px;
+  max-width: 16.666%;
+  flex-basis: 16.666%;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .search-area__tag {
-  margin-bottom: 17px;
+  margin-bottom: 11px;
 }
 
 .search-area__viewed {
