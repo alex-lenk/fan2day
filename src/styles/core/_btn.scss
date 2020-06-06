@@ -32,7 +32,6 @@
   padding-top: 5px;
   background: $grey-gradient;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
   display: inline-block;
   border-radius: 50%;
   text-align: center;
@@ -99,6 +98,10 @@
       }
     }
   }
+
+  .btn-circle {
+    box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
+  }
 }
 
 @media (max-width: 1199px) {
@@ -106,7 +109,11 @@
     padding-top: .5rem;
     padding-bottom: .5rem;
   }
-  .btn-circle:hover {
-    color: $black;
+  .btn-circle {
+    box-shadow: 1px 1px 2px #C7C9D2, -1px -1px 2px #FAFBFF;
+
+    &:hover {
+      color: $black;
+    }
   }
 }

@@ -169,10 +169,9 @@ function favicon() {
 function images() {
   return gulp.src(paths.src.img)
     .pipe(cache(imagemin([
-      /*imagemin.gifsicle({interlaced: true}),*/
       jpegrecompress({
         progressive: true,
-        max: 90,
+        max: 85,
         min: 80
       }),
       pngquant(),
