@@ -143,11 +143,27 @@ input[type='search']::-webkit-search-results-decoration {
   display: block;
   position: relative;
 
+  &::before,
+  &::after {
+    pointer-events: none;
+    position: absolute;
+  }
+
   &::before {
     top: 12px;
     right: 19px;
-    position: absolute;
+    z-index: 2;
     transform: rotate(90deg);
+  }
+
+  &::after {
+    width: 25px;
+    height: 100%;
+    top: 0;
+    right: 16px;
+    z-index: 1;
+    background: $grey-gradient;
+    content: '';
   }
 }
 

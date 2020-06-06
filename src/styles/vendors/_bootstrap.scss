@@ -8,7 +8,7 @@
 @import "bootstrap-4.4.1/scss/grid";
 @import "bootstrap-4.4.1/scss/forms";
 //@import "bootstrap-4.4.1/scss/custom-forms";
-@import "bootstrap-4.4.1/scss/buttons";
+//@import "bootstrap-4.4.1/scss/buttons";
 @import "bootstrap-4.4.1/scss/utilities";
 
 
@@ -36,12 +36,5 @@
   .form-control {
     height: calc(1.5em + 1.44rem);
     padding: .72rem 1.2rem;
-  }
-}
-
-@media (max-width: 575px) {
-  .btn {
-    font-size: 14px;
-    height: 40px;
   }
 }

@@ -3,24 +3,62 @@
 {% block topPanel %}{% include 'desktop-table/top-panel.twig' %}{% endblock %}
 
 {% block content %}
-<div class="container">
+<div class="personal-area container">
   <div class="row">
-    <aside class="col-lg-2 sidebar">
-      <ul class="sidebar-menu">
-        <li class="sidebar-menu__item">
-          <a href="#" class="sidebar-menu__link icon-orders">Заказы</a>
+    <aside class="col-lg-2 personal-area-aside">
+      <ul class="personal-area-menu list-unstyled">
+        <li class="personal-area-menu__item">
+          <a href="#" class="personal-area-menu__link icon-orders">Заказы</a>
         </li>
-        <li class="sidebar-menu__item">
-          <a href="#" class="sidebar-menu__link icon-location">Мероприятия</a>
+        <li class="personal-area-menu__item">
+          <a href="#" class="personal-area-menu__link icon-location">Мероприятия</a>
         </li>
-        <li class="sidebar-menu__item">
-          <a href="#" class="sidebar-menu__link icon-settings">Настройки</a>
+        <li class="personal-area-menu__item">
+          <a href="#" class="personal-area-menu__link icon-settings">Настройки</a>
         </li>
-        <li class="sidebar-menu__item">
-          <a href="#" class="sidebar-menu__link icon-support">Поддержка</a>
+        <li class="personal-area-menu__item">
+          <a href="#" class="personal-area-menu__link icon-support">Поддержка</a>
         </li>
       </ul>
+      <a href="#" class="sidebar-out">Выйти</a>
     </aside>
+
+    <div class="col-lg-10 personal-area-container">
+      <h1 class="personal-area-title">Настройки</h1>
+
+      <div class="personal-area-box">
+        <h2>Ваши данные</h2>
+
+        <div class="personal-area-lead">
+          Для изменения данных отправьте запрос на <a href="mailto:welcome@fun2day.ru" rel="nofollow">welcome@fun2day.ru</a>
+        </div>
+
+        <ul class="personal-area-list list-unstyled">
+          <li class="personal-area-list__item">
+            <div class="personal-area-list__label">E-mail:</div>
+            <div class="personal-area-list__data">Myemail@gmail.com</div>
+          </li>
+        </ul>
+
+        <h2>Представитель Организатора</h2>
+        <div class="personal-area-lead">Укажите контактное лицо для общения с сотрудником FUN2DAY</div>
+
+        <div class="form-group">
+          <label class="sr-only">Введите ФИО</label>
+          <input type="text" class="form-control hide-placeholder" placeholder="Введите ФИО">
+        </div>
+        <div class="form-group">
+          <label class="sr-only">Введите телефон</label>
+          <input type="tel" class="form-control hide-placeholder" placeholder="Введите телефон">
+        </div>
+        <div class="form-group">
+          <label class="sr-only">Введите e-mail</label>
+          <input type="email" class="form-control hide-placeholder" placeholder="Введите e-mail">
+        </div>
+        <button class="btn-bright btn">Сохранить изменения</button>
+      </div>
+
+    </div>
   </div>
 </div>
 {% endblock %}
