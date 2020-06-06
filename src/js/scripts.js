@@ -54,11 +54,16 @@ $(document).ready(function () {
 
 
   /* BEGIN: Клик по кнопке "выбрать развлечения", появится панель с навигацией */
+  let navCatalogPanel = '.nav-catalog-panel';
   $('.js__nav-catalog-btn').click(function () {
-    $('.nav-catalog-panel').addClass('nav-catalog-opened');
+    $(navCatalogPanel).addClass('nav-catalog-opened');
   });
 
-  documentMouseup('.nav-catalog-panel', 'nav-catalog-opened');
+  $(document).mouseup(function (e) {
+    if ($(navCatalogPanel).has(e.target).length === 0) {
+      $(navCatalogPanel).removeClass('nav-catalog-opened')
+    }
+  });
   /* END */
 
 

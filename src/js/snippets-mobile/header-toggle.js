@@ -3,6 +3,7 @@ $(document).ready(function () {
     $(this).toggleClass('icon-menu icon-close');
     $('body').toggleClass('menu-open');
     $('.nav-catalog-panel').removeClass('nav-catalog-opened');
+    $('.nav-catalog-dropdown').removeClass('active');
   });
 
   $('.menu-entertainment__item').click(function () {
