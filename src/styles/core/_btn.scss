@@ -5,7 +5,6 @@
   cursor: pointer;
   border: 0 solid transparent;
   font-size: 16px;
-  font-weight: 700;
   line-height: 24px;
   text-align: center;
   background-color: transparent;
@@ -28,13 +27,14 @@
 .btn-primary,
 .btn-secondary {
   min-width: 169px;
-  padding: 7px 15px;
+  padding: 7px 40px;
   letter-spacing: 0.03em;
 }
 
 .btn-primary {
   position: relative;
   overflow: hidden;
+  font-weight: 700;
   color: #fff;
   background: $blue-gradient;
   box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
@@ -59,10 +59,22 @@
 }
 
 .btn-secondary {
+  font-size: 18px;
   color: $blue;
   border: 2px solid $blue;
   background-color: transparent;
   transition: background-color .3s, color .3s;
+
+  &:hover {
+    color: #fff;
+    background-color: $blue;
+  }
+
+  &.disabled:hover,
+  &:disabled:hover {
+    color: $blue;
+    background-color: transparent;
+  }
 
   &:active,
   &.active {
@@ -130,19 +142,6 @@
       &::after {
         opacity: 1;
       }
-    }
-  }
-
-  .btn-secondary {
-    &:hover {
-      color: #fff;
-      background-color: $blue;
-    }
-
-    &.disabled:hover,
-    &:disabled:hover {
-      color: $blue;
-      background-color: transparent;
     }
   }
 

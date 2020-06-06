@@ -23,11 +23,11 @@
       <a href="#" class="sidebar-out">Выйти</a>
     </aside>
 
-    <div class="col-lg-10 personal-area-container">
+    <div class="col-lg-6">
       <h1 class="personal-area-title">Настройки</h1>
 
       <div class="personal-area-box">
-        <h2>Ваши данные</h2>
+        <h2 class="personal-area-h2">Ваши данные</h2>
 
         <div class="personal-area-lead">
           Для изменения данных отправьте запрос на <a href="mailto:welcome@fun2day.ru" rel="nofollow">welcome@fun2day.ru</a>
@@ -38,26 +38,66 @@
             <div class="personal-area-list__label">E-mail:</div>
             <div class="personal-area-list__data">Myemail@gmail.com</div>
           </li>
+          <li class="personal-area-list__item">
+            <div class="personal-area-list__label">Телефон:</div>
+            <div class="personal-area-list__data">+7 (977) 123 45 54</div>
+          </li>
+          <li class="personal-area-list__item">
+            <div class="personal-area-list__label">Форма занятости:</div>
+            <div class="personal-area-list__data">Юридическое лицо</div>
+          </li>
+          <li class="personal-area-list__item">
+            <div class="personal-area-list__label">Название организации:</div>
+            <div class="personal-area-list__data">ООО Чай с Индийской горы</div>
+          </li>
+          <li class="personal-area-list__item">
+            <div class="personal-area-list__label">Ваш ИНН:</div>
+            <div class="personal-area-list__data">456 891 234 568</div>
+          </li>
         </ul>
 
-        <h2>Представитель Организатора</h2>
+        <div class="personal-area-avatar">
+          <input type="file" class="personal-area-avatar__field" accept=".svg, .jpeg, .jpg, .png">
+          <div>
+            <div class="personal-area-avatar__text">Загрузить аватар организатора</div>
+            <div>Аватар должен быть не более 5 Mb, в формате SVG, PNG, JPEG</div>
+          </div>
+        </div>
+
+        <h2 class="personal-area-h2">Представитель Организатора</h2>
+
         <div class="personal-area-lead">Укажите контактное лицо для общения с сотрудником FUN2DAY</div>
 
-        <div class="form-group">
-          <label class="sr-only">Введите ФИО</label>
-          <input type="text" class="form-control hide-placeholder" placeholder="Введите ФИО">
+        <div class="personal-area__field-group">
+          <div class="form-group">
+            <label class="sr-only">Введите ФИО</label>
+            <input type="text" class="form-control hide-placeholder" placeholder="Введите ФИО">
+          </div>
+          <div class="form-group">
+            <label class="sr-only">Введите телефон</label>
+            <input type="tel" class="form-control hide-placeholder" placeholder="Введите телефон">
+          </div>
+          <div class="form-group">
+            <label class="sr-only">Введите e-mail</label>
+            <input type="email" class="form-control hide-placeholder" placeholder="Введите e-mail">
+          </div>
+          <button class="btn-secondary btn">Сохранить изменения</button>
         </div>
-        <div class="form-group">
-          <label class="sr-only">Введите телефон</label>
-          <input type="tel" class="form-control hide-placeholder" placeholder="Введите телефон">
-        </div>
-        <div class="form-group">
-          <label class="sr-only">Введите e-mail</label>
-          <input type="email" class="form-control hide-placeholder" placeholder="Введите e-mail">
-        </div>
-        <button class="btn-bright btn">Сохранить изменения</button>
       </div>
 
+    </div>
+
+    <div class="personal-area-right col-lg-4">
+      <div class="personal-area-media__brand"><img src="img/decor/brand.svg" alt=""></div>
+
+      <div class="personal-area-box">
+        <h2 class="personal-area-h2">Бренд</h2>
+
+        <div class="personal-area-lead">
+          Добавьте бренд под которым будут проходить ваши мероприятия.
+        </div>
+        <a href="#" class="btn-primary btn"><span class="btn-text">Добавить бренд</span></a>
+      </div>
     </div>
   </div>
 </div>

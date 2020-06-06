@@ -162,4 +162,8 @@ $(document).ready(function () {
     ]
   });
   /* END */
+
+  $('input[type=file]').change(function (e) {
+    $(this).parent().find('.personal-area-avatar__text').text(e.target.files[0].name);
+  });
 });
