@@ -89,7 +89,7 @@
   left: 0;
   position: fixed;
   z-index: 65;
-  background-color: #DEDEDE;
+  background-color: $grey4;
   will-change: transform;
   transform: translateX(-100%);
   transition: transform .3s ease-out;
