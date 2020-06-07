@@ -163,7 +163,34 @@ $(document).ready(function () {
   });
   /* END */
 
-  $('input[type=file]').change(function (e) {
-    $(this).parent().find('.personal-area-avatar__text').text(e.target.files[0].name);
+
+  /* BEGIN: Вывод имени файла в див */
+  $('.js__decor-file').change(function (e) {
+    $(this).next().text(e.target.files[0].name);
+  });
+
+  $(".js__multi-upload").change(function () {
+    if ($(this).val() !== '') {
+      $(this).next().text('Выбрано файлов: ' + $(this)[0].files.length);
+    }
+  });
+  /* END */
+
+
+  /* BEGIN: Разворачиваем панель с вводом данных филиала */
+  $('.personal-area__add-address').click(function () {
+    $(this).prev('.personal-area-box').slideDown();
+  });
+  /* END */
+
+
+  let personalAreaDirectionsClose = '.personal-area-directions__close';
+
+  $(personalAreaDirectionsClose).click(function () {
+    $(this).closest('.personal-area-directions__item').remove();
+    if ($(personalAreaDirectionsClose).length < 1) {
+      $('.personal-area-directions').fadeOut();
+      $('.personal-area__download-files').fadeIn();
+    }
   });
 });

@@ -84,7 +84,7 @@
     &:nth-child(4) {
       &:before {
         @include coreIcon;
-        content: $icon-arrow-very-long;
+        content: $icon-arrow-long;
       }
     }
   }
