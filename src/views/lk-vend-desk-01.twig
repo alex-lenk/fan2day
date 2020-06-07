@@ -5,23 +5,9 @@
 {% block content %}
 <div class="personal-area container">
   <div class="row">
-    <aside class="col-lg-2 personal-area-aside">
-      <ul class="personal-area-menu list-unstyled">
-        <li class="personal-area-menu__item">
-          <a href="#" class="personal-area-menu__link icon-orders">Заказы</a>
-        </li>
-        <li class="personal-area-menu__item">
-          <a href="#" class="personal-area-menu__link icon-location">Мероприятия</a>
-        </li>
-        <li class="personal-area-menu__item">
-          <a href="#" class="personal-area-menu__link icon-settings">Настройки</a>
-        </li>
-        <li class="personal-area-menu__item">
-          <a href="#" class="personal-area-menu__link icon-support">Поддержка</a>
-        </li>
-      </ul>
-      <a href="#" class="sidebar-out">Выйти</a>
-    </aside>
+    <!-- BEGIN personal-area-aside -->
+    {% include 'partials/personal-area-aside.twig' %}
+    <!-- END personal-area-aside -->
 
     <div class="col-lg-6">
       <h1 class="personal-area-title">Настройки</h1>
@@ -56,7 +42,7 @@
           </li>
         </ul>
 
-        <div class="personal-area-avatar">
+        <div class="personal-area-avatar personal-area-gap">
           <input type="file" class="personal-area-avatar__field" accept=".svg, .jpeg, .jpg, .png">
           <div>
             <div class="personal-area-avatar__text">Загрузить аватар организатора</div>
@@ -81,10 +67,9 @@
             <label class="sr-only">Введите e-mail</label>
             <input type="email" class="form-control hide-placeholder" placeholder="Введите e-mail">
           </div>
-          <button class="btn-secondary btn">Сохранить изменения</button>
+          <button class="btn-secondary btn">Отправить</button>
         </div>
       </div>
-
     </div>
 
     <div class="personal-area-right col-lg-4">
@@ -97,6 +82,26 @@
           Добавьте бренд под которым будут проходить ваши мероприятия.
         </div>
         <a href="#" class="btn-primary btn"><span class="btn-text">Добавить бренд</span></a>
+      </div>
+
+      <div class="personal-area-box">
+        <h2 class="personal-area-h2">Поддержка</h2>
+
+        <ul class="list-unstyled">
+          <li class="list-item"><a href="#">Правила создания бренда</a></li>
+          <li class="list-item"><a href="#">Правила создания филиала</a></li>
+          <li class="list-item"><a href="#">Правила создания мероприятия</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="offset-2 col-lg-6">
+      <h3>Добавьте первый бренд</h3>
+      <div>
+        И заполните информацию по вашим магазинам и филиалам, чтобы при создании мероприятия для добавления на сайт вы
+        могли выбрать информацию из созданного списка.
       </div>
     </div>
   </div>

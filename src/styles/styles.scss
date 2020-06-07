@@ -107,6 +107,7 @@
 }
 
 .personal-area-box {
+  margin-bottom: 30px;
   padding: 30px;
   background-color: $grey4;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -145,7 +146,7 @@
 }
 
 .personal-area-avatar {
-  margin-bottom: 54px;
+  margin-bottom: 24px;
   position: relative;
   display: flex;
   align-items: center;
@@ -166,6 +167,10 @@
   }
 }
 
+.personal-area-gap {
+  margin-bottom: 50px;
+}
+
 .personal-area-avatar__text {
   color: $blue;
 }
@@ -180,7 +185,11 @@
 }
 
 .personal-area__field-group {
-  max-width: 69%;
+  max-width: 420px;
+}
+
+.personal-area-textarea {
+  max-width: 92%;
 }
 
 .personal-area-right {
@@ -189,6 +198,48 @@
 
 .personal-area-media__brand {
   margin-bottom: 30px;
+}
+
+.personal-area-holder {
+  padding: 30px;
+  background-color: $grey5;
+  border-radius: 15px;
+}
+
+.personal-area__add-address {
+  display: inline-flex;
+  align-items: center;
+
+  &::before {
+    margin-right: 7px;
+  }
+}
+
+.personal-area__control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::before {
+    width: 100%;
+    height: 1px;
+    display: block;
+    background: $blue-gradient2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+  }
+}
+
+.personal-area__control-box {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.personal-area__control-reset {
+  color: inherit;
 }
 
 .header .search-form__wrap {

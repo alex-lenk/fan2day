@@ -1,0 +1,73 @@
+{% extends "layout/layout.twig" %}
+{% set title = "Личный кабинет вендора - Fan2Day" %}
+{% block topPanel %}{% include 'desktop-table/top-panel.twig' %}{% endblock %}
+
+{% block content %}
+<div class="personal-area container">
+  <div class="row">
+    <!-- BEGIN personal-area-aside -->
+    {% include 'partials/personal-area-aside.twig' %}
+    <!-- END personal-area-aside -->
+
+    <div class="col-lg-10">
+      <h1 class="personal-area-title">Добавление бренда</h1>
+
+      <div class="personal-area-holder">
+        <h2>О бренде</h2>
+
+        <div class="personal-area-avatar">
+          <input type="file" class="personal-area-avatar__field" accept=".svg, .jpeg, .jpg, .png">
+          <div>
+            <div class="personal-area-avatar__text">Загрузить аватар организатора</div>
+            <div>Аватар должен быть не более 5 Mb, в формате SVG, PNG, JPEG</div>
+          </div>
+        </div>
+
+        <div class="personal-area__field-group form-group">
+          <label class="form-label" for="field-01">Название бренда</label>
+          <input type="text" id="field-01" class="form-control hide-placeholder" placeholder="Введите название бренда">
+        </div>
+
+        <div class="personal-area-gap personal-area-textarea form-group">
+          <label class="form-label" for="field-02">Информация о бренде</label>
+          <textarea id="field-02" cols="30" rows="4" class="form-control hide-placeholder"
+                    placeholder="Расскажите о вашем бренде (это будут видеть клиенты)"></textarea>
+          <div class="form-tip">не более 3 000 символов без пробелов</div>
+        </div>
+
+        <h2 class="personal-area-h2">Адрес мероприятия</h2>
+        <div class="personal-area-lead">Напишите город и адрес места проведения</div>
+
+        <div class="personal-area__add-address icon-plus as-link">Добавить адрес</div>
+
+        <div class="personal-area__control">
+          <div class="personal-area__control-box">
+            <button class="btn-primary btn"><span class="btn-text">Создать бренд</span></button>
+          </div>
+          <div class="personal-area__control-box">
+            <button class="personal-area__control-reset btn">Удалить бренд</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include 'desktop-table/footer.twig' %}
+{% endblock %}
+
+{% block modal %}
+  {% include 'desktop-table/modal.twig' %}
+{% endblock %}
+
+{% block search %}
+  {% include 'desktop-table/search-area.twig' %}
+{% endblock %}
+
+{% block entertainment %}
+  {% include 'desktop-table/entertainment.twig' %}
+{% endblock %}
