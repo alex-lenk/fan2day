@@ -169,12 +169,6 @@ $(document).ready(function () {
   $('.js__decor-file').change(function (e) {
     $(this).next().text(e.target.files[0].name);
   });
-
-  $(".js__multi-upload").change(function () {
-    if ($(this).val() !== '') {
-      $(this).next().text('Выбрано файлов: ' + $(this)[0].files.length);
-    }
-  });
   /* END */
 
 

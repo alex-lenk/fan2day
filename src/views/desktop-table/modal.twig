@@ -8,10 +8,12 @@
       <div class="modal-subtitle">Для входа используйте ваш е-mail и&nbsp;пароль</div>
 
       <div class="form-group">
+        <label for="" class="sr-only">Введите e-mail</label>
         <input type="email" name="email" class="form-control hide-placeholder" placeholder="Введите e-mail *">
       </div>
 
       <div class="form-group">
+        <label for="" class="sr-only">Пароль</label>
         <input type="password" name="password" class="form-control hide-placeholder" placeholder="Пароль *">
       </div>
 
@@ -58,10 +60,12 @@
         <input type="email" name="inputRegisterEmail" class="form-control hide-placeholder" placeholder="Укажите Ваш E-mail *">
       </div>
 
-      <label class="form-group custom-control custom-checkbox">
-        <input type="checkbox" name="agreeRegister" class="custom-control-input">
-        <span class="custom-control-label icon-check">Согласие на обработку</span>
-      </label>
+      <div class="form-group">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" name="agreeRegister" class="custom-control-input">
+          <span class="custom-control-label icon-check">Согласие на обработку</span>
+        </label>
+      </div>
 
       <div class="form-group__btn">
         <button type="submit" class="btn btn-primary"><span class="btn-text">Зарегистрироваться</span></button>
@@ -72,5 +76,138 @@
         <div class="as-link js__login">Войти</div>
       </div>
     </form>
+  </div>
+</div>
+
+
+<div class="modal-wrapper" id="modal-auth__organizer">
+  <div class="modal-box">
+    <div class="modal-close btn-circle icon-close"></div>
+
+    <form id="modal-login__organizer" class="modal-form">
+      <h2 class="modal-title">Войти как организатор</h2>
+
+      <div class="modal-subtitle">Для входа используйте ваш е-mail и&nbsp;пароль</div>
+
+      <div class="form-group">
+        <label for="" class="sr-only">Введите e-mail</label>
+        <input type="email" name="email" class="form-control hide-placeholder" placeholder="Введите e-mail *">
+      </div>
+
+      <div class="form-group">
+        <label for="" class="sr-only">Пароль</label>
+        <input type="password" name="password" class="form-control hide-placeholder" placeholder="Пароль *">
+      </div>
+
+      <div class="form-group__btn">
+        <button type="submit" class="btn btn-primary"><span class="btn-text">Войти</span></button>
+        <div class="form-group__link as-link js__forgot__organizer">Забыли пароли?</div>
+      </div>
+
+      <div class="modal-box__bottom">
+        <div class="modal-box__bottom-text">У вас нет аккаунта на Fun2Day?</div>
+        <div class="as-link js__register__organizer">Зарегистрироваться</div>
+      </div>
+    </form>
+
+    <form id="modal-forgot__organizer" class="modal-form">
+      <h2 class="modal-title">Восстановления пароля</h2>
+
+      <div class="modal-subtitle">Укажите адрес электронной почты, который вы&nbsp;использовали при регистрации.</div>
+
+      <div class="form-group">
+        <input type="email" name="inputForgotEmail" class="form-control hide-placeholder" placeholder="E-mail *">
+      </div>
+
+      <div class="form-group__btn">
+        <button type="submit" class="btn btn-primary"><span class="btn-text">Восстановить</span></button>
+        <div class="form-group__link as-link js__login__organizer">Вспомнили пароль?</div>
+      </div>
+
+      <div class="modal-box__bottom">
+        <div class="modal-box__bottom-text">У вас нет аккаунта на Fun2Day?</div>
+        <div class="as-link js__register__organizer">Зарегистрироваться</div>
+      </div>
+    </form>
+
+    <form id="modal-register__organizer" class="modal-form">
+      <h2 class="modal-title">Регистрация организатора</h2>
+
+      <div class="mb-4">
+        <h3 class="mb-1">Личные данные</h3>
+
+        <div class="modal-subtitle">
+          Укажите адрес электронной почты, мы&nbsp;отправим вам
+          пароль для входа в&nbsp;личный кабинет
+        </div>
+
+        <div class="form-group">
+          <label class="sr-only">Укажите Ваш E-mail</label>
+          <input type="email" name="inputRegisterEmail" class="form-control hide-placeholder" placeholder="Укажите Ваш E-mail *">
+        </div>
+
+        <div class="modal-subtitle">Укажите телефон для сотрудников компании Фан2дэй</div>
+        <div class="form-group">
+          <label class="sr-only">Укажите телефон</label>
+          <input type="tel" name="inputRegisterEmail" class="form-control hide-placeholder js__phone" placeholder="+7 (___) ___ - __ - __ *">
+        </div>
+      </div>
+
+      <h3 class="mb-4">Данные организации</h3>
+
+      <div class="modal-form__group form-group">
+        <label class="modal-form__group-item custom-control custom-radio">
+          <input type="radio" name="radio2" class="custom-control-input">
+          <span class="custom-control-label">Физ. лицо</span>
+        </label>
+        <label class="modal-form__group-item custom-control custom-radio">
+          <input type="radio" name="radio2" class="custom-control-input" checked="">
+          <span class="custom-control-label">Юр. лицо</span>
+        </label>
+        <label class="modal-form__group-item custom-control custom-radio">
+          <input type="radio" name="radio2" class="custom-control-input">
+          <span class="custom-control-label">ИП</span>
+        </label>
+      </div>
+
+      <div class="form-group">
+        <label class="sr-only">Название организации</label>
+        <input type="text" class="form-control hide-placeholder" placeholder="Название организации">
+      </div>
+
+      <div class="form-group">
+        <label class="sr-only">Введите ИНН</label>
+        <input type="text" class="form-control hide-placeholder" placeholder="Введите ИНН">
+      </div>
+
+      <div class="form-group">
+        <label class="custom-control custom-checkbox">
+          <input type="checkbox" name="agreeRegister" class="custom-control-input">
+          <span class="custom-control-label icon-check">Согласие на обработку</span>
+        </label>
+      </div>
+
+      <div class="form-group__btn">
+        <button type="submit" class="btn btn-primary"><span class="btn-text">Зарегистрироваться</span></button>
+      </div>
+
+      <div class="modal-box__bottom">
+        <div class="modal-box__bottom-text">Уже есть аккаунт на Fun2Day?</div>
+        <div class="as-link js__login__organizer">Войти</div>
+      </div>
+    </form>
+
+    <div class="modal-form" id="modal-recovery">
+      <h2>Восстановления пароля</h2>
+
+      <div>
+        Мы отправили письмо с инструкцией по восстановлению пароля на адрес
+        <a href="Myemail@gmail.com">Myemail@gmail.com</a>
+      </div>
+
+      <div class="modal-box__bottom">
+        <span class="as-link">Войти</span>
+      </div>
+    </div>
   </div>
 </div>

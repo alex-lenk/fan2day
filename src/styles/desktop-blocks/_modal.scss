@@ -25,11 +25,11 @@
 }
 
 .modal-title {
-  margin-bottom: 5px;
+  margin-bottom: 30px;
 }
 
 .modal-subtitle {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   line-height: 24px;
 }
 
@@ -81,6 +81,11 @@
 
 .modal-form__active {
   display: block;
+}
+
+.modal-form__group {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (max-width: 765px) {
