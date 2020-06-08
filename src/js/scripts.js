@@ -184,6 +184,17 @@ $(document).ready(function () {
   /* END */
 
 
+  /* BEGIN: Разворачиваем панель при клике на аватарку, появляется меню личного кабинета */
+  $('.top-panel-user__control').click(function () {
+    $(this).next().slideToggle();
+  });
+  /* END */
+
+
+  /*
+   BEGIN: Логика удаления схем проезда из личного кабинета, когда последняя удалена,скрывается блок и появляется блок
+   с загрузкой схем
+  */
   let personalAreaDirectionsClose = '.personal-area-directions__close';
 
   $(personalAreaDirectionsClose).click(function () {
@@ -193,4 +204,5 @@ $(document).ready(function () {
       $('.personal-area__download-files').fadeIn();
     }
   });
+  /* END */
 });

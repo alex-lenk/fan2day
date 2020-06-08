@@ -22,9 +22,36 @@
       <span class="top-panel-compare__counter">2</span>
     </a>
 
-    <div class="btn btn-bright js__login">
-      <span class="btn-text">Войти</span>
-    </div>
+    {% if online == "true" %}
+      <div class="top-panel-user">
+        <div class="top-panel-user__control icon-arrow-down">
+          <div class="top-panel-user__media">
+            <img src="img/example/avatar-03.jpg" alt="">
+          </div>
+        </div>
+        <div class="top-panel-user__menu">
+          <ul class="personal-area-menu list-unstyled">
+            <li class="personal-area-menu__item icon-arrow-right">
+              <a href="#" class="personal-area-menu__link icon-orders">Заказы</a>
+            </li>
+            <li class="personal-area-menu__item icon-arrow-right">
+              <a href="#" class="personal-area-menu__link icon-location">Мероприятия</a>
+            </li>
+            <li class="personal-area-menu__item icon-arrow-right">
+              <a href="#" class="personal-area-menu__link icon-settings">Настройки</a>
+            </li>
+            <li class="personal-area-menu__item icon-arrow-right">
+              <a href="#" class="personal-area-menu__link icon-support">Поддержка</a>
+            </li>
+          </ul>
+          <a href="#" class="personal-area-out">Выйти</a>
+        </div>
+      </div>
+    {% else %}
+      <div class="btn btn-bright js__login">
+        <span class="btn-text">Войти</span>
+      </div>
+    {% endif %}
   </div>
 </nav>
 <!-- END: desktop component -->
