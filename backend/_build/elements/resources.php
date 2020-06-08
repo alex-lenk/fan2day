@@ -12,6 +12,11 @@ return [
             'template' => 1,
             'hidemenu' => false,
         ],
+        'profile' => [
+            'pagetitle' => 'Профиль',
+            'template' => 1,
+            'hidemenu' => false,
+        ],
         '404' => [
             'pagetitle' => '404 Страница не найдена',
             'template' => 1,

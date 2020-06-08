@@ -51,9 +51,17 @@
             <a href="#" class="top-panel-compare btn-circle icon-compare">
                 <span class="top-panel-compare__counter">2</span>
             </a>
-            <div class="btn btn-bright js__login">
-                <span class="btn-text">Войти</span>
-            </div>
+            {if $_modx->hasSessionContext('web')}
+                <div class="top-panel-user">
+                    {'!officeAuth' | snippet : [
+                    	'tplLogout' => '@FILE chunks/office/auth_logout.tpl'
+                    ]}
+                </div>
+            {else}
+                <div class="btn btn-bright js__login">
+                    <span class="btn-text">Войти</span>
+                </div>
+            {/if}
         </div>
     </nav>
     {include 'file:chunks/section/breadcrumbs.tpl'}
