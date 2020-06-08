@@ -1,4 +1,4 @@
-[].forEach.call(document.querySelectorAll('.phone'), function (input) {
+[].forEach.call(document.querySelectorAll('.js__phone'), function (input) {
     var keyCode;
 
     function mask(event) {

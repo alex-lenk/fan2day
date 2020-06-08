@@ -1,6 +1,7 @@
 // Импортируем другие js-файлы
 import './snippets/tab.js';
 import './snippets/login.js';
+import './snippets/mask.js';
 import './snippets-mobile/header-toggle.js';
 
 /* BEGIN: функция для закрытия разных панелей при нажатии на пустое пространство */

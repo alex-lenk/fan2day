@@ -159,15 +159,21 @@
   height: 50px;
   margin-bottom: 24px;
   position: relative;
+  cursor: pointer;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-content: flex-start;
   justify-content: center;
-  transition: opacity .3s;
 
   &:hover {
-    opacity: .85;
+    .personal-area-avatar__pic {
+      opacity: .8;
+    }
+
+    .personal-area-avatar__text {
+      color: $grey;
+    }
   }
 }
 
@@ -179,6 +185,7 @@
   overflow: hidden;
   background: url(../img/ico.svg) no-repeat center $grey;
   background-size: contain;
+  transition: opacity .3s;
 }
 
 .personal-area-gap {
@@ -187,6 +194,7 @@
 
 .personal-area-avatar__text {
   color: $blue;
+  transition: color .3s;
 }
 
 .personal-area-avatar__field {
@@ -196,6 +204,7 @@
   top: 0;
   left: 0;
   opacity: 0;
+  cursor: pointer;
 }
 
 .personal-area__field-group {
@@ -230,8 +239,7 @@
   }
 }
 
-.personal-area__address-box {
-  margin-bottom: 30px;
+.personal-area__items {
   padding: 27px 30px;
   background: $grey-gradient;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -241,13 +249,21 @@
   align-items: center;
 }
 
-.personal-area__address-text {
+.personal-area__items-avatar {
+  width: 50px;
+  height: 50%;
+  margin-right: 15px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.personal-area__items-text {
   font-size: 18px;
   font-weight: 700;
   color: $black;
 }
 
-.personal-area__address-edit {
+.personal-area__items-edit {
   margin-left: auto;
   color: $blue;
   cursor: pointer;
@@ -270,6 +286,10 @@
   margin-bottom: 20px;
   position: relative;
   display: block;
+
+  &:hover .as-link {
+    color: $grey;
+  }
 }
 
 .personal-area__control {
