@@ -1,6 +1,9 @@
 {% extends "layout/layout.twig" %}
 {% set title = "Личный кабинет вендора - Fan2Day" %}
-{% block topPanel %}{% include 'desktop-table/top-panel.twig' %}{% endblock %}
+{% block topPanel %}
+  {% set online = "true" %}
+  {% include 'desktop-table/top-panel.twig' %}
+{% endblock %}
 
 {% block content %}
 <div class="personal-area container">
