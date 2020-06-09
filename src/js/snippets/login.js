@@ -5,10 +5,10 @@ let modalLogin = '#modal-login',
   modalOpened = 'modal-opened',
   modalForm = '.modal-form',
   modalFormActive = 'modal-form__active',
-  modalAuth__organizer = '#modal-auth__organizer',
-  modalLogin__organizer = '#modal-login__organizer',
-  modalForgot__organizer = '#modal-forgot__organizer',
-  modalRegister__organizer = '#modal-register__organizer';
+  modalAuth__org = '#modal-auth__org',
+  modalLogin__org = '#modal-login__org',
+  modalForgot__org = '#modal-forgot__org',
+  modalRegister__org = '#modal-register__org';
 
 $(document).ready(function () {
   /* BEGIN: For logic on modals login, forgot and register */
@@ -18,10 +18,10 @@ $(document).ready(function () {
     $(modalLogin).addClass(modalFormActive);
   });
 
-  $('.js__login__organizer').click(function () {
-    $(modalAuth__organizer).addClass(modalOpened);
+  $('.js__login__org').click(function () {
+    $(modalAuth__org).addClass(modalOpened);
     $(modalForm).removeClass(modalFormActive);
-    $(modalLogin__organizer).addClass(modalFormActive);
+    $(modalLogin__org).addClass(modalFormActive);
   });
 
   $('.js__forgot').click(function () {
@@ -30,10 +30,10 @@ $(document).ready(function () {
     $(modalForgot).addClass(modalFormActive);
   });
 
-  $('.js__forgot__organizer').click(function () {
-    $(modalAuth__organizer).addClass(modalOpened);
+  $('.js__forgot__org').click(function () {
+    $(modalAuth__org).addClass(modalOpened);
     $(modalForm).removeClass(modalFormActive);
-    $(modalForgot__organizer).addClass(modalFormActive);
+    $(modalForgot__org).addClass(modalFormActive);
   });
 
   $('.js__register').click(function () {
@@ -42,10 +42,10 @@ $(document).ready(function () {
     $(modalRegister).addClass(modalFormActive);
   });
 
-  $('.js__register__organizer').click(function () {
-    $(modalAuth__organizer).addClass(modalOpened);
+  $('.js__register__org').click(function () {
+    $(modalAuth__org).addClass(modalOpened);
     $(modalForm).removeClass(modalFormActive);
-    $(modalRegister__organizer).addClass(modalFormActive);
+    $(modalRegister__org).addClass(modalFormActive);
   });
 
   $('.modal-close').click(function () {
@@ -135,7 +135,7 @@ $(document).ready(function () {
     }
   });
 
-  $(modalLogin__organizer).validate({
+  $(modalLogin__org).validate({
     rules: {
       email: {
         required: true,
@@ -159,7 +159,7 @@ $(document).ready(function () {
       }
     }
   });
-  $(modalForgot__organizer).validate({
+  $(modalForgot__org).validate({
     rules: {
       inputForgotEmail: {
         required: true,
@@ -175,12 +175,16 @@ $(document).ready(function () {
       }
     }
   });
-  $(modalRegister__organizer).validate({
+  $(modalRegister__org).validate({
     rules: {
       inputRegisterEmail: {
         required: true,
         email: true,
         minlength: 8
+      },
+      inputRegisterTel: {
+        required: true,
+        minlength: 10
       },
       agreeRegister: {
         required: true
@@ -191,6 +195,10 @@ $(document).ready(function () {
         required: "Поле e-mail обязательно к заполнению",
         email: "Необходим формат адреса e-mail",
         minlength: "Пожалуйста, введите не менее 7 символов"
+      },
+      inputRegisterTel: {
+        required: "Введите номер телефона",
+        minlength: "Пожалуйста, введите не менее 10 символов"
       },
       agreeRegister: {
         required: "Вы должны согласиться на обработку персональных данных"

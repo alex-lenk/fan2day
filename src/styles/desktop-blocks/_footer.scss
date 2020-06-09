@@ -45,6 +45,7 @@
 .footer-nav__link {
   color: inherit;
   display: inline-block;
+  cursor: pointer;
 
   &::after {
     background-color: #fff;
