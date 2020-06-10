@@ -58,16 +58,6 @@
   color: inherit;
 }
 
-.top-panel-phone {
-  font-weight: 700;
-  color: $black;
-  flex-shrink: 0;
-
-  &:hover {
-    color: $black;
-  }
-}
-
 .top-panel-compare {
   flex-shrink: 0;
 }
@@ -159,10 +149,6 @@
     margin-right: 80px;
     margin-left: 80px;
   }
-  .top-panel-phone {
-    margin-right: 30px;
-    letter-spacing: 0.03em;
-  }
   .top-panel-compare {
     margin-right: 30px;
   }
@@ -194,10 +180,6 @@
   }
   .top-panel-nav__link {
     font-size: 15px;
-  }
-  .top-panel-phone {
-    font-size: 14px;
-    margin-right: 20px;
   }
   .top-panel-compare {
     margin-right: 20px;

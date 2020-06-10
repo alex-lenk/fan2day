@@ -24,6 +24,8 @@ const gulpif = require('gulp-if');
 const babel = require('gulp-babel');
 const webpack = require('webpack-stream');
 const strip = require('gulp-strip-comments');
+const svgmin = require('gulp-svgmin');
+const svgstore = require('gulp-svgstore');
 
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify-es').default;
@@ -68,6 +70,24 @@ const paths = {
 
 
 /* задачи */
+gulp.task('countriesIcons', function () {
+  return gulp
+    .src('./src/img/countries/*.svg')
+    .pipe(svgmin(function (file) {
+      var prefix = path.basename(file.relative, path.extname(file.relative));
+      return {
+        plugins: [{
+          cleanupIDs: {
+            prefix: prefix + '-',
+            minify: true
+          }
+        }]
+      }
+    }))
+    .pipe(svgstore())
+    .pipe(gulp.dest('./dist/img/'));
+});
+
 
 // слежка
 function watch() {
