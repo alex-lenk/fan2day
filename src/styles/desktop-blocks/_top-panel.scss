@@ -30,6 +30,7 @@
 }
 
 .top-panel-nav {
+  margin-right: 18px;
   color: $black;
   display: flex;
   align-items: center;
@@ -56,6 +57,11 @@
 
 .top-panel-nav__link {
   color: inherit;
+}
+
+.top-panel-currency {
+  margin-left: 20px;
+  margin-right: 37px;
 }
 
 .top-panel-compare {

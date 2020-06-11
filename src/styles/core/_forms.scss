@@ -99,7 +99,8 @@ textarea.form-control {
   margin-bottom: 0;
   position: relative;
   vertical-align: top;
-  display: block;
+  display: flex;
+  align-items: center;
 
   &::before,
   &::after {

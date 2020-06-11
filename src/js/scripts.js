@@ -174,18 +174,19 @@ $(document).ready(function () {
   /* END */
 
 
-  /* BEGIN: Разворачиваем панель при клике на аватарку, появляется меню личного кабинета */
-  let dropdownEl = '.dropdown';
-  let dropdownToggle = '.dropdown-toggle';
+  /* BEGIN: Раскрываем и сворачиваем список dropdown */
+  let dropdownActive = 'dropdown-active',
+    dropdownToggle = '.dropdown-toggle';
+
   $(dropdownToggle).click(function () {
-    if ($(this).hasClass('show')) {
-      $(dropdownToggle).next().slideUp();
-      $(dropdownToggle).removeClass('show');
+    if (!$(this).hasClass(dropdownActive)) {
+      $('.dropdown-toggle.dropdown-active').removeClass(dropdownActive).next().slideUp();
+      $(this).addClass(dropdownActive).next().slideDown();
     } else {
-      $(this).toggleClass('show');
-      $(this).next().slideToggle();
+      $(this).removeClass(dropdownActive).next().slideUp();
     }
   });
+  documentMouseup(dropdownToggle, dropdownActive);
   /* END */
 
 
@@ -222,10 +223,10 @@ $(document).ready(function () {
   /* BEGIN: Для закрытия разных панелей при нажатии на пустое пространство */
   $(document).mouseup(function (e) {
     if ($(navCatalogPanel).has(e.target).length === 0) {
-      $(navCatalogPanel).removeClass('nav-catalog-opened')
+      $(navCatalogPanel).removeClass('nav-catalog-opened');
     }
-    if (!$(dropdownEl).is(e.target) && $(dropdownEl).has(e.target).length === 0) {
-      $(dropdownEl).find('.dropdown-menu').slideUp();
+    if ($(dropdownToggle).has(e.target).length === 0) {
+      $(dropdownToggle).removeClass(dropdownActive).next().slideUp();
     }
   });
   /* END */
