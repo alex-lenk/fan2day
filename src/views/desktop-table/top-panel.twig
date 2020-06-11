@@ -16,26 +16,52 @@
       <li class="top-panel-nav__item"><a href="#" class="top-panel-nav__link link-decor">Стать организатором</a></li>
     </ul>
 
-    <ul>
-      <li>
-        <a href="#">
-          
-        </a>
-      </li>
-    </ul>
+    <div class="top-panel-country dropdown">
+      <div class="dropdown-toggle icon-arrow-down">
+        <svg class="dropdown-icon">
+          <use xlink:href="img/countries.svg#russia"></use>
+        </svg>
+        RU
+      </div>
+      <form class="dropdown-menu">
+        <ul class="dropdown-list list-unstyled">
+          <li class="dropdown-item">
+            <label class="custom-control custom-radio">
+              <input type="radio" name="radio2" class="custom-control-input" checked>
+              <span class="custom-control-label">
+              <svg class="dropdown-icon">
+                <use xlink:href="img/countries.svg#russia"></use>
+              </svg> Русский (RU)
+              </span>
+            </label>
+          </li>
+        </ul>
+      </form>
+    </div>
+
+    <div class="top-panel-country dropdown">
+      <div class="dropdown-toggle icon-arrow-down">
+        RUB
+      </div>
+      <div class="dropdown-menu">
+        <a href="#" class="dropdown-item">$</a>
+        <a href="#" class="dropdown-item">Pesso</a>
+        <a href="#" class="dropdown-item">Real</a>
+      </div>
+    </div>
 
     <a href="#" class="top-panel-compare btn-circle icon-compare">
       <span class="top-panel-compare__counter">2</span>
     </a>
 
     {% if online == "true" %}
-      <div class="top-panel-user">
-        <div class="top-panel-user__control icon-arrow-down">
+      <div class="top-panel-user dropdown">
+        <div class="top-panel-user__control dropdown-toggle icon-arrow-down">
           <div class="top-panel-user__media">
             <img src="img/example/avatar-03.jpg" alt="">
           </div>
         </div>
-        <div class="top-panel-user__menu">
+        <div class="top-panel-user__menu dropdown-menu">
           <ul class="personal-area-menu list-unstyled">
             <li class="personal-area-menu__item icon-arrow-right">
               <a href="#" class="personal-area-menu__link icon-orders">Заказы</a>

@@ -60,11 +60,6 @@ $(document).ready(function () {
     $(navCatalogPanel).addClass('nav-catalog-opened');
   });
 
-  $(document).mouseup(function (e) {
-    if ($(navCatalogPanel).has(e.target).length === 0) {
-      $(navCatalogPanel).removeClass('nav-catalog-opened')
-    }
-  });
   /* END */
 
 
@@ -180,8 +175,16 @@ $(document).ready(function () {
 
 
   /* BEGIN: Разворачиваем панель при клике на аватарку, появляется меню личного кабинета */
-  $('.top-panel-user__control').click(function () {
-    $(this).next().slideToggle();
+  let dropdownEl = '.dropdown';
+  let dropdownToggle = '.dropdown-toggle';
+  $(dropdownToggle).click(function () {
+    if ($(this).hasClass('show')) {
+      $(dropdownToggle).next().slideUp();
+      $(dropdownToggle).removeClass('show');
+    } else {
+      $(this).toggleClass('show');
+      $(this).next().slideToggle();
+    }
   });
   /* END */
 
@@ -213,5 +216,17 @@ $(document).ready(function () {
       this.style.height = (this.scrollHeight) + 'px';
     });
   }
+  /* END */
+
+
+  /* BEGIN: Для закрытия разных панелей при нажатии на пустое пространство */
+  $(document).mouseup(function (e) {
+    if ($(navCatalogPanel).has(e.target).length === 0) {
+      $(navCatalogPanel).removeClass('nav-catalog-opened')
+    }
+    if (!$(dropdownEl).is(e.target) && $(dropdownEl).has(e.target).length === 0) {
+      $(dropdownEl).find('.dropdown-menu').slideUp();
+    }
+  });
   /* END */
 });
