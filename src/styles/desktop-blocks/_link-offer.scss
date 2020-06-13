@@ -14,7 +14,7 @@
   box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
   border-radius: 10px;
   display: block;
-  transition: background-color .3s;
+  transition: background-color .3s, box-shadow .3s;
 
   &::before {
     width: 30px;
@@ -31,6 +31,7 @@
   &:hover {
     color: $black;
     background-color: $grey5;
+    box-shadow: none;
   }
 }
 

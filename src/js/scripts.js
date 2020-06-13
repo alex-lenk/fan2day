@@ -175,7 +175,8 @@ $(document).ready(function () {
 
 
   /* BEGIN: Раскрываем и сворачиваем список dropdown */
-  let dropdownActive = 'dropdown-active',
+  let dropdown = '.dropdown',
+    dropdownActive = 'dropdown-active',
     dropdownToggle = '.dropdown-toggle';
 
   $(dropdownToggle).click(function () {
@@ -186,7 +187,6 @@ $(document).ready(function () {
       $(this).removeClass(dropdownActive).next().slideUp();
     }
   });
-  documentMouseup(dropdownToggle, dropdownActive);
   /* END */
 
 
@@ -206,8 +206,7 @@ $(document).ready(function () {
   /* END */
 
 
-  /*
-   BEGIN: Проверка на textarea и авторесайз textarea тега */
+  /* BEGIN: Проверка на textarea и авторесайз textarea тега */
   let textarea = $('textarea');
   if (textarea.length > 0) {
     textarea.each(function () {
@@ -225,7 +224,7 @@ $(document).ready(function () {
     if ($(navCatalogPanel).has(e.target).length === 0) {
       $(navCatalogPanel).removeClass('nav-catalog-opened');
     }
-    if ($(dropdownToggle).has(e.target).length === 0) {
+    if (!$(dropdown).is(e.target) && $(dropdown).has(e.target).length === 0) {
       $(dropdownToggle).removeClass(dropdownActive).next().slideUp();
     }
   });

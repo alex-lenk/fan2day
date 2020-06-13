@@ -69,7 +69,6 @@
 
 .personal-area-box {
   margin-bottom: 30px;
-  padding: 30px;
   background-color: $grey4;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 3px 3px 8px #C7C9D2, -2px -2px 6px #FAFBFF;
@@ -100,6 +99,7 @@
 
 .personal-area-list__label {
   width: 206px;
+  flex-shrink: 0;
 }
 
 .personal-area-list__data {
@@ -107,15 +107,9 @@
 }
 
 .personal-area-avatar {
-  height: 50px;
   margin-bottom: 24px;
   position: relative;
   cursor: pointer;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: flex-start;
-  justify-content: center;
 
   &:hover {
     .personal-area-avatar__pic {
@@ -130,7 +124,7 @@
 
 .personal-area-avatar__pic {
   width: 50px;
-  height: inherit;
+  height: 50px;
   margin-right: 10px;
   border-radius: 50%;
   overflow: hidden;
@@ -166,16 +160,7 @@
   max-width: 92%;
 }
 
-.personal-area-right {
-  padding-top: 68px;
-}
-
-.personal-area-media__brand {
-  margin-bottom: 30px;
-}
-
 .personal-area-holder {
-  padding: 30px;
   background-color: $grey5;
   border-radius: 15px;
 }
@@ -229,10 +214,6 @@
   }
 }
 
-.personal-area__add-brands {
-  margin-right: -30px;
-}
-
 .personal-area__download-files {
   margin-bottom: 20px;
   position: relative;
@@ -262,6 +243,9 @@
 
 .personal-area__check-group {
   margin-bottom: 10px;
+  display: flex;
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
 .personal-area__check-group--block {
@@ -283,7 +267,6 @@
 }
 
 .personal-area-directions__item {
-  width: 33%;
   height: 200px;
   margin-top: 10px;
   overflow: hidden;
@@ -317,5 +300,66 @@
 
   &:hover {
     background-color: #000;
+  }
+}
+
+@media (min-width: 992px) {
+  .personal-area-holder,
+  .personal-area-box {
+    padding: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .personal-area__add-brands {
+    margin-right: -30px;
+  }
+
+  .personal-area-right {
+    padding-top: 68px;
+  }
+
+  .personal-area-media__brand {
+    margin-bottom: 30px;
+  }
+  .personal-area-directions__item {
+    width: 33%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .personal-area-avatar {
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 1399px) {
+  .personal-area-avatar {
+    line-height: 1.2;
+    @include clearfix;
+  }
+  .personal-area-avatar__pic {
+    float: left;
+  }
+}
+
+@media (max-width: 1199px) {
+  .personal-area-media__brand {
+    display: none;
+  }
+  .personal-area-directions__item {
+    width: 50%;
+  }
+}
+
+@media (max-width: 991px) {
+  .personal-area-holder,
+  .personal-area-box {
+    padding: 15px;
   }
 }

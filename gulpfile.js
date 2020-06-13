@@ -69,26 +69,6 @@ const paths = {
 };
 
 
-/* задачи */
-gulp.task('countriesIcons', function () {
-  return gulp
-    .src('./src/img/countries/*.svg')
-    .pipe(svgmin(function (file) {
-      var prefix = path.basename(file.relative, path.extname(file.relative));
-      return {
-        plugins: [{
-          cleanupIDs: {
-            prefix: prefix + '-',
-            minify: true
-          }
-        }]
-      }
-    }))
-    .pipe(svgstore())
-    .pipe(gulp.dest('./dist/img/'));
-});
-
-
 // слежка
 function watch() {
   gulp.watch(paths.watch.scss, styles);
@@ -221,6 +201,26 @@ gulp.task('default', gulp.series(
 gulp.task('build', gulp.series(
   gulp.parallel(fonts, favicon, images, styles, scripts, templates)
 ));
+
+
+/* задачи */
+gulp.task('countriesIcons', function () {
+  return gulp
+    .src('./src/img/countries/*.svg')
+    .pipe(svgmin(function (file) {
+      var prefix = path.basename(file.relative, path.extname(file.relative));
+      return {
+        plugins: [{
+          cleanupIDs: {
+            prefix: prefix + '-',
+            minify: true
+          }
+        }]
+      }
+    }))
+    .pipe(svgstore())
+    .pipe(gulp.dest('./dist/img/'));
+});
 
 
 gulp.task('deploy', function () {

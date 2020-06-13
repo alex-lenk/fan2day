@@ -1,11 +1,5 @@
 .as-link {
   color: $blue;
-  cursor: pointer;
-  transition: color .3s;
-
-  &:hover {
-    color: $blue2;
-  }
 }
 
 .link-decor {
@@ -94,6 +88,16 @@
   margin-bottom: 10px;
 }
 
-.col-inner-1 {
-  padding-right: 8.3333%;
+@media (min-width: 1200px) {
+  .as-link {
+    cursor: pointer;
+    transition: color .3s;
+
+    &:hover {
+      color: $grey;
+    }
+  }
+  .col-inner-1 {
+    padding-right: 8.3333%;
+  }
 }
