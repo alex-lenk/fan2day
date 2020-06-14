@@ -5,10 +5,28 @@
 @import "bootstrap-4.4.1/scss/mixins/breakpoints";
 @import "bootstrap-4.4.1/scss/mixins/grid";
 @import "bootstrap-4.4.1/scss/reboot";
-@import "bootstrap-4.4.1/scss/utilities/screenreaders";
-@import "bootstrap-4.4.1/scss/grid";
+//@import "bootstrap-4.4.1/scss/grid";
 @import "bootstrap-4.4.1/scss/forms";
-@import "bootstrap-4.4.1/scss/utilities";
+/* utilities */
+@import "bootstrap-4.4.1/scss/utilities/clearfix";
+@import "bootstrap-4.4.1/scss/utilities/screenreaders";
+/*
+@import "bootstrap-4.4.1/scss/utilities/align";
+@import "bootstrap-4.4.1/scss/utilities/background";
+@import "bootstrap-4.4.1/scss/utilities/borders";
+@import "bootstrap-4.4.1/scss/utilities/display";
+@import "bootstrap-4.4.1/scss/utilities/embed";
+@import "bootstrap-4.4.1/scss/utilities/flex";
+@import "bootstrap-4.4.1/scss/utilities/float";
+@import "bootstrap-4.4.1/scss/utilities/overflow";
+@import "bootstrap-4.4.1/scss/utilities/position";
+@import "bootstrap-4.4.1/scss/utilities/shadows";
+@import "bootstrap-4.4.1/scss/utilities/sizing";
+@import "bootstrap-4.4.1/scss/utilities/stretched-link";
+@import "bootstrap-4.4.1/scss/utilities/spacing";
+@import "bootstrap-4.4.1/scss/utilities/text";
+@import "bootstrap-4.4.1/scss/utilities/visibility";
+*/
 
 
 // Container widths
@@ -17,17 +35,18 @@
   @include make-container-max-widths();
 }
 
+// Rows contain your columns.
+@if $enable-grid-classes {
+  .row {
+    @include make-row();
+  }
+}
+
+// Common styles for small and large grid columns
+@include make-grid-columns();
+
 // Lists
 .list-unstyled {
   margin-bottom: 0;
   @include list-unstyled();
-}
-
-
-// custom style
-@media (min-width: 576px) {
-  .form-control {
-    height: calc(1.5em + 1.44rem);
-    padding: .72rem 1.2rem;
-  }
 }
