@@ -35,7 +35,59 @@
 
 @import "desktop-blocks/personal-area";
 
+.personal-area-column__wrap {
+  display: flex;
 
+  .personal-area-column:not(:last-of-type) {
+    margin-right: 30px;
+  }
+}
+
+.personal-area-column {
+  max-width: 272px;
+}
+
+.personal-area__field-short {
+  margin-left: -9px;
+  margin-right: -9px;
+  display: flex;
+  align-items: center;
+
+  .form-control {
+    margin-left: 9px;
+    margin-right: 9px;
+    max-width: 120px;
+  }
+}
+
+.personal-area-field__short {
+  width: 120px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.personal-area-download {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    width: 174px;
+    height: 116px;
+    margin-right: 30px;
+    background: $grey url(../img/ico.svg) no-repeat center;
+    background-size: 70px 70px;
+    border-radius: 15px;
+    content: '';
+  }
+
+  &:hover .as-link {
+    color: inherit;
+  }
+}
+
+.personal-area-download__text {
+}
 
 .header .search-form__wrap {
   display: none;

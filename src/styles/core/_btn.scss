@@ -1,5 +1,4 @@
 .btn {
-  //padding: .375rem 2.5rem;
   display: inline-flex;
   align-items: center;
   cursor: pointer;
@@ -7,6 +6,7 @@
   font-size: 16px;
   line-height: 24px;
   text-align: center;
+  color: inherit;
   background-color: transparent;
   border-radius: 30px;
   -webkit-user-select: none;
