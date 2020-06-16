@@ -13,8 +13,8 @@
   Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
       if ("value" in descriptor) descriptor.writable = true;
@@ -34,21 +34,21 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'alert';
-  var VERSION = '4.4.1';
-  var DATA_KEY = 'bs.alert';
-  var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var Selector = {
+  let NAME = 'alert';
+  let VERSION = '4.4.1';
+  let DATA_KEY = 'bs.alert';
+  let EVENT_KEY = "." + DATA_KEY;
+  let DATA_API_KEY = '.data-api';
+  let JQUERY_NO_CONFLICT = $.fn[NAME];
+  let Selector = {
     DISMISS: '[data-dismiss="alert"]'
   };
-  var Event = {
+  let Event = {
     CLOSE: "close" + EVENT_KEY,
     CLOSED: "closed" + EVENT_KEY,
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   };
-  var ClassName = {
+  let ClassName = {
     ALERT: 'alert',
     FADE: 'fade',
     SHOW: 'show'
@@ -59,7 +59,7 @@
    * ------------------------------------------------------------------------
    */
 
-  var Alert =
+  let Alert =
   /*#__PURE__*/
   function () {
     function Alert(element) {
@@ -67,17 +67,17 @@
     } // Getters
 
 
-    var _proto = Alert.prototype;
+    let _proto = Alert.prototype;
 
     // Public
     _proto.close = function close(element) {
-      var rootElement = this._element;
+      let rootElement = this._element;
 
       if (element) {
         rootElement = this._getRootElement(element);
       }
 
-      var customEvent = this._triggerCloseEvent(rootElement);
+      let customEvent = this._triggerCloseEvent(rootElement);
 
       if (customEvent.isDefaultPrevented()) {
         return;
@@ -93,8 +93,8 @@
     ;
 
     _proto._getRootElement = function _getRootElement(element) {
-      var selector = Util.getSelectorFromElement(element);
-      var parent = false;
+      let selector = Util.getSelectorFromElement(element);
+      let parent = false;
 
       if (selector) {
         parent = document.querySelector(selector);
@@ -108,13 +108,13 @@
     };
 
     _proto._triggerCloseEvent = function _triggerCloseEvent(element) {
-      var closeEvent = $.Event(Event.CLOSE);
+      let closeEvent = $.Event(Event.CLOSE);
       $(element).trigger(closeEvent);
       return closeEvent;
     };
 
     _proto._removeElement = function _removeElement(element) {
-      var _this = this;
+      let _this = this;
 
       $(element).removeClass(ClassName.SHOW);
 
@@ -124,7 +124,7 @@
         return;
       }
 
-      var transitionDuration = Util.getTransitionDurationFromElement(element);
+      let transitionDuration = Util.getTransitionDurationFromElement(element);
       $(element).one(Util.TRANSITION_END, function (event) {
         return _this._destroyElement(element, event);
       }).emulateTransitionEnd(transitionDuration);
@@ -137,8 +137,8 @@
 
     Alert._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var $element = $(this);
-        var data = $element.data(DATA_KEY);
+        let $element = $(this);
+        let data = $element.data(DATA_KEY);
 
         if (!data) {
           data = new Alert(this);

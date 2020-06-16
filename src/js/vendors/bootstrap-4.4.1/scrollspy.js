@@ -13,8 +13,8 @@
   Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
       if ("value" in descriptor) descriptor.writable = true;
@@ -44,10 +44,10 @@
   }
 
   function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
+    let keys = Object.keys(object);
 
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
+      let symbols = Object.getOwnPropertySymbols(object);
       if (enumerableOnly) symbols = symbols.filter(function (sym) {
         return Object.getOwnPropertyDescriptor(object, sym).enumerable;
       });
@@ -58,8 +58,8 @@
   }
 
   function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
+    for (let i = 1; i < arguments.length; i++) {
+      let source = arguments[i] != null ? arguments[i] : {};
 
       if (i % 2) {
         ownKeys(Object(source), true).forEach(function (key) {
@@ -83,33 +83,33 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'scrollspy';
-  var VERSION = '4.4.1';
-  var DATA_KEY = 'bs.scrollspy';
-  var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var Default = {
+  let NAME = 'scrollspy';
+  let VERSION = '4.4.1';
+  let DATA_KEY = 'bs.scrollspy';
+  let EVENT_KEY = "." + DATA_KEY;
+  let DATA_API_KEY = '.data-api';
+  let JQUERY_NO_CONFLICT = $.fn[NAME];
+  let Default = {
     offset: 10,
     method: 'auto',
     target: ''
   };
-  var DefaultType = {
+  let DefaultType = {
     offset: 'number',
     method: 'string',
     target: '(string|element)'
   };
-  var Event = {
+  let Event = {
     ACTIVATE: "activate" + EVENT_KEY,
     SCROLL: "scroll" + EVENT_KEY,
     LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY
   };
-  var ClassName = {
+  let ClassName = {
     DROPDOWN_ITEM: 'dropdown-item',
     DROPDOWN_MENU: 'dropdown-menu',
     ACTIVE: 'active'
   };
-  var Selector = {
+  let Selector = {
     DATA_SPY: '[data-spy="scroll"]',
     ACTIVE: '.active',
     NAV_LIST_GROUP: '.nav, .list-group',
@@ -120,7 +120,7 @@
     DROPDOWN_ITEMS: '.dropdown-item',
     DROPDOWN_TOGGLE: '.dropdown-toggle'
   };
-  var OffsetMethod = {
+  let OffsetMethod = {
     OFFSET: 'offset',
     POSITION: 'position'
   };
@@ -130,11 +130,11 @@
    * ------------------------------------------------------------------------
    */
 
-  var ScrollSpy =
+  let ScrollSpy =
   /*#__PURE__*/
   function () {
     function ScrollSpy(element, config) {
-      var _this = this;
+      let _this = this;
 
       this._element = element;
       this._scrollElement = element.tagName === 'BODY' ? window : element;
@@ -153,29 +153,29 @@
     } // Getters
 
 
-    var _proto = ScrollSpy.prototype;
+    let _proto = ScrollSpy.prototype;
 
     // Public
     _proto.refresh = function refresh() {
-      var _this2 = this;
+      let _this2 = this;
 
-      var autoMethod = this._scrollElement === this._scrollElement.window ? OffsetMethod.OFFSET : OffsetMethod.POSITION;
-      var offsetMethod = this._config.method === 'auto' ? autoMethod : this._config.method;
-      var offsetBase = offsetMethod === OffsetMethod.POSITION ? this._getScrollTop() : 0;
+      let autoMethod = this._scrollElement === this._scrollElement.window ? OffsetMethod.OFFSET : OffsetMethod.POSITION;
+      let offsetMethod = this._config.method === 'auto' ? autoMethod : this._config.method;
+      let offsetBase = offsetMethod === OffsetMethod.POSITION ? this._getScrollTop() : 0;
       this._offsets = [];
       this._targets = [];
       this._scrollHeight = this._getScrollHeight();
-      var targets = [].slice.call(document.querySelectorAll(this._selector));
+      let targets = [].slice.call(document.querySelectorAll(this._selector));
       targets.map(function (element) {
-        var target;
-        var targetSelector = Util.getSelectorFromElement(element);
+        let target;
+        let targetSelector = Util.getSelectorFromElement(element);
 
         if (targetSelector) {
           target = document.querySelector(targetSelector);
         }
 
         if (target) {
-          var targetBCR = target.getBoundingClientRect();
+          let targetBCR = target.getBoundingClientRect();
 
           if (targetBCR.width || targetBCR.height) {
             // TODO (fat): remove sketch reliance on jQuery position/offset
@@ -213,7 +213,7 @@
       config = _objectSpread2({}, Default, {}, typeof config === 'object' && config ? config : {});
 
       if (typeof config.target !== 'string') {
-        var id = $(config.target).attr('id');
+        let id = $(config.target).attr('id');
 
         if (!id) {
           id = Util.getUID(NAME);
@@ -240,18 +240,18 @@
     };
 
     _proto._process = function _process() {
-      var scrollTop = this._getScrollTop() + this._config.offset;
+      let scrollTop = this._getScrollTop() + this._config.offset;
 
-      var scrollHeight = this._getScrollHeight();
+      let scrollHeight = this._getScrollHeight();
 
-      var maxScroll = this._config.offset + scrollHeight - this._getOffsetHeight();
+      let maxScroll = this._config.offset + scrollHeight - this._getOffsetHeight();
 
       if (this._scrollHeight !== scrollHeight) {
         this.refresh();
       }
 
       if (scrollTop >= maxScroll) {
-        var target = this._targets[this._targets.length - 1];
+        let target = this._targets[this._targets.length - 1];
 
         if (this._activeTarget !== target) {
           this._activate(target);
@@ -268,10 +268,10 @@
         return;
       }
 
-      var offsetLength = this._offsets.length;
+      let offsetLength = this._offsets.length;
 
-      for (var i = offsetLength; i--;) {
-        var isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
+      for (let i = offsetLength; i--;) {
+        let isActiveTarget = this._activeTarget !== this._targets[i] && scrollTop >= this._offsets[i] && (typeof this._offsets[i + 1] === 'undefined' || scrollTop < this._offsets[i + 1]);
 
         if (isActiveTarget) {
           this._activate(this._targets[i]);
@@ -284,11 +284,11 @@
 
       this._clear();
 
-      var queries = this._selector.split(',').map(function (selector) {
+      let queries = this._selector.split(',').map(function (selector) {
         return selector + "[data-target=\"" + target + "\"]," + selector + "[href=\"" + target + "\"]";
       });
 
-      var $link = $([].slice.call(document.querySelectorAll(queries.join(','))));
+      let $link = $([].slice.call(document.querySelectorAll(queries.join(','))));
 
       if ($link.hasClass(ClassName.DROPDOWN_ITEM)) {
         $link.closest(Selector.DROPDOWN).find(Selector.DROPDOWN_TOGGLE).addClass(ClassName.ACTIVE);
@@ -319,9 +319,9 @@
 
     ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY);
+        let data = $(this).data(DATA_KEY);
 
-        var _config = typeof config === 'object' && config;
+        let _config = typeof config === 'object' && config;
 
         if (!data) {
           data = new ScrollSpy(this, _config);
@@ -360,11 +360,11 @@
 
 
   $(window).on(Event.LOAD_DATA_API, function () {
-    var scrollSpys = [].slice.call(document.querySelectorAll(Selector.DATA_SPY));
-    var scrollSpysLength = scrollSpys.length;
+    let scrollSpys = [].slice.call(document.querySelectorAll(Selector.DATA_SPY));
+    let scrollSpysLength = scrollSpys.length;
 
-    for (var i = scrollSpysLength; i--;) {
-      var $spy = $(scrollSpys[i]);
+    for (let i = scrollSpysLength; i--;) {
+      let $spy = $(scrollSpys[i]);
 
       ScrollSpy._jQueryInterface.call($spy, $spy.data());
     }

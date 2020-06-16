@@ -23,9 +23,9 @@
    * ------------------------------------------------------------------------
    */
 
-  var TRANSITION_END = 'transitionend';
-  var MAX_UID = 1000000;
-  var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
+  let TRANSITION_END = 'transitionend';
+  let MAX_UID = 1000000;
+  let MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
 
   function toType(obj) {
     return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
@@ -46,9 +46,9 @@
   }
 
   function transitionEndEmulator(duration) {
-    var _this = this;
+    let _this = this;
 
-    var called = false;
+    let called = false;
     $(this).one(Util.TRANSITION_END, function () {
       called = true;
     });
@@ -71,7 +71,7 @@
    */
 
 
-  var Util = {
+  let Util = {
     TRANSITION_END: 'bsTransitionEnd',
     getUID: function getUID(prefix) {
       do {
@@ -82,10 +82,10 @@
       return prefix;
     },
     getSelectorFromElement: function getSelectorFromElement(element) {
-      var selector = element.getAttribute('data-target');
+      let selector = element.getAttribute('data-target');
 
       if (!selector || selector === '#') {
-        var hrefAttr = element.getAttribute('href');
+        let hrefAttr = element.getAttribute('href');
         selector = hrefAttr && hrefAttr !== '#' ? hrefAttr.trim() : '';
       }
 
@@ -101,10 +101,10 @@
       } // Get transition-duration of the element
 
 
-      var transitionDuration = $(element).css('transition-duration');
-      var transitionDelay = $(element).css('transition-delay');
-      var floatTransitionDuration = parseFloat(transitionDuration);
-      var floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
+      let transitionDuration = $(element).css('transition-duration');
+      let transitionDelay = $(element).css('transition-delay');
+      let floatTransitionDuration = parseFloat(transitionDuration);
+      let floatTransitionDelay = parseFloat(transitionDelay); // Return 0 if element or transition duration is not found
 
       if (!floatTransitionDuration && !floatTransitionDelay) {
         return 0;
@@ -129,11 +129,11 @@
       return (obj[0] || obj).nodeType;
     },
     typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
-      for (var property in configTypes) {
+      for (let property in configTypes) {
         if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
-          var expectedTypes = configTypes[property];
-          var value = config[property];
-          var valueType = value && Util.isElement(value) ? 'element' : toType(value);
+          let expectedTypes = configTypes[property];
+          let value = config[property];
+          let valueType = value && Util.isElement(value) ? 'element' : toType(value);
 
           if (!new RegExp(expectedTypes).test(valueType)) {
             throw new Error(componentName.toUpperCase() + ": " + ("Option \"" + property + "\" provided type \"" + valueType + "\" ") + ("but expected type \"" + expectedTypes + "\"."));
@@ -148,7 +148,7 @@
 
 
       if (typeof element.getRootNode === 'function') {
-        var root = element.getRootNode();
+        let root = element.getRootNode();
         return root instanceof ShadowRoot ? root : null;
       }
 
@@ -168,12 +168,12 @@
         throw new TypeError('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
       }
 
-      var version = $.fn.jquery.split(' ')[0].split('.');
-      var minMajor = 1;
-      var ltMajor = 2;
-      var minMinor = 9;
-      var minPatch = 1;
-      var maxMajor = 4;
+      let version = $.fn.jquery.split(' ')[0].split('.');
+      let minMajor = 1;
+      let ltMajor = 2;
+      let minMinor = 9;
+      let minPatch = 1;
+      let maxMajor = 4;
 
       if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
         throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');

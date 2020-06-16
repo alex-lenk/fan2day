@@ -13,8 +13,8 @@
   Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
       if ("value" in descriptor) descriptor.writable = true;
@@ -44,10 +44,10 @@
   }
 
   function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
+    let keys = Object.keys(object);
 
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
+      let symbols = Object.getOwnPropertySymbols(object);
       if (enumerableOnly) symbols = symbols.filter(function (sym) {
         return Object.getOwnPropertyDescriptor(object, sym).enumerable;
       });
@@ -58,8 +58,8 @@
   }
 
   function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
+    for (let i = 1; i < arguments.length; i++) {
+      let source = arguments[i] != null ? arguments[i] : {};
 
       if (i % 2) {
         ownKeys(Object(source), true).forEach(function (key) {
@@ -83,20 +83,20 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'carousel';
-  var VERSION = '4.4.1';
-  var DATA_KEY = 'bs.carousel';
-  var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
+  let NAME = 'carousel';
+  let VERSION = '4.4.1';
+  let DATA_KEY = 'bs.carousel';
+  let EVENT_KEY = "." + DATA_KEY;
+  let DATA_API_KEY = '.data-api';
+  let JQUERY_NO_CONFLICT = $.fn[NAME];
+  let ARROW_LEFT_KEYCODE = 37; // KeyboardEvent.which value for left arrow key
 
-  var ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
+  let ARROW_RIGHT_KEYCODE = 39; // KeyboardEvent.which value for right arrow key
 
-  var TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
+  let TOUCHEVENT_COMPAT_WAIT = 500; // Time for mouse compat events to fire after touch
 
-  var SWIPE_THRESHOLD = 40;
-  var Default = {
+  let SWIPE_THRESHOLD = 40;
+  let Default = {
     interval: 5000,
     keyboard: true,
     slide: false,
@@ -104,7 +104,7 @@
     wrap: true,
     touch: true
   };
-  var DefaultType = {
+  let DefaultType = {
     interval: '(number|boolean)',
     keyboard: 'boolean',
     slide: '(boolean|string)',
@@ -112,13 +112,13 @@
     wrap: 'boolean',
     touch: 'boolean'
   };
-  var Direction = {
+  let Direction = {
     NEXT: 'next',
     PREV: 'prev',
     LEFT: 'left',
     RIGHT: 'right'
   };
-  var Event = {
+  let Event = {
     SLIDE: "slide" + EVENT_KEY,
     SLID: "slid" + EVENT_KEY,
     KEYDOWN: "keydown" + EVENT_KEY,
@@ -133,7 +133,7 @@
     LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY,
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   };
-  var ClassName = {
+  let ClassName = {
     CAROUSEL: 'carousel',
     ACTIVE: 'active',
     SLIDE: 'slide',
@@ -144,7 +144,7 @@
     ITEM: 'carousel-item',
     POINTER_EVENT: 'pointer-event'
   };
-  var Selector = {
+  let Selector = {
     ACTIVE: '.active',
     ACTIVE_ITEM: '.active.carousel-item',
     ITEM: '.carousel-item',
@@ -154,7 +154,7 @@
     DATA_SLIDE: '[data-slide], [data-slide-to]',
     DATA_RIDE: '[data-ride="carousel"]'
   };
-  var PointerType = {
+  let PointerType = {
     TOUCH: 'touch',
     PEN: 'pen'
   };
@@ -164,7 +164,7 @@
    * ------------------------------------------------------------------------
    */
 
-  var Carousel =
+  let Carousel =
   /*#__PURE__*/
   function () {
     function Carousel(element, config) {
@@ -186,7 +186,7 @@
     } // Getters
 
 
-    var _proto = Carousel.prototype;
+    let _proto = Carousel.prototype;
 
     // Public
     _proto.next = function next() {
@@ -239,11 +239,11 @@
     };
 
     _proto.to = function to(index) {
-      var _this = this;
+      let _this = this;
 
       this._activeElement = this._element.querySelector(Selector.ACTIVE_ITEM);
 
-      var activeIndex = this._getItemIndex(this._activeElement);
+      let activeIndex = this._getItemIndex(this._activeElement);
 
       if (index > this._items.length - 1 || index < 0) {
         return;
@@ -262,7 +262,7 @@
         return;
       }
 
-      var direction = index > activeIndex ? Direction.NEXT : Direction.PREV;
+      let direction = index > activeIndex ? Direction.NEXT : Direction.PREV;
 
       this._slide(direction, this._items[index]);
     };
@@ -288,13 +288,13 @@
     };
 
     _proto._handleSwipe = function _handleSwipe() {
-      var absDeltax = Math.abs(this.touchDeltaX);
+      let absDeltax = Math.abs(this.touchDeltaX);
 
       if (absDeltax <= SWIPE_THRESHOLD) {
         return;
       }
 
-      var direction = absDeltax / this.touchDeltaX;
+      let direction = absDeltax / this.touchDeltaX;
       this.touchDeltaX = 0; // swipe left
 
       if (direction > 0) {
@@ -308,7 +308,7 @@
     };
 
     _proto._addEventListeners = function _addEventListeners() {
-      var _this2 = this;
+      let _this2 = this;
 
       if (this._config.keyboard) {
         $(this._element).on(Event.KEYDOWN, function (event) {
@@ -330,13 +330,13 @@
     };
 
     _proto._addTouchEventListeners = function _addTouchEventListeners() {
-      var _this3 = this;
+      let _this3 = this;
 
       if (!this._touchSupported) {
         return;
       }
 
-      var start = function start(event) {
+      let start = function start(event) {
         if (_this3._pointerEvent && PointerType[event.originalEvent.pointerType.toUpperCase()]) {
           _this3.touchStartX = event.originalEvent.clientX;
         } else if (!_this3._pointerEvent) {
@@ -344,7 +344,7 @@
         }
       };
 
-      var move = function move(event) {
+      let move = function move(event) {
         // ensure swiping with one touch and not pinching
         if (event.originalEvent.touches && event.originalEvent.touches.length > 1) {
           _this3.touchDeltaX = 0;
@@ -353,7 +353,7 @@
         }
       };
 
-      var end = function end(event) {
+      let end = function end(event) {
         if (_this3._pointerEvent && PointerType[event.originalEvent.pointerType.toUpperCase()]) {
           _this3.touchDeltaX = event.originalEvent.clientX - _this3.touchStartX;
         }
@@ -430,29 +430,29 @@
     };
 
     _proto._getItemByDirection = function _getItemByDirection(direction, activeElement) {
-      var isNextDirection = direction === Direction.NEXT;
-      var isPrevDirection = direction === Direction.PREV;
+      let isNextDirection = direction === Direction.NEXT;
+      let isPrevDirection = direction === Direction.PREV;
 
-      var activeIndex = this._getItemIndex(activeElement);
+      let activeIndex = this._getItemIndex(activeElement);
 
-      var lastItemIndex = this._items.length - 1;
-      var isGoingToWrap = isPrevDirection && activeIndex === 0 || isNextDirection && activeIndex === lastItemIndex;
+      let lastItemIndex = this._items.length - 1;
+      let isGoingToWrap = isPrevDirection && activeIndex === 0 || isNextDirection && activeIndex === lastItemIndex;
 
       if (isGoingToWrap && !this._config.wrap) {
         return activeElement;
       }
 
-      var delta = direction === Direction.PREV ? -1 : 1;
-      var itemIndex = (activeIndex + delta) % this._items.length;
+      let delta = direction === Direction.PREV ? -1 : 1;
+      let itemIndex = (activeIndex + delta) % this._items.length;
       return itemIndex === -1 ? this._items[this._items.length - 1] : this._items[itemIndex];
     };
 
     _proto._triggerSlideEvent = function _triggerSlideEvent(relatedTarget, eventDirectionName) {
-      var targetIndex = this._getItemIndex(relatedTarget);
+      let targetIndex = this._getItemIndex(relatedTarget);
 
-      var fromIndex = this._getItemIndex(this._element.querySelector(Selector.ACTIVE_ITEM));
+      let fromIndex = this._getItemIndex(this._element.querySelector(Selector.ACTIVE_ITEM));
 
-      var slideEvent = $.Event(Event.SLIDE, {
+      let slideEvent = $.Event(Event.SLIDE, {
         relatedTarget: relatedTarget,
         direction: eventDirectionName,
         from: fromIndex,
@@ -464,10 +464,10 @@
 
     _proto._setActiveIndicatorElement = function _setActiveIndicatorElement(element) {
       if (this._indicatorsElement) {
-        var indicators = [].slice.call(this._indicatorsElement.querySelectorAll(Selector.ACTIVE));
+        let indicators = [].slice.call(this._indicatorsElement.querySelectorAll(Selector.ACTIVE));
         $(indicators).removeClass(ClassName.ACTIVE);
 
-        var nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
+        let nextIndicator = this._indicatorsElement.children[this._getItemIndex(element)];
 
         if (nextIndicator) {
           $(nextIndicator).addClass(ClassName.ACTIVE);
@@ -476,20 +476,20 @@
     };
 
     _proto._slide = function _slide(direction, element) {
-      var _this4 = this;
+      let _this4 = this;
 
-      var activeElement = this._element.querySelector(Selector.ACTIVE_ITEM);
+      let activeElement = this._element.querySelector(Selector.ACTIVE_ITEM);
 
-      var activeElementIndex = this._getItemIndex(activeElement);
+      let activeElementIndex = this._getItemIndex(activeElement);
 
-      var nextElement = element || activeElement && this._getItemByDirection(direction, activeElement);
+      let nextElement = element || activeElement && this._getItemByDirection(direction, activeElement);
 
-      var nextElementIndex = this._getItemIndex(nextElement);
+      let nextElementIndex = this._getItemIndex(nextElement);
 
-      var isCycling = Boolean(this._interval);
-      var directionalClassName;
-      var orderClassName;
-      var eventDirectionName;
+      let isCycling = Boolean(this._interval);
+      let directionalClassName;
+      let orderClassName;
+      let eventDirectionName;
 
       if (direction === Direction.NEXT) {
         directionalClassName = ClassName.LEFT;
@@ -506,7 +506,7 @@
         return;
       }
 
-      var slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName);
+      let slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName);
 
       if (slideEvent.isDefaultPrevented()) {
         return;
@@ -525,7 +525,7 @@
 
       this._setActiveIndicatorElement(nextElement);
 
-      var slidEvent = $.Event(Event.SLID, {
+      let slidEvent = $.Event(Event.SLID, {
         relatedTarget: nextElement,
         direction: eventDirectionName,
         from: activeElementIndex,
@@ -537,7 +537,7 @@
         Util.reflow(nextElement);
         $(activeElement).addClass(directionalClassName);
         $(nextElement).addClass(directionalClassName);
-        var nextElementInterval = parseInt(nextElement.getAttribute('data-interval'), 10);
+        let nextElementInterval = parseInt(nextElement.getAttribute('data-interval'), 10);
 
         if (nextElementInterval) {
           this._config.defaultInterval = this._config.defaultInterval || this._config.interval;
@@ -546,7 +546,7 @@
           this._config.interval = this._config.defaultInterval || this._config.interval;
         }
 
-        var transitionDuration = Util.getTransitionDurationFromElement(activeElement);
+        let transitionDuration = Util.getTransitionDurationFromElement(activeElement);
         $(activeElement).one(Util.TRANSITION_END, function () {
           $(nextElement).removeClass(directionalClassName + " " + orderClassName).addClass(ClassName.ACTIVE);
           $(activeElement).removeClass(ClassName.ACTIVE + " " + orderClassName + " " + directionalClassName);
@@ -570,15 +570,15 @@
 
     Carousel._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY);
+        let data = $(this).data(DATA_KEY);
 
-        var _config = _objectSpread2({}, Default, {}, $(this).data());
+        let _config = _objectSpread2({}, Default, {}, $(this).data());
 
         if (typeof config === 'object') {
           _config = _objectSpread2({}, _config, {}, config);
         }
 
-        var action = typeof config === 'string' ? config : _config.slide;
+        let action = typeof config === 'string' ? config : _config.slide;
 
         if (!data) {
           data = new Carousel(this, _config);
@@ -601,21 +601,21 @@
     };
 
     Carousel._dataApiClickHandler = function _dataApiClickHandler(event) {
-      var selector = Util.getSelectorFromElement(this);
+      let selector = Util.getSelectorFromElement(this);
 
       if (!selector) {
         return;
       }
 
-      var target = $(selector)[0];
+      let target = $(selector)[0];
 
       if (!target || !$(target).hasClass(ClassName.CAROUSEL)) {
         return;
       }
 
-      var config = _objectSpread2({}, $(target).data(), {}, $(this).data());
+      let config = _objectSpread2({}, $(target).data(), {}, $(this).data());
 
-      var slideIndex = this.getAttribute('data-slide-to');
+      let slideIndex = this.getAttribute('data-slide-to');
 
       if (slideIndex) {
         config.interval = false;
@@ -653,10 +653,10 @@
 
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_SLIDE, Carousel._dataApiClickHandler);
   $(window).on(Event.LOAD_DATA_API, function () {
-    var carousels = [].slice.call(document.querySelectorAll(Selector.DATA_RIDE));
+    let carousels = [].slice.call(document.querySelectorAll(Selector.DATA_RIDE));
 
-    for (var i = 0, len = carousels.length; i < len; i++) {
-      var $carousel = $(carousels[i]);
+    for (let i = 0, len = carousels.length; i < len; i++) {
+      let $carousel = $(carousels[i]);
 
       Carousel._jQueryInterface.call($carousel, $carousel.data());
     }

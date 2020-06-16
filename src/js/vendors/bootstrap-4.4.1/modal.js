@@ -13,8 +13,8 @@
   Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
       if ("value" in descriptor) descriptor.writable = true;
@@ -44,10 +44,10 @@
   }
 
   function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
+    let keys = Object.keys(object);
 
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
+      let symbols = Object.getOwnPropertySymbols(object);
       if (enumerableOnly) symbols = symbols.filter(function (sym) {
         return Object.getOwnPropertyDescriptor(object, sym).enumerable;
       });
@@ -58,8 +58,8 @@
   }
 
   function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
+    for (let i = 1; i < arguments.length; i++) {
+      let source = arguments[i] != null ? arguments[i] : {};
 
       if (i % 2) {
         ownKeys(Object(source), true).forEach(function (key) {
@@ -83,27 +83,27 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'modal';
-  var VERSION = '4.4.1';
-  var DATA_KEY = 'bs.modal';
-  var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
+  let NAME = 'modal';
+  let VERSION = '4.4.1';
+  let DATA_KEY = 'bs.modal';
+  let EVENT_KEY = "." + DATA_KEY;
+  let DATA_API_KEY = '.data-api';
+  let JQUERY_NO_CONFLICT = $.fn[NAME];
+  let ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
 
-  var Default = {
+  let Default = {
     backdrop: true,
     keyboard: true,
     focus: true,
     show: true
   };
-  var DefaultType = {
+  let DefaultType = {
     backdrop: '(boolean|string)',
     keyboard: 'boolean',
     focus: 'boolean',
     show: 'boolean'
   };
-  var Event = {
+  let Event = {
     HIDE: "hide" + EVENT_KEY,
     HIDE_PREVENTED: "hidePrevented" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
@@ -117,7 +117,7 @@
     MOUSEDOWN_DISMISS: "mousedown.dismiss" + EVENT_KEY,
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   };
-  var ClassName = {
+  let ClassName = {
     SCROLLABLE: 'modal-dialog-scrollable',
     SCROLLBAR_MEASURER: 'modal-scrollbar-measure',
     BACKDROP: 'modal-backdrop',
@@ -126,7 +126,7 @@
     SHOW: 'show',
     STATIC: 'modal-static'
   };
-  var Selector = {
+  let Selector = {
     DIALOG: '.modal-dialog',
     MODAL_BODY: '.modal-body',
     DATA_TOGGLE: '[data-toggle="modal"]',
@@ -140,7 +140,7 @@
    * ------------------------------------------------------------------------
    */
 
-  var Modal =
+  let Modal =
   /*#__PURE__*/
   function () {
     function Modal(element, config) {
@@ -156,7 +156,7 @@
     } // Getters
 
 
-    var _proto = Modal.prototype;
+    let _proto = Modal.prototype;
 
     // Public
     _proto.toggle = function toggle(relatedTarget) {
@@ -164,7 +164,7 @@
     };
 
     _proto.show = function show(relatedTarget) {
-      var _this = this;
+      let _this = this;
 
       if (this._isShown || this._isTransitioning) {
         return;
@@ -174,7 +174,7 @@
         this._isTransitioning = true;
       }
 
-      var showEvent = $.Event(Event.SHOW, {
+      let showEvent = $.Event(Event.SHOW, {
         relatedTarget: relatedTarget
       });
       $(this._element).trigger(showEvent);
@@ -212,7 +212,7 @@
     };
 
     _proto.hide = function hide(event) {
-      var _this2 = this;
+      let _this2 = this;
 
       if (event) {
         event.preventDefault();
@@ -222,7 +222,7 @@
         return;
       }
 
-      var hideEvent = $.Event(Event.HIDE);
+      let hideEvent = $.Event(Event.HIDE);
       $(this._element).trigger(hideEvent);
 
       if (!this._isShown || hideEvent.isDefaultPrevented()) {
@@ -230,7 +230,7 @@
       }
 
       this._isShown = false;
-      var transition = $(this._element).hasClass(ClassName.FADE);
+      let transition = $(this._element).hasClass(ClassName.FADE);
 
       if (transition) {
         this._isTransitioning = true;
@@ -246,7 +246,7 @@
       $(this._dialog).off(Event.MOUSEDOWN_DISMISS);
 
       if (transition) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+        let transitionDuration = Util.getTransitionDurationFromElement(this._element);
         $(this._element).one(Util.TRANSITION_END, function (event) {
           return _this2._hideModal(event);
         }).emulateTransitionEnd(transitionDuration);
@@ -290,10 +290,10 @@
     };
 
     _proto._triggerBackdropTransition = function _triggerBackdropTransition() {
-      var _this3 = this;
+      let _this3 = this;
 
       if (this._config.backdrop === 'static') {
-        var hideEventPrevented = $.Event(Event.HIDE_PREVENTED);
+        let hideEventPrevented = $.Event(Event.HIDE_PREVENTED);
         $(this._element).trigger(hideEventPrevented);
 
         if (hideEventPrevented.defaultPrevented) {
@@ -302,7 +302,7 @@
 
         this._element.classList.add(ClassName.STATIC);
 
-        var modalTransitionDuration = Util.getTransitionDurationFromElement(this._element);
+        let modalTransitionDuration = Util.getTransitionDurationFromElement(this._element);
         $(this._element).one(Util.TRANSITION_END, function () {
           _this3._element.classList.remove(ClassName.STATIC);
         }).emulateTransitionEnd(modalTransitionDuration);
@@ -314,10 +314,10 @@
     };
 
     _proto._showElement = function _showElement(relatedTarget) {
-      var _this4 = this;
+      let _this4 = this;
 
-      var transition = $(this._element).hasClass(ClassName.FADE);
-      var modalBody = this._dialog ? this._dialog.querySelector(Selector.MODAL_BODY) : null;
+      let transition = $(this._element).hasClass(ClassName.FADE);
+      let modalBody = this._dialog ? this._dialog.querySelector(Selector.MODAL_BODY) : null;
 
       if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
         // Don't move modal's DOM position
@@ -346,11 +346,11 @@
         this._enforceFocus();
       }
 
-      var shownEvent = $.Event(Event.SHOWN, {
+      let shownEvent = $.Event(Event.SHOWN, {
         relatedTarget: relatedTarget
       });
 
-      var transitionComplete = function transitionComplete() {
+      let transitionComplete = function transitionComplete() {
         if (_this4._config.focus) {
           _this4._element.focus();
         }
@@ -360,7 +360,7 @@
       };
 
       if (transition) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._dialog);
+        let transitionDuration = Util.getTransitionDurationFromElement(this._dialog);
         $(this._dialog).one(Util.TRANSITION_END, transitionComplete).emulateTransitionEnd(transitionDuration);
       } else {
         transitionComplete();
@@ -368,7 +368,7 @@
     };
 
     _proto._enforceFocus = function _enforceFocus() {
-      var _this5 = this;
+      let _this5 = this;
 
       $(document).off(Event.FOCUSIN) // Guard against infinite focus loop
       .on(Event.FOCUSIN, function (event) {
@@ -379,7 +379,7 @@
     };
 
     _proto._setEscapeEvent = function _setEscapeEvent() {
-      var _this6 = this;
+      let _this6 = this;
 
       if (this._isShown && this._config.keyboard) {
         $(this._element).on(Event.KEYDOWN_DISMISS, function (event) {
@@ -393,7 +393,7 @@
     };
 
     _proto._setResizeEvent = function _setResizeEvent() {
-      var _this7 = this;
+      let _this7 = this;
 
       if (this._isShown) {
         $(window).on(Event.RESIZE, function (event) {
@@ -405,7 +405,7 @@
     };
 
     _proto._hideModal = function _hideModal() {
-      var _this8 = this;
+      let _this8 = this;
 
       this._element.style.display = 'none';
 
@@ -434,9 +434,9 @@
     };
 
     _proto._showBackdrop = function _showBackdrop(callback) {
-      var _this9 = this;
+      let _this9 = this;
 
-      var animate = $(this._element).hasClass(ClassName.FADE) ? ClassName.FADE : '';
+      let animate = $(this._element).hasClass(ClassName.FADE) ? ClassName.FADE : '';
 
       if (this._isShown && this._config.backdrop) {
         this._backdrop = document.createElement('div');
@@ -475,12 +475,12 @@
           return;
         }
 
-        var backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
+        let backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
         $(this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
       } else if (!this._isShown && this._backdrop) {
         $(this._backdrop).removeClass(ClassName.SHOW);
 
-        var callbackRemove = function callbackRemove() {
+        let callbackRemove = function callbackRemove() {
           _this9._removeBackdrop();
 
           if (callback) {
@@ -489,7 +489,7 @@
         };
 
         if ($(this._element).hasClass(ClassName.FADE)) {
-          var _backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
+          let _backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
 
           $(this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
         } else {
@@ -505,7 +505,7 @@
     ;
 
     _proto._adjustDialog = function _adjustDialog() {
-      var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
+      let isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
 
       if (!this._isBodyOverflowing && isModalOverflowing) {
         this._element.style.paddingLeft = this._scrollbarWidth + "px";
@@ -522,34 +522,34 @@
     };
 
     _proto._checkScrollbar = function _checkScrollbar() {
-      var rect = document.body.getBoundingClientRect();
+      let rect = document.body.getBoundingClientRect();
       this._isBodyOverflowing = rect.left + rect.right < window.innerWidth;
       this._scrollbarWidth = this._getScrollbarWidth();
     };
 
     _proto._setScrollbar = function _setScrollbar() {
-      var _this10 = this;
+      let _this10 = this;
 
       if (this._isBodyOverflowing) {
         // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
         //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
-        var fixedContent = [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT));
-        var stickyContent = [].slice.call(document.querySelectorAll(Selector.STICKY_CONTENT)); // Adjust fixed content padding
+        let fixedContent = [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT));
+        let stickyContent = [].slice.call(document.querySelectorAll(Selector.STICKY_CONTENT)); // Adjust fixed content padding
 
         $(fixedContent).each(function (index, element) {
-          var actualPadding = element.style.paddingRight;
-          var calculatedPadding = $(element).css('padding-right');
+          let actualPadding = element.style.paddingRight;
+          let calculatedPadding = $(element).css('padding-right');
           $(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this10._scrollbarWidth + "px");
         }); // Adjust sticky content margin
 
         $(stickyContent).each(function (index, element) {
-          var actualMargin = element.style.marginRight;
-          var calculatedMargin = $(element).css('margin-right');
+          let actualMargin = element.style.marginRight;
+          let calculatedMargin = $(element).css('margin-right');
           $(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this10._scrollbarWidth + "px");
         }); // Adjust body padding
 
-        var actualPadding = document.body.style.paddingRight;
-        var calculatedPadding = $(document.body).css('padding-right');
+        let actualPadding = document.body.style.paddingRight;
+        let calculatedPadding = $(document.body).css('padding-right');
         $(document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
       }
 
@@ -558,33 +558,33 @@
 
     _proto._resetScrollbar = function _resetScrollbar() {
       // Restore fixed content padding
-      var fixedContent = [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT));
+      let fixedContent = [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT));
       $(fixedContent).each(function (index, element) {
-        var padding = $(element).data('padding-right');
+        let padding = $(element).data('padding-right');
         $(element).removeData('padding-right');
         element.style.paddingRight = padding ? padding : '';
       }); // Restore sticky content
 
-      var elements = [].slice.call(document.querySelectorAll("" + Selector.STICKY_CONTENT));
+      let elements = [].slice.call(document.querySelectorAll("" + Selector.STICKY_CONTENT));
       $(elements).each(function (index, element) {
-        var margin = $(element).data('margin-right');
+        let margin = $(element).data('margin-right');
 
         if (typeof margin !== 'undefined') {
           $(element).css('margin-right', margin).removeData('margin-right');
         }
       }); // Restore body padding
 
-      var padding = $(document.body).data('padding-right');
+      let padding = $(document.body).data('padding-right');
       $(document.body).removeData('padding-right');
       document.body.style.paddingRight = padding ? padding : '';
     };
 
     _proto._getScrollbarWidth = function _getScrollbarWidth() {
       // thx d.walsh
-      var scrollDiv = document.createElement('div');
+      let scrollDiv = document.createElement('div');
       scrollDiv.className = ClassName.SCROLLBAR_MEASURER;
       document.body.appendChild(scrollDiv);
-      var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
+      let scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
       document.body.removeChild(scrollDiv);
       return scrollbarWidth;
     } // Static
@@ -592,9 +592,9 @@
 
     Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY);
+        let data = $(this).data(DATA_KEY);
 
-        var _config = _objectSpread2({}, Default, {}, $(this).data(), {}, typeof config === 'object' && config ? config : {});
+        let _config = _objectSpread2({}, Default, {}, $(this).data(), {}, typeof config === 'object' && config ? config : {});
 
         if (!data) {
           data = new Modal(this, _config);
@@ -635,22 +635,22 @@
 
 
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
-    var _this11 = this;
+    let _this11 = this;
 
-    var target;
-    var selector = Util.getSelectorFromElement(this);
+    let target;
+    let selector = Util.getSelectorFromElement(this);
 
     if (selector) {
       target = document.querySelector(selector);
     }
 
-    var config = $(target).data(DATA_KEY) ? 'toggle' : _objectSpread2({}, $(target).data(), {}, $(this).data());
+    let config = $(target).data(DATA_KEY) ? 'toggle' : _objectSpread2({}, $(target).data(), {}, $(this).data());
 
     if (this.tagName === 'A' || this.tagName === 'AREA') {
       event.preventDefault();
     }
 
-    var $target = $(target).one(Event.SHOW, function (showEvent) {
+    let $target = $(target).one(Event.SHOW, function (showEvent) {
       if (showEvent.isDefaultPrevented()) {
         // Only register focus restorer if modal will actually get shown
         return;

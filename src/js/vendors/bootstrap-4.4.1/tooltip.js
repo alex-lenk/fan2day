@@ -14,8 +14,8 @@
   Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
       if ("value" in descriptor) descriptor.writable = true;
@@ -45,10 +45,10 @@
   }
 
   function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
+    let keys = Object.keys(object);
 
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
+      let symbols = Object.getOwnPropertySymbols(object);
       if (enumerableOnly) symbols = symbols.filter(function (sym) {
         return Object.getOwnPropertyDescriptor(object, sym).enumerable;
       });
@@ -59,8 +59,8 @@
   }
 
   function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
+    for (let i = 1; i < arguments.length; i++) {
+      let source = arguments[i] != null ? arguments[i] : {};
 
       if (i % 2) {
         ownKeys(Object(source), true).forEach(function (key) {
@@ -84,9 +84,9 @@
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
    * --------------------------------------------------------------------------
    */
-  var uriAttrs = ['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href'];
-  var ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
-  var DefaultWhitelist = {
+  let uriAttrs = ['background', 'cite', 'href', 'itemtype', 'longdesc', 'poster', 'src', 'xlink:href'];
+  let ARIA_ATTRIBUTE_PATTERN = /^aria-[\w-]*$/i;
+  let DefaultWhitelist = {
     // Global attributes allowed on any supplied element below.
     '*': ['class', 'dir', 'id', 'lang', 'role', ARIA_ATTRIBUTE_PATTERN],
     a: ['target', 'href', 'title', 'rel'],
@@ -125,17 +125,17 @@
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
-  var SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
+  let SAFE_URL_PATTERN = /^(?:(?:https?|mailto|ftp|tel|file):|[^&:/?#]*(?:[/?#]|$))/gi;
   /**
    * A pattern that matches safe data URLs. Only matches image, video and audio types.
    *
    * Shoutout to Angular 7 https://github.com/angular/angular/blob/7.2.4/packages/core/src/sanitization/url_sanitizer.ts
    */
 
-  var DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i;
+  let DATA_URL_PATTERN = /^data:(?:image\/(?:bmp|gif|jpeg|jpg|png|tiff|webp)|video\/(?:mpeg|mp4|ogg|webm)|audio\/(?:mp3|oga|ogg|opus));base64,[a-z0-9+/]+=*$/i;
 
   function allowedAttribute(attr, allowedAttributeList) {
-    var attrName = attr.nodeName.toLowerCase();
+    let attrName = attr.nodeName.toLowerCase();
 
     if (allowedAttributeList.indexOf(attrName) !== -1) {
       if (uriAttrs.indexOf(attrName) !== -1) {
@@ -145,11 +145,11 @@
       return true;
     }
 
-    var regExp = allowedAttributeList.filter(function (attrRegex) {
+    let regExp = allowedAttributeList.filter(function (attrRegex) {
       return attrRegex instanceof RegExp;
     }); // Check if a regular expression validates the attribute.
 
-    for (var i = 0, l = regExp.length; i < l; i++) {
+    for (let i = 0, l = regExp.length; i < l; i++) {
       if (attrName.match(regExp[i])) {
         return true;
       }
@@ -167,22 +167,22 @@
       return sanitizeFn(unsafeHtml);
     }
 
-    var domParser = new window.DOMParser();
-    var createdDocument = domParser.parseFromString(unsafeHtml, 'text/html');
-    var whitelistKeys = Object.keys(whiteList);
-    var elements = [].slice.call(createdDocument.body.querySelectorAll('*'));
+    let domParser = new window.DOMParser();
+    let createdDocument = domParser.parseFromString(unsafeHtml, 'text/html');
+    let whitelistKeys = Object.keys(whiteList);
+    let elements = [].slice.call(createdDocument.body.querySelectorAll('*'));
 
-    var _loop = function _loop(i, len) {
-      var el = elements[i];
-      var elName = el.nodeName.toLowerCase();
+    let _loop = function _loop(i, len) {
+      let el = elements[i];
+      let elName = el.nodeName.toLowerCase();
 
       if (whitelistKeys.indexOf(el.nodeName.toLowerCase()) === -1) {
         el.parentNode.removeChild(el);
         return "continue";
       }
 
-      var attributeList = [].slice.call(el.attributes);
-      var whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || []);
+      let attributeList = [].slice.call(el.attributes);
+      let whitelistedAttributes = [].concat(whiteList['*'] || [], whiteList[elName] || []);
       attributeList.forEach(function (attr) {
         if (!allowedAttribute(attr, whitelistedAttributes)) {
           el.removeAttribute(attr.nodeName);
@@ -190,8 +190,8 @@
       });
     };
 
-    for (var i = 0, len = elements.length; i < len; i++) {
-      var _ret = _loop(i);
+    for (let i = 0, len = elements.length; i < len; i++) {
+      let _ret = _loop(i);
 
       if (_ret === "continue") continue;
     }
@@ -205,15 +205,15 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'tooltip';
-  var VERSION = '4.4.1';
-  var DATA_KEY = 'bs.tooltip';
-  var EVENT_KEY = "." + DATA_KEY;
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var CLASS_PREFIX = 'bs-tooltip';
-  var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
-  var DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn'];
-  var DefaultType = {
+  let NAME = 'tooltip';
+  let VERSION = '4.4.1';
+  let DATA_KEY = 'bs.tooltip';
+  let EVENT_KEY = "." + DATA_KEY;
+  let JQUERY_NO_CONFLICT = $.fn[NAME];
+  let CLASS_PREFIX = 'bs-tooltip';
+  let BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
+  let DISALLOWED_ATTRIBUTES = ['sanitize', 'whiteList', 'sanitizeFn'];
+  let DefaultType = {
     animation: 'boolean',
     template: 'string',
     title: '(string|element|function)',
@@ -231,14 +231,14 @@
     whiteList: 'object',
     popperConfig: '(null|object)'
   };
-  var AttachmentMap = {
+  let AttachmentMap = {
     AUTO: 'auto',
     TOP: 'top',
     RIGHT: 'right',
     BOTTOM: 'bottom',
     LEFT: 'left'
   };
-  var Default = {
+  let Default = {
     animation: true,
     template: '<div class="tooltip" role="tooltip">' + '<div class="arrow"></div>' + '<div class="tooltip-inner"></div></div>',
     trigger: 'hover focus',
@@ -256,11 +256,11 @@
     whiteList: DefaultWhitelist,
     popperConfig: null
   };
-  var HoverState = {
+  let HoverState = {
     SHOW: 'show',
     OUT: 'out'
   };
-  var Event = {
+  let Event = {
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
     SHOW: "show" + EVENT_KEY,
@@ -272,16 +272,16 @@
     MOUSEENTER: "mouseenter" + EVENT_KEY,
     MOUSELEAVE: "mouseleave" + EVENT_KEY
   };
-  var ClassName = {
+  let ClassName = {
     FADE: 'fade',
     SHOW: 'show'
   };
-  var Selector = {
+  let Selector = {
     TOOLTIP: '.tooltip',
     TOOLTIP_INNER: '.tooltip-inner',
     ARROW: '.arrow'
   };
-  var Trigger = {
+  let Trigger = {
     HOVER: 'hover',
     FOCUS: 'focus',
     CLICK: 'click',
@@ -293,7 +293,7 @@
    * ------------------------------------------------------------------------
    */
 
-  var Tooltip =
+  let Tooltip =
   /*#__PURE__*/
   function () {
     function Tooltip(element, config) {
@@ -316,7 +316,7 @@
     } // Getters
 
 
-    var _proto = Tooltip.prototype;
+    let _proto = Tooltip.prototype;
 
     // Public
     _proto.enable = function enable() {
@@ -337,8 +337,8 @@
       }
 
       if (event) {
-        var dataKey = this.constructor.DATA_KEY;
-        var context = $(event.currentTarget).data(dataKey);
+        let dataKey = this.constructor.DATA_KEY;
+        let context = $(event.currentTarget).data(dataKey);
 
         if (!context) {
           context = new this.constructor(event.currentTarget, this._getDelegateConfig());
@@ -389,25 +389,25 @@
     };
 
     _proto.show = function show() {
-      var _this = this;
+      let _this = this;
 
       if ($(this.element).css('display') === 'none') {
         throw new Error('Please use show on visible elements');
       }
 
-      var showEvent = $.Event(this.constructor.Event.SHOW);
+      let showEvent = $.Event(this.constructor.Event.SHOW);
 
       if (this.isWithContent() && this._isEnabled) {
         $(this.element).trigger(showEvent);
-        var shadowRoot = Util.findShadowRoot(this.element);
-        var isInTheDom = $.contains(shadowRoot !== null ? shadowRoot : this.element.ownerDocument.documentElement, this.element);
+        let shadowRoot = Util.findShadowRoot(this.element);
+        let isInTheDom = $.contains(shadowRoot !== null ? shadowRoot : this.element.ownerDocument.documentElement, this.element);
 
         if (showEvent.isDefaultPrevented() || !isInTheDom) {
           return;
         }
 
-        var tip = this.getTipElement();
-        var tipId = Util.getUID(this.constructor.NAME);
+        let tip = this.getTipElement();
+        let tipId = Util.getUID(this.constructor.NAME);
         tip.setAttribute('id', tipId);
         this.element.setAttribute('aria-describedby', tipId);
         this.setContent();
@@ -416,13 +416,13 @@
           $(tip).addClass(ClassName.FADE);
         }
 
-        var placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
+        let placement = typeof this.config.placement === 'function' ? this.config.placement.call(this, tip, this.element) : this.config.placement;
 
-        var attachment = this._getAttachment(placement);
+        let attachment = this._getAttachment(placement);
 
         this.addAttachmentClass(attachment);
 
-        var container = this._getContainer();
+        let container = this._getContainer();
 
         $(tip).data(this.constructor.DATA_KEY, this);
 
@@ -441,12 +441,12 @@
           $(document.body).children().on('mouseover', null, $.noop);
         }
 
-        var complete = function complete() {
+        let complete = function complete() {
           if (_this.config.animation) {
             _this._fixTransition();
           }
 
-          var prevHoverState = _this._hoverState;
+          let prevHoverState = _this._hoverState;
           _this._hoverState = null;
           $(_this.element).trigger(_this.constructor.Event.SHOWN);
 
@@ -456,7 +456,7 @@
         };
 
         if ($(this.tip).hasClass(ClassName.FADE)) {
-          var transitionDuration = Util.getTransitionDurationFromElement(this.tip);
+          let transitionDuration = Util.getTransitionDurationFromElement(this.tip);
           $(this.tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
         } else {
           complete();
@@ -465,12 +465,12 @@
     };
 
     _proto.hide = function hide(callback) {
-      var _this2 = this;
+      let _this2 = this;
 
-      var tip = this.getTipElement();
-      var hideEvent = $.Event(this.constructor.Event.HIDE);
+      let tip = this.getTipElement();
+      let hideEvent = $.Event(this.constructor.Event.HIDE);
 
-      var complete = function complete() {
+      let complete = function complete() {
         if (_this2._hoverState !== HoverState.SHOW && tip.parentNode) {
           tip.parentNode.removeChild(tip);
         }
@@ -508,7 +508,7 @@
       this._activeTrigger[Trigger.HOVER] = false;
 
       if ($(this.tip).hasClass(ClassName.FADE)) {
-        var transitionDuration = Util.getTransitionDurationFromElement(tip);
+        let transitionDuration = Util.getTransitionDurationFromElement(tip);
         $(tip).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
         complete();
@@ -538,7 +538,7 @@
     };
 
     _proto.setContent = function setContent() {
-      var tip = this.getTipElement();
+      let tip = this.getTipElement();
       this.setElementContent($(tip.querySelectorAll(Selector.TOOLTIP_INNER)), this.getTitle());
       $(tip).removeClass(ClassName.FADE + " " + ClassName.SHOW);
     };
@@ -569,7 +569,7 @@
     };
 
     _proto.getTitle = function getTitle() {
-      var title = this.element.getAttribute('data-original-title');
+      let title = this.element.getAttribute('data-original-title');
 
       if (!title) {
         title = typeof this.config.title === 'function' ? this.config.title.call(this.element) : this.config.title;
@@ -580,9 +580,9 @@
     ;
 
     _proto._getPopperConfig = function _getPopperConfig(attachment) {
-      var _this3 = this;
+      let _this3 = this;
 
-      var defaultBsConfig = {
+      let defaultBsConfig = {
         placement: attachment,
         modifiers: {
           offset: this._getOffset(),
@@ -609,9 +609,9 @@
     };
 
     _proto._getOffset = function _getOffset() {
-      var _this4 = this;
+      let _this4 = this;
 
-      var offset = {};
+      let offset = {};
 
       if (typeof this.config.offset === 'function') {
         offset.fn = function (data) {
@@ -642,17 +642,17 @@
     };
 
     _proto._setListeners = function _setListeners() {
-      var _this5 = this;
+      let _this5 = this;
 
-      var triggers = this.config.trigger.split(' ');
+      let triggers = this.config.trigger.split(' ');
       triggers.forEach(function (trigger) {
         if (trigger === 'click') {
           $(_this5.element).on(_this5.constructor.Event.CLICK, _this5.config.selector, function (event) {
             return _this5.toggle(event);
           });
         } else if (trigger !== Trigger.MANUAL) {
-          var eventIn = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSEENTER : _this5.constructor.Event.FOCUSIN;
-          var eventOut = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSELEAVE : _this5.constructor.Event.FOCUSOUT;
+          let eventIn = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSEENTER : _this5.constructor.Event.FOCUSIN;
+          let eventOut = trigger === Trigger.HOVER ? _this5.constructor.Event.MOUSELEAVE : _this5.constructor.Event.FOCUSOUT;
           $(_this5.element).on(eventIn, _this5.config.selector, function (event) {
             return _this5._enter(event);
           }).on(eventOut, _this5.config.selector, function (event) {
@@ -680,7 +680,7 @@
     };
 
     _proto._fixTitle = function _fixTitle() {
-      var titleType = typeof this.element.getAttribute('data-original-title');
+      let titleType = typeof this.element.getAttribute('data-original-title');
 
       if (this.element.getAttribute('title') || titleType !== 'string') {
         this.element.setAttribute('data-original-title', this.element.getAttribute('title') || '');
@@ -689,7 +689,7 @@
     };
 
     _proto._enter = function _enter(event, context) {
-      var dataKey = this.constructor.DATA_KEY;
+      let dataKey = this.constructor.DATA_KEY;
       context = context || $(event.currentTarget).data(dataKey);
 
       if (!context) {
@@ -722,7 +722,7 @@
     };
 
     _proto._leave = function _leave(event, context) {
-      var dataKey = this.constructor.DATA_KEY;
+      let dataKey = this.constructor.DATA_KEY;
       context = context || $(event.currentTarget).data(dataKey);
 
       if (!context) {
@@ -754,7 +754,7 @@
     };
 
     _proto._isWithActiveTrigger = function _isWithActiveTrigger() {
-      for (var trigger in this._activeTrigger) {
+      for (let trigger in this._activeTrigger) {
         if (this._activeTrigger[trigger]) {
           return true;
         }
@@ -764,7 +764,7 @@
     };
 
     _proto._getConfig = function _getConfig(config) {
-      var dataAttributes = $(this.element).data();
+      let dataAttributes = $(this.element).data();
       Object.keys(dataAttributes).forEach(function (dataAttr) {
         if (DISALLOWED_ATTRIBUTES.indexOf(dataAttr) !== -1) {
           delete dataAttributes[dataAttr];
@@ -797,10 +797,10 @@
     };
 
     _proto._getDelegateConfig = function _getDelegateConfig() {
-      var config = {};
+      let config = {};
 
       if (this.config) {
-        for (var key in this.config) {
+        for (let key in this.config) {
           if (this.constructor.Default[key] !== this.config[key]) {
             config[key] = this.config[key];
           }
@@ -811,8 +811,8 @@
     };
 
     _proto._cleanTipClass = function _cleanTipClass() {
-      var $tip = $(this.getTipElement());
-      var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
+      let $tip = $(this.getTipElement());
+      let tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
 
       if (tabClass !== null && tabClass.length) {
         $tip.removeClass(tabClass.join(''));
@@ -820,7 +820,7 @@
     };
 
     _proto._handlePopperPlacementChange = function _handlePopperPlacementChange(popperData) {
-      var popperInstance = popperData.instance;
+      let popperInstance = popperData.instance;
       this.tip = popperInstance.popper;
 
       this._cleanTipClass();
@@ -829,8 +829,8 @@
     };
 
     _proto._fixTransition = function _fixTransition() {
-      var tip = this.getTipElement();
-      var initConfigAnimation = this.config.animation;
+      let tip = this.getTipElement();
+      let initConfigAnimation = this.config.animation;
 
       if (tip.getAttribute('x-placement') !== null) {
         return;
@@ -846,9 +846,9 @@
 
     Tooltip._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY);
+        let data = $(this).data(DATA_KEY);
 
-        var _config = typeof config === 'object' && config;
+        let _config = typeof config === 'object' && config;
 
         if (!data && /dispose|hide/.test(config)) {
           return;

@@ -87,6 +87,8 @@ textarea.form-control {
   opacity: 0;
 
   &:checked ~ .custom-control-label {
+    color: $black;
+
     &::before,
     &::after {
       opacity: 1;

@@ -1,11 +1,11 @@
 [].forEach.call(document.querySelectorAll('.js__phone'), function (input) {
-    var keyCode;
+    let keyCode;
 
     function mask(event) {
         event.keyCode && (keyCode = event.keyCode);
-        var pos = this.selectionStart;
+        let pos = this.selectionStart;
         if (pos < 3) event.preventDefault();
-        var matrix = "+7 (___) ___ ____",
+        let matrix = "+7 (___) ___ ____",
             i = 0,
             def = matrix.replace(/\D/g, ""),
             val = this.value.replace(/\D/g, ""),
@@ -17,7 +17,7 @@
             i < 5 && (i = 3);
             new_value = new_value.slice(0, i)
         }
-        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+        let reg = matrix.substr(0, this.value.length).replace(/_+/g,
             function (a) {
                 return "\\d{1," + a.length + "}"
             }).replace(/[+()]/g, "\\$&");

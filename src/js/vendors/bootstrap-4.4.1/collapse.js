@@ -13,8 +13,8 @@
   Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
       if ("value" in descriptor) descriptor.writable = true;
@@ -44,10 +44,10 @@
   }
 
   function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
+    let keys = Object.keys(object);
 
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
+      let symbols = Object.getOwnPropertySymbols(object);
       if (enumerableOnly) symbols = symbols.filter(function (sym) {
         return Object.getOwnPropertyDescriptor(object, sym).enumerable;
       });
@@ -58,8 +58,8 @@
   }
 
   function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
+    for (let i = 1; i < arguments.length; i++) {
+      let source = arguments[i] != null ? arguments[i] : {};
 
       if (i % 2) {
         ownKeys(Object(source), true).forEach(function (key) {
@@ -83,38 +83,38 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'collapse';
-  var VERSION = '4.4.1';
-  var DATA_KEY = 'bs.collapse';
-  var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var Default = {
+  let NAME = 'collapse';
+  let VERSION = '4.4.1';
+  let DATA_KEY = 'bs.collapse';
+  let EVENT_KEY = "." + DATA_KEY;
+  let DATA_API_KEY = '.data-api';
+  let JQUERY_NO_CONFLICT = $.fn[NAME];
+  let Default = {
     toggle: true,
     parent: ''
   };
-  var DefaultType = {
+  let DefaultType = {
     toggle: 'boolean',
     parent: '(string|element)'
   };
-  var Event = {
+  let Event = {
     SHOW: "show" + EVENT_KEY,
     SHOWN: "shown" + EVENT_KEY,
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   };
-  var ClassName = {
+  let ClassName = {
     SHOW: 'show',
     COLLAPSE: 'collapse',
     COLLAPSING: 'collapsing',
     COLLAPSED: 'collapsed'
   };
-  var Dimension = {
+  let Dimension = {
     WIDTH: 'width',
     HEIGHT: 'height'
   };
-  var Selector = {
+  let Selector = {
     ACTIVES: '.show, .collapsing',
     DATA_TOGGLE: '[data-toggle="collapse"]'
   };
@@ -124,7 +124,7 @@
    * ------------------------------------------------------------------------
    */
 
-  var Collapse =
+  let Collapse =
   /*#__PURE__*/
   function () {
     function Collapse(element, config) {
@@ -132,12 +132,12 @@
       this._element = element;
       this._config = this._getConfig(config);
       this._triggerArray = [].slice.call(document.querySelectorAll("[data-toggle=\"collapse\"][href=\"#" + element.id + "\"]," + ("[data-toggle=\"collapse\"][data-target=\"#" + element.id + "\"]")));
-      var toggleList = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE));
+      let toggleList = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE));
 
-      for (var i = 0, len = toggleList.length; i < len; i++) {
-        var elem = toggleList[i];
-        var selector = Util.getSelectorFromElement(elem);
-        var filterElement = [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
+      for (let i = 0, len = toggleList.length; i < len; i++) {
+        let elem = toggleList[i];
+        let selector = Util.getSelectorFromElement(elem);
+        let filterElement = [].slice.call(document.querySelectorAll(selector)).filter(function (foundElem) {
           return foundElem === element;
         });
 
@@ -160,7 +160,7 @@
     } // Getters
 
 
-    var _proto = Collapse.prototype;
+    let _proto = Collapse.prototype;
 
     // Public
     _proto.toggle = function toggle() {
@@ -172,14 +172,14 @@
     };
 
     _proto.show = function show() {
-      var _this = this;
+      let _this = this;
 
       if (this._isTransitioning || $(this._element).hasClass(ClassName.SHOW)) {
         return;
       }
 
-      var actives;
-      var activesData;
+      let actives;
+      let activesData;
 
       if (this._parent) {
         actives = [].slice.call(this._parent.querySelectorAll(Selector.ACTIVES)).filter(function (elem) {
@@ -203,7 +203,7 @@
         }
       }
 
-      var startEvent = $.Event(Event.SHOW);
+      let startEvent = $.Event(Event.SHOW);
       $(this._element).trigger(startEvent);
 
       if (startEvent.isDefaultPrevented()) {
@@ -218,7 +218,7 @@
         }
       }
 
-      var dimension = this._getDimension();
+      let dimension = this._getDimension();
 
       $(this._element).removeClass(ClassName.COLLAPSE).addClass(ClassName.COLLAPSING);
       this._element.style[dimension] = 0;
@@ -229,7 +229,7 @@
 
       this.setTransitioning(true);
 
-      var complete = function complete() {
+      let complete = function complete() {
         $(_this._element).removeClass(ClassName.COLLAPSING).addClass(ClassName.COLLAPSE).addClass(ClassName.SHOW);
         _this._element.style[dimension] = '';
 
@@ -238,41 +238,41 @@
         $(_this._element).trigger(Event.SHOWN);
       };
 
-      var capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
-      var scrollSize = "scroll" + capitalizedDimension;
-      var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+      let capitalizedDimension = dimension[0].toUpperCase() + dimension.slice(1);
+      let scrollSize = "scroll" + capitalizedDimension;
+      let transitionDuration = Util.getTransitionDurationFromElement(this._element);
       $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       this._element.style[dimension] = this._element[scrollSize] + "px";
     };
 
     _proto.hide = function hide() {
-      var _this2 = this;
+      let _this2 = this;
 
       if (this._isTransitioning || !$(this._element).hasClass(ClassName.SHOW)) {
         return;
       }
 
-      var startEvent = $.Event(Event.HIDE);
+      let startEvent = $.Event(Event.HIDE);
       $(this._element).trigger(startEvent);
 
       if (startEvent.isDefaultPrevented()) {
         return;
       }
 
-      var dimension = this._getDimension();
+      let dimension = this._getDimension();
 
       this._element.style[dimension] = this._element.getBoundingClientRect()[dimension] + "px";
       Util.reflow(this._element);
       $(this._element).addClass(ClassName.COLLAPSING).removeClass(ClassName.COLLAPSE).removeClass(ClassName.SHOW);
-      var triggerArrayLength = this._triggerArray.length;
+      let triggerArrayLength = this._triggerArray.length;
 
       if (triggerArrayLength > 0) {
-        for (var i = 0; i < triggerArrayLength; i++) {
-          var trigger = this._triggerArray[i];
-          var selector = Util.getSelectorFromElement(trigger);
+        for (let i = 0; i < triggerArrayLength; i++) {
+          let trigger = this._triggerArray[i];
+          let selector = Util.getSelectorFromElement(trigger);
 
           if (selector !== null) {
-            var $elem = $([].slice.call(document.querySelectorAll(selector)));
+            let $elem = $([].slice.call(document.querySelectorAll(selector)));
 
             if (!$elem.hasClass(ClassName.SHOW)) {
               $(trigger).addClass(ClassName.COLLAPSED).attr('aria-expanded', false);
@@ -283,14 +283,14 @@
 
       this.setTransitioning(true);
 
-      var complete = function complete() {
+      let complete = function complete() {
         _this2.setTransitioning(false);
 
         $(_this2._element).removeClass(ClassName.COLLAPSING).addClass(ClassName.COLLAPSE).trigger(Event.HIDDEN);
       };
 
       this._element.style[dimension] = '';
-      var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+      let transitionDuration = Util.getTransitionDurationFromElement(this._element);
       $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
     };
 
@@ -317,14 +317,14 @@
     };
 
     _proto._getDimension = function _getDimension() {
-      var hasWidth = $(this._element).hasClass(Dimension.WIDTH);
+      let hasWidth = $(this._element).hasClass(Dimension.WIDTH);
       return hasWidth ? Dimension.WIDTH : Dimension.HEIGHT;
     };
 
     _proto._getParent = function _getParent() {
-      var _this3 = this;
+      let _this3 = this;
 
-      var parent;
+      let parent;
 
       if (Util.isElement(this._config.parent)) {
         parent = this._config.parent; // It's a jQuery object
@@ -336,8 +336,8 @@
         parent = document.querySelector(this._config.parent);
       }
 
-      var selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
-      var children = [].slice.call(parent.querySelectorAll(selector));
+      let selector = "[data-toggle=\"collapse\"][data-parent=\"" + this._config.parent + "\"]";
+      let children = [].slice.call(parent.querySelectorAll(selector));
       $(children).each(function (i, element) {
         _this3._addAriaAndCollapsedClass(Collapse._getTargetFromElement(element), [element]);
       });
@@ -345,7 +345,7 @@
     };
 
     _proto._addAriaAndCollapsedClass = function _addAriaAndCollapsedClass(element, triggerArray) {
-      var isOpen = $(element).hasClass(ClassName.SHOW);
+      let isOpen = $(element).hasClass(ClassName.SHOW);
 
       if (triggerArray.length) {
         $(triggerArray).toggleClass(ClassName.COLLAPSED, !isOpen).attr('aria-expanded', isOpen);
@@ -354,16 +354,16 @@
     ;
 
     Collapse._getTargetFromElement = function _getTargetFromElement(element) {
-      var selector = Util.getSelectorFromElement(element);
+      let selector = Util.getSelectorFromElement(element);
       return selector ? document.querySelector(selector) : null;
     };
 
     Collapse._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var $this = $(this);
-        var data = $this.data(DATA_KEY);
+        let $this = $(this);
+        let data = $this.data(DATA_KEY);
 
-        var _config = _objectSpread2({}, Default, {}, $this.data(), {}, typeof config === 'object' && config ? config : {});
+        let _config = _objectSpread2({}, Default, {}, $this.data(), {}, typeof config === 'object' && config ? config : {});
 
         if (!data && _config.toggle && /show|hide/.test(config)) {
           _config.toggle = false;
@@ -411,13 +411,13 @@
       event.preventDefault();
     }
 
-    var $trigger = $(this);
-    var selector = Util.getSelectorFromElement(this);
-    var selectors = [].slice.call(document.querySelectorAll(selector));
+    let $trigger = $(this);
+    let selector = Util.getSelectorFromElement(this);
+    let selectors = [].slice.call(document.querySelectorAll(selector));
     $(selectors).each(function () {
-      var $target = $(this);
-      var data = $target.data(DATA_KEY);
-      var config = data ? 'toggle' : $trigger.data();
+      let $target = $(this);
+      let data = $target.data(DATA_KEY);
+      let config = data ? 'toggle' : $trigger.data();
 
       Collapse._jQueryInterface.call($target, config);
     });

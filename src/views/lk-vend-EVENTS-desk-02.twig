@@ -15,120 +15,142 @@
       <div class="col-xl-10 col-md-9">
         <h1 class="personal-area-title">Добавление мероприятия</h1>
 
-        <div class="personal-area-holder">
+        <form class="personal-area-holder">
           <div class="col-inner-1">
-            <h2>О мероприятии</h2>
+            <!-- BEGIN: О мероприятии -->
+            <fieldset class="mb-4">
+              <h2>О мероприятии</h2>
 
-            <div class="personal-area__field-group form-group">
-              <label class="form-label" for="field-01">Название мероприятия</label>
-              <input type="text" id="field-01" class="form-control hide-placeholder" placeholder="Напишите название">
-            </div>
-
-            <div class="mb-4 form-group">
-              <label class="form-label" for="field-02">Описание мероприятия</label>
-              <textarea id="field-02" class="form-control hide-placeholder" placeholder="Кратко опишите мероприятие"></textarea>
-              <div class="form-tip">не более 200 символов без пробелов</div>
-            </div>
-
-            <div class="personal-area-download personal-area-gap">
-              <input type="file" class="personal-area-avatar__field js__multi-upload" multiple accept=".svg, .jpeg, .jpg, .png">
-              <div>
-                <div class="personal-area-download__text"><span class="as-link">Загрузить фотографии</span> не более 20 фото</div>
-                <div class="personal-area-download__text">фото должны быть не более 10 Mb, в формате, PNG, JPEG</div>
+              <div class="personal-area__field-group form-group">
+                <label class="form-label" for="field-01">Название мероприятия</label>
+                <input type="text" id="field-01" class="form-control hide-placeholder" placeholder="Напишите название">
               </div>
-            </div>
 
-            <h2>Бренд мероприятия</h2>
-
-            <div class="personal-area-column personal-area-gap">
-              <select>
-                <option>Выбрать бренд</option>
-                <option>Fun2Day</option>
-                <option>fun2day</option>
-                <option>fan2day</option>
-                <option>funToDay</option>
-              </select>
-            </div>
-
-            <h2>Детальная информация о мероприятии</h2>
-
-            <div class="mb-4">
-              <label class="form-label">Укажите длительность мероприятия</label>
-              <div class="personal-area__field-short">
-                <input type="text" class="form-control hide-placeholder" placeholder="Дней">
-                <span>-</span>
-                <input type="text" class="form-control hide-placeholder" placeholder="Часов">
-                <span>-</span>
-                <input type="text" class="form-control hide-placeholder" placeholder="Минут">
+              <div class="form-group">
+                <label class="form-label" for="field-02">Описание мероприятия</label>
+                <textarea id="field-02" class="form-control hide-placeholder" placeholder="Кратко опишите мероприятие"></textarea>
+                <div class="form-tip">не более 200 символов без пробелов</div>
               </div>
-            </div>
+            </fieldset>
+            <!-- END: О мероприятии -->
 
-            <div class="mb-4">
-              <label class="form-label">Укажите максимальное количество человек на мероприятии</label>
-              <div class="personal-area__field-short">
-                <input type="text" class="form-control hide-placeholder" placeholder="От">
-                <span>-</span>
-                <input type="text" class="form-control hide-placeholder" placeholder="До">
+
+            <!-- BEGIN: Загрузить фото -->
+            <fieldset class="personal-area-gap">
+              <div class="personal-area-download">
+                <input type="file" class="personal-area-avatar__field js__multi-upload" multiple accept=".svg, .jpeg, .jpg, .png">
+                <div>
+                  <div class="personal-area-download__text">
+                    <span class="as-link">Загрузить фотографии</span> не более 20 фото
+                  </div>
+                  <div class="personal-area-download__text">фото должны быть не более 10 Mb, в формате, PNG, JPEG</div>
+                </div>
               </div>
-            </div>
+            </fieldset>
+            <!-- END: Загрузить фото -->
 
-            <div class="personal-area-column mb-4">
-              <select>
-                <option>Возраст</option>
-                <option>До 7</option>
-                <option>До 18</option>
-                <option>с 18 до 65</option>
-                <option>от 65</option>
-                <option>от 100</option>
-              </select>
-            </div>
 
-            <div class="personal-area-column__wrap mb-4">
+            <!-- BEGIN: Бренд -->
+            <fieldset class="personal-area-gap">
+              <legend class="h2">Бренд мероприятия</legend>
               <div class="personal-area-column">
-                <label class="form-label" for="field-03">Укажите формат мероприятия</label>
-                <select id="field-03">
-                  <option>Формат мероприятия</option>
-                  <option>Детский</option>
-                  <option>Подростковый</option>
-                  <option>Мужской</option>
-                  <option>Женский</option>
-                  <option>Древний</option>
+                <select>
+                  <option>Выбрать бренд</option>
+                  <option>Fun2Day</option>
+                  <option>fun2day</option>
+                  <option>fan2day</option>
+                  <option>funToDay</option>
+                </select>
+              </div>
+            </fieldset>
+            <!-- END: Бренд -->
+
+
+            <!-- BEGIN: Детальная информация -->
+            <fieldset class="personal-area-gap">
+              <legend class="h2">Детальная информация о мероприятии</legend>
+
+              <div class="mb-4">
+                <label class="form-label">Укажите длительность мероприятия</label>
+                <div class="personal-area__field-short">
+                  <input type="text" class="form-control hide-placeholder" placeholder="Дней">
+                  <span>-</span>
+                  <input type="text" class="form-control hide-placeholder" placeholder="Часов">
+                  <span>-</span>
+                  <input type="text" class="form-control hide-placeholder" placeholder="Минут">
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label">Укажите максимальное количество человек на мероприятии</label>
+                <div class="personal-area__field-short">
+                  <input type="text" class="form-control hide-placeholder" placeholder="От">
+                  <span>-</span>
+                  <input type="text" class="form-control hide-placeholder" placeholder="До">
+                </div>
+              </div>
+
+              <div class="personal-area-column mb-4">
+                <select>
+                  <option>Возраст</option>
+                  <option>До 7</option>
+                  <option>До 18</option>
+                  <option>с 18 до 65</option>
+                  <option>от 65</option>
+                  <option>от 100</option>
                 </select>
               </div>
 
-              <div class="personal-area-column">
-                <label class="form-label" for="field-04">Укажите тип мероприятия</label>
-                <select id="field-04">
-                  <option>Тип мероприятия</option>
-                  <option>Детский</option>
-                  <option>Подростковый</option>
-                  <option>Мужской</option>
-                  <option>Женский</option>
-                  <option>Древний</option>
+              <div class="personal-area-column__wrap mb-4">
+                <div class="personal-area-column">
+                  <label class="form-label" for="field-03">Укажите формат мероприятия</label>
+                  <select id="field-03">
+                    <option>Формат мероприятия</option>
+                    <option>Детский</option>
+                    <option>Подростковый</option>
+                    <option>Мужской</option>
+                    <option>Женский</option>
+                    <option>Древний</option>
+                  </select>
+                </div>
+
+                <div class="personal-area-column">
+                  <label class="form-label" for="field-04">Укажите тип мероприятия</label>
+                  <select id="field-04">
+                    <option>Тип мероприятия</option>
+                    <option>Детский</option>
+                    <option>Подростковый</option>
+                    <option>Мужской</option>
+                    <option>Женский</option>
+                    <option>Древний</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="field-05">Опишите детали и особенности мероприятия</label>
+                <textarea id="field-05" class="form-control hide-placeholder" placeholder="Описание деталей"></textarea>
+              </div>
+            </fieldset>
+            <!-- END: Детальная информация -->
+
+
+            <!-- BEGIN: Детали оплаты -->
+            <fieldset class="personal-area-gap">
+              <legend class="h2">Детали оплаты мероприятия</legend>
+
+              <div class="personal-area-column mb-4">
+                <label class="form-label" for="field-06">Укажите форму оплаты</label>
+                <select id="field-06">
+                  <option>За человека</option>
+                  <option>За мероприятие</option>
                 </select>
               </div>
-            </div>
 
-            <div class="personal-area-gap form-group">
-              <label class="form-label" for="field-05">Опишите детали и особенности мероприятия</label>
-              <textarea id="field-05" class="form-control hide-placeholder" placeholder="Описание деталей"></textarea>
-            </div>
-
-            <h2>Детали оплаты мероприятия</h2>
-
-            <div class="personal-area-column mb-4">
-              <label class="form-label" for="field-06">Укажите форму оплаты</label>
-              <select id="field-06">
-                <option>За человека</option>
-                <option>За мероприятие</option>
-              </select>
-            </div>
-
-            <div class="container-fluid">
               <label class="form-label">Установите сумму и валюту для оплаты мероприятия</label>
 
-              <div>
-                <div class="row mb-3 align-items-center">
+              <div class="personal-area-price">
+                <div class="personal-area-price__item row mb-3 align-items-center">
                   <div class="personal-area-field__short">
                     <input type="text" class="form-control hide-placeholder" placeholder="1 000 ₽">
                   </div>
@@ -151,25 +173,130 @@
                     </select>
                   </div>
 
-                  <div class=""><button class="btn">Удалить цену</button></div>
+                  <div class="">
+                    <button class="btn">Удалить цену</button>
+                  </div>
                 </div>
               </div>
 
-              <div class="personal-area__add-address icon-plus as-link">Добавить цену</div>
-            </div>
+              <div class="personal-area__add icon-plus as-link">Добавить цену</div>
+            </fieldset>
+            <!-- END: Детали оплаты -->
+
+
+            <!-- BEGIN: Скидка -->
+            <fieldset class="personal-area-gap">
+              <legend class="h2">Настройка скидки</legend>
+
+              <div class="form-label">Установите сумму или процент скидки на мероприятие</div>
+
+              <div class="personal-area-price__item row mb-4">
+                <div class="personal-area-column col-12">
+                  <select>
+                    <option>Сумма</option>
+                    <option>Процент</option>
+                  </select>
+                </div>
+                <div class="personal-area-field__short">
+                  <input type="text" class="form-control hide-placeholder" placeholder="1 000 ₽">
+                </div>
+              </div>
+
+              <div class="form-label">Укажите календарный период скидки</div>
+
+              <div class="personal-area__field-short">
+                <input type="text" class="form-control hide-placeholder" placeholder="12.05.2020">
+                <span>-</span>
+                <input type="text" class="form-control hide-placeholder" placeholder="12.06.2020">
+              </div>
+            </fieldset>
+            <!-- END: Скидка -->
+
+
+            <!-- BEGIN: Акции подарки промо -->
+            <fieldset class="personal-area-gap">
+              <legend class="h2">Акции, подарки, промо</legend>
+
+              <div class="form-group">
+                <label class="form-label" for="field-07">Опишите условия акции. Пример: “Каждый третий билет бесплатно”</label>
+                <textarea id="field-07" class="form-control hide-placeholder" placeholder="Описание условий акции"></textarea>
+              </div>
+
+              <div class="form-label">Укажите календарный период скидки </div>
+
+              <div class="personal-area__field-short">
+                <input type="text" class="form-control hide-placeholder" placeholder="12.05.2020">
+                <span>-</span>
+                <input type="text" class="form-control hide-placeholder" placeholder="12.06.2020">
+              </div>
+            </fieldset>
+            <!-- END: Акции подарки промо -->
+
+
+            <!-- BEGIN: Бронирование -->
+            <fieldset class="personal-area-gap">
+              <legend class="h2">Детали бронирования</legend>
+
+              <div class="mb-4">
+                <label class="form-label" for="field-08">Укажите за какой максимальный срок можно бронировать</label>
+                <div class="personal-area-column">
+                  <select>
+                    <option>за 3 месяца</option>
+                    <option>за 1 месяц</option>
+                    <option>за 1 неделю</option>
+                    <option>за 1 день</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="personal-area__check-group mb-4">
+                <div class="personal-area__check-group--block">
+                  <label class="modal-form__group-item custom-control custom-radio">
+                    <input type="radio" name="radio2" class="custom-control-input">
+                    <span class="custom-control-label">Можно отменить бронирование</span>
+                  </label>
+                </div>
+                <div class="personal-area__check-group--block">
+                  <label class="modal-form__group-item custom-control custom-radio">
+                    <input type="radio" name="radio2" class="custom-control-input" checked>
+                    <span class="custom-control-label">Нельзя отменить бронирование</span>
+                  </label>
+                </div>
+              </div>
+
+              <div>
+                <label class="form-label" for="field-09">Опишите условия отмены бронирования</label>
+                <textarea id="field-09" class="form-control hide-placeholder" placeholder="Описание условий отмены бронирования"></textarea>
+              </div>
+            </fieldset>
+            <!-- END: Бронирование -->
+
+
+            <!-- BEGIN: Категория мероприятия -->
+            <fieldset class="mb-4">
+              <legend class="h2">Категория мероприятия</legend>
+
+              <p>Добавьте ваше мероприятие в существующую структуру каталога</p>
+
+              <div class="personal-area__add icon-plus as-link">Выбрать раздел</div>
+            </fieldset>
+            <!-- END: Категория мероприятия -->
           </div>
 
           <div class="personal-area__control">
             <div class="row justify-content-center">
               <div class="personal-area__control-box">
-                <button class="btn-primary btn"><span class="btn-text">Создать бренд</span></button>
+                <button class="btn-primary btn"><span class="btn-text">Создать мероприятие</span></button>
+              </div>
+              <div class="personal-area__control-box">
+                <button class="btn-secondary btn"><span class="btn-text">Предпросмотр</span></button>
               </div>
               <div class="personal-area__control-box align-self-center">
-                <button class="personal-area__control-reset btn">Удалить бренд</button>
+                <button class="personal-area__control-reset btn">Удалить мероприятие</button>
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

@@ -92,6 +92,7 @@
 
 .jq-selectbox__dropdown {
   width: 100%;
+  padding-top: 35px;
   margin-top: -35px;
   background-color: $grey4;
   box-shadow: 2px 2px 4px #C7C9D2, -2px -2px 4px #FAFBFF;
@@ -260,10 +261,6 @@
 .jq-selectbox li {
   min-height: 18px;
   padding: 8px 10px 8px 20px;
-
-  &:first-child {
-    opacity: 0;
-  }
 }
 
 .jq-selectbox .sel {

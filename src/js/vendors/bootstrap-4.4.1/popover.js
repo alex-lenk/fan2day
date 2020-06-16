@@ -13,8 +13,8 @@
   Tooltip = Tooltip && Tooltip.hasOwnProperty('default') ? Tooltip['default'] : Tooltip;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
       if ("value" in descriptor) descriptor.writable = true;
@@ -44,10 +44,10 @@
   }
 
   function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
+    let keys = Object.keys(object);
 
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
+      let symbols = Object.getOwnPropertySymbols(object);
       if (enumerableOnly) symbols = symbols.filter(function (sym) {
         return Object.getOwnPropertyDescriptor(object, sym).enumerable;
       });
@@ -58,8 +58,8 @@
   }
 
   function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
+    for (let i = 1; i < arguments.length; i++) {
+      let source = arguments[i] != null ? arguments[i] : {};
 
       if (i % 2) {
         ownKeys(Object(source), true).forEach(function (key) {
@@ -89,34 +89,34 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'popover';
-  var VERSION = '4.4.1';
-  var DATA_KEY = 'bs.popover';
-  var EVENT_KEY = "." + DATA_KEY;
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var CLASS_PREFIX = 'bs-popover';
-  var BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
+  let NAME = 'popover';
+  let VERSION = '4.4.1';
+  let DATA_KEY = 'bs.popover';
+  let EVENT_KEY = "." + DATA_KEY;
+  let JQUERY_NO_CONFLICT = $.fn[NAME];
+  let CLASS_PREFIX = 'bs-popover';
+  let BSCLS_PREFIX_REGEX = new RegExp("(^|\\s)" + CLASS_PREFIX + "\\S+", 'g');
 
-  var Default = _objectSpread2({}, Tooltip.Default, {
+  let Default = _objectSpread2({}, Tooltip.Default, {
     placement: 'right',
     trigger: 'click',
     content: '',
     template: '<div class="popover" role="tooltip">' + '<div class="arrow"></div>' + '<h3 class="popover-header"></h3>' + '<div class="popover-body"></div></div>'
   });
 
-  var DefaultType = _objectSpread2({}, Tooltip.DefaultType, {
+  let DefaultType = _objectSpread2({}, Tooltip.DefaultType, {
     content: '(string|element|function)'
   });
 
-  var ClassName = {
+  let ClassName = {
     FADE: 'fade',
     SHOW: 'show'
   };
-  var Selector = {
+  let Selector = {
     TITLE: '.popover-header',
     CONTENT: '.popover-body'
   };
-  var Event = {
+  let Event = {
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
     SHOW: "show" + EVENT_KEY,
@@ -134,7 +134,7 @@
    * ------------------------------------------------------------------------
    */
 
-  var Popover =
+  let Popover =
   /*#__PURE__*/
   function (_Tooltip) {
     _inheritsLoose(Popover, _Tooltip);
@@ -143,7 +143,7 @@
       return _Tooltip.apply(this, arguments) || this;
     }
 
-    var _proto = Popover.prototype;
+    let _proto = Popover.prototype;
 
     // Overrides
     _proto.isWithContent = function isWithContent() {
@@ -160,11 +160,11 @@
     };
 
     _proto.setContent = function setContent() {
-      var $tip = $(this.getTipElement()); // We use append for html objects to maintain js events
+      let $tip = $(this.getTipElement()); // We use append for html objects to maintain js events
 
       this.setElementContent($tip.find(Selector.TITLE), this.getTitle());
 
-      var content = this._getContent();
+      let content = this._getContent();
 
       if (typeof content === 'function') {
         content = content.call(this.element);
@@ -180,8 +180,8 @@
     };
 
     _proto._cleanTipClass = function _cleanTipClass() {
-      var $tip = $(this.getTipElement());
-      var tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
+      let $tip = $(this.getTipElement());
+      let tabClass = $tip.attr('class').match(BSCLS_PREFIX_REGEX);
 
       if (tabClass !== null && tabClass.length > 0) {
         $tip.removeClass(tabClass.join(''));
@@ -191,9 +191,9 @@
 
     Popover._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY);
+        let data = $(this).data(DATA_KEY);
 
-        var _config = typeof config === 'object' ? config : null;
+        let _config = typeof config === 'object' ? config : null;
 
         if (!data && /dispose|hide/.test(config)) {
           return;

@@ -14,8 +14,8 @@
   Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
       if ("value" in descriptor) descriptor.writable = true;
@@ -45,10 +45,10 @@
   }
 
   function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
+    let keys = Object.keys(object);
 
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
+      let symbols = Object.getOwnPropertySymbols(object);
       if (enumerableOnly) symbols = symbols.filter(function (sym) {
         return Object.getOwnPropertyDescriptor(object, sym).enumerable;
       });
@@ -59,8 +59,8 @@
   }
 
   function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
+    for (let i = 1; i < arguments.length; i++) {
+      let source = arguments[i] != null ? arguments[i] : {};
 
       if (i % 2) {
         ownKeys(Object(source), true).forEach(function (key) {
@@ -84,26 +84,26 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'dropdown';
-  var VERSION = '4.4.1';
-  var DATA_KEY = 'bs.dropdown';
-  var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
+  let NAME = 'dropdown';
+  let VERSION = '4.4.1';
+  let DATA_KEY = 'bs.dropdown';
+  let EVENT_KEY = "." + DATA_KEY;
+  let DATA_API_KEY = '.data-api';
+  let JQUERY_NO_CONFLICT = $.fn[NAME];
+  let ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
 
-  var SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
+  let SPACE_KEYCODE = 32; // KeyboardEvent.which value for space key
 
-  var TAB_KEYCODE = 9; // KeyboardEvent.which value for tab key
+  let TAB_KEYCODE = 9; // KeyboardEvent.which value for tab key
 
-  var ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for up arrow key
+  let ARROW_UP_KEYCODE = 38; // KeyboardEvent.which value for up arrow key
 
-  var ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which value for down arrow key
+  let ARROW_DOWN_KEYCODE = 40; // KeyboardEvent.which value for down arrow key
 
-  var RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
+  let RIGHT_MOUSE_BUTTON_WHICH = 3; // MouseEvent.which value for the right button (assuming a right-handed mouse)
 
-  var REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
-  var Event = {
+  let REGEXP_KEYDOWN = new RegExp(ARROW_UP_KEYCODE + "|" + ARROW_DOWN_KEYCODE + "|" + ESCAPE_KEYCODE);
+  let Event = {
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
     SHOW: "show" + EVENT_KEY,
@@ -113,7 +113,7 @@
     KEYDOWN_DATA_API: "keydown" + EVENT_KEY + DATA_API_KEY,
     KEYUP_DATA_API: "keyup" + EVENT_KEY + DATA_API_KEY
   };
-  var ClassName = {
+  let ClassName = {
     DISABLED: 'disabled',
     SHOW: 'show',
     DROPUP: 'dropup',
@@ -123,14 +123,14 @@
     MENULEFT: 'dropdown-menu-left',
     POSITION_STATIC: 'position-static'
   };
-  var Selector = {
+  let Selector = {
     DATA_TOGGLE: '[data-toggle="dropdown"]',
     FORM_CHILD: '.dropdown form',
     MENU: '.dropdown-menu',
     NAVBAR_NAV: '.navbar-nav',
     VISIBLE_ITEMS: '.dropdown-menu .dropdown-item:not(.disabled):not(:disabled)'
   };
-  var AttachmentMap = {
+  let AttachmentMap = {
     TOP: 'top-start',
     TOPEND: 'top-end',
     BOTTOM: 'bottom-start',
@@ -140,7 +140,7 @@
     LEFT: 'left-start',
     LEFTEND: 'left-end'
   };
-  var Default = {
+  let Default = {
     offset: 0,
     flip: true,
     boundary: 'scrollParent',
@@ -148,7 +148,7 @@
     display: 'dynamic',
     popperConfig: null
   };
-  var DefaultType = {
+  let DefaultType = {
     offset: '(number|string|function)',
     flip: 'boolean',
     boundary: '(string|element)',
@@ -162,7 +162,7 @@
    * ------------------------------------------------------------------------
    */
 
-  var Dropdown =
+  let Dropdown =
   /*#__PURE__*/
   function () {
     function Dropdown(element, config) {
@@ -176,7 +176,7 @@
     } // Getters
 
 
-    var _proto = Dropdown.prototype;
+    let _proto = Dropdown.prototype;
 
     // Public
     _proto.toggle = function toggle() {
@@ -184,7 +184,7 @@
         return;
       }
 
-      var isActive = $(this._menu).hasClass(ClassName.SHOW);
+      let isActive = $(this._menu).hasClass(ClassName.SHOW);
 
       Dropdown._clearMenus();
 
@@ -204,12 +204,12 @@
         return;
       }
 
-      var relatedTarget = {
+      let relatedTarget = {
         relatedTarget: this._element
       };
-      var showEvent = $.Event(Event.SHOW, relatedTarget);
+      let showEvent = $.Event(Event.SHOW, relatedTarget);
 
-      var parent = Dropdown._getParentFromElement(this._element);
+      let parent = Dropdown._getParentFromElement(this._element);
 
       $(parent).trigger(showEvent);
 
@@ -227,7 +227,7 @@
           throw new TypeError('Bootstrap\'s dropdowns require Popper.js (https://popper.js.org/)');
         }
 
-        var referenceElement = this._element;
+        let referenceElement = this._element;
 
         if (this._config.reference === 'parent') {
           referenceElement = parent;
@@ -270,12 +270,12 @@
         return;
       }
 
-      var relatedTarget = {
+      let relatedTarget = {
         relatedTarget: this._element
       };
-      var hideEvent = $.Event(Event.HIDE, relatedTarget);
+      let hideEvent = $.Event(Event.HIDE, relatedTarget);
 
-      var parent = Dropdown._getParentFromElement(this._element);
+      let parent = Dropdown._getParentFromElement(this._element);
 
       $(parent).trigger(hideEvent);
 
@@ -314,7 +314,7 @@
     ;
 
     _proto._addEventListeners = function _addEventListeners() {
-      var _this = this;
+      let _this = this;
 
       $(this._element).on(Event.CLICK, function (event) {
         event.preventDefault();
@@ -332,7 +332,7 @@
 
     _proto._getMenuElement = function _getMenuElement() {
       if (!this._menu) {
-        var parent = Dropdown._getParentFromElement(this._element);
+        let parent = Dropdown._getParentFromElement(this._element);
 
         if (parent) {
           this._menu = parent.querySelector(Selector.MENU);
@@ -343,8 +343,8 @@
     };
 
     _proto._getPlacement = function _getPlacement() {
-      var $parentDropdown = $(this._element.parentNode);
-      var placement = AttachmentMap.BOTTOM; // Handle dropup
+      let $parentDropdown = $(this._element.parentNode);
+      let placement = AttachmentMap.BOTTOM; // Handle dropup
 
       if ($parentDropdown.hasClass(ClassName.DROPUP)) {
         placement = AttachmentMap.TOP;
@@ -368,9 +368,9 @@
     };
 
     _proto._getOffset = function _getOffset() {
-      var _this2 = this;
+      let _this2 = this;
 
-      var offset = {};
+      let offset = {};
 
       if (typeof this._config.offset === 'function') {
         offset.fn = function (data) {
@@ -385,7 +385,7 @@
     };
 
     _proto._getPopperConfig = function _getPopperConfig() {
-      var popperConfig = {
+      let popperConfig = {
         placement: this._getPlacement(),
         modifiers: {
           offset: this._getOffset(),
@@ -410,9 +410,9 @@
 
     Dropdown._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY);
+        let data = $(this).data(DATA_KEY);
 
-        var _config = typeof config === 'object' ? config : null;
+        let _config = typeof config === 'object' ? config : null;
 
         if (!data) {
           data = new Dropdown(this, _config);
@@ -434,13 +434,13 @@
         return;
       }
 
-      var toggles = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE));
+      let toggles = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE));
 
-      for (var i = 0, len = toggles.length; i < len; i++) {
-        var parent = Dropdown._getParentFromElement(toggles[i]);
+      for (let i = 0, len = toggles.length; i < len; i++) {
+        let parent = Dropdown._getParentFromElement(toggles[i]);
 
-        var context = $(toggles[i]).data(DATA_KEY);
-        var relatedTarget = {
+        let context = $(toggles[i]).data(DATA_KEY);
+        let relatedTarget = {
           relatedTarget: toggles[i]
         };
 
@@ -452,7 +452,7 @@
           continue;
         }
 
-        var dropdownMenu = context._menu;
+        let dropdownMenu = context._menu;
 
         if (!$(parent).hasClass(ClassName.SHOW)) {
           continue;
@@ -462,7 +462,7 @@
           continue;
         }
 
-        var hideEvent = $.Event(Event.HIDE, relatedTarget);
+        let hideEvent = $.Event(Event.HIDE, relatedTarget);
         $(parent).trigger(hideEvent);
 
         if (hideEvent.isDefaultPrevented()) {
@@ -487,8 +487,8 @@
     };
 
     Dropdown._getParentFromElement = function _getParentFromElement(element) {
-      var parent;
-      var selector = Util.getSelectorFromElement(element);
+      let parent;
+      let selector = Util.getSelectorFromElement(element);
 
       if (selector) {
         parent = document.querySelector(selector);
@@ -517,9 +517,9 @@
         return;
       }
 
-      var parent = Dropdown._getParentFromElement(this);
+      let parent = Dropdown._getParentFromElement(this);
 
-      var isActive = $(parent).hasClass(ClassName.SHOW);
+      let isActive = $(parent).hasClass(ClassName.SHOW);
 
       if (!isActive && event.which === ESCAPE_KEYCODE) {
         return;
@@ -527,7 +527,7 @@
 
       if (!isActive || isActive && (event.which === ESCAPE_KEYCODE || event.which === SPACE_KEYCODE)) {
         if (event.which === ESCAPE_KEYCODE) {
-          var toggle = parent.querySelector(Selector.DATA_TOGGLE);
+          let toggle = parent.querySelector(Selector.DATA_TOGGLE);
           $(toggle).trigger('focus');
         }
 
@@ -535,7 +535,7 @@
         return;
       }
 
-      var items = [].slice.call(parent.querySelectorAll(Selector.VISIBLE_ITEMS)).filter(function (item) {
+      let items = [].slice.call(parent.querySelectorAll(Selector.VISIBLE_ITEMS)).filter(function (item) {
         return $(item).is(':visible');
       });
 
@@ -543,7 +543,7 @@
         return;
       }
 
-      var index = items.indexOf(event.target);
+      let index = items.indexOf(event.target);
 
       if (event.which === ARROW_UP_KEYCODE && index > 0) {
         // Up

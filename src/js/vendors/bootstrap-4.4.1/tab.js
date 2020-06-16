@@ -13,8 +13,8 @@
   Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
       if ("value" in descriptor) descriptor.writable = true;
@@ -34,27 +34,27 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'tab';
-  var VERSION = '4.4.1';
-  var DATA_KEY = 'bs.tab';
-  var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var Event = {
+  let NAME = 'tab';
+  let VERSION = '4.4.1';
+  let DATA_KEY = 'bs.tab';
+  let EVENT_KEY = "." + DATA_KEY;
+  let DATA_API_KEY = '.data-api';
+  let JQUERY_NO_CONFLICT = $.fn[NAME];
+  let Event = {
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
     SHOW: "show" + EVENT_KEY,
     SHOWN: "shown" + EVENT_KEY,
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   };
-  var ClassName = {
+  let ClassName = {
     DROPDOWN_MENU: 'dropdown-menu',
     ACTIVE: 'active',
     DISABLED: 'disabled',
     FADE: 'fade',
     SHOW: 'show'
   };
-  var Selector = {
+  let Selector = {
     DROPDOWN: '.dropdown',
     NAV_LIST_GROUP: '.nav, .list-group',
     ACTIVE: '.active',
@@ -69,7 +69,7 @@
    * ------------------------------------------------------------------------
    */
 
-  var Tab =
+  let Tab =
   /*#__PURE__*/
   function () {
     function Tab(element) {
@@ -77,31 +77,31 @@
     } // Getters
 
 
-    var _proto = Tab.prototype;
+    let _proto = Tab.prototype;
 
     // Public
     _proto.show = function show() {
-      var _this = this;
+      let _this = this;
 
       if (this._element.parentNode && this._element.parentNode.nodeType === Node.ELEMENT_NODE && $(this._element).hasClass(ClassName.ACTIVE) || $(this._element).hasClass(ClassName.DISABLED)) {
         return;
       }
 
-      var target;
-      var previous;
-      var listElement = $(this._element).closest(Selector.NAV_LIST_GROUP)[0];
-      var selector = Util.getSelectorFromElement(this._element);
+      let target;
+      let previous;
+      let listElement = $(this._element).closest(Selector.NAV_LIST_GROUP)[0];
+      let selector = Util.getSelectorFromElement(this._element);
 
       if (listElement) {
-        var itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? Selector.ACTIVE_UL : Selector.ACTIVE;
+        let itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? Selector.ACTIVE_UL : Selector.ACTIVE;
         previous = $.makeArray($(listElement).find(itemSelector));
         previous = previous[previous.length - 1];
       }
 
-      var hideEvent = $.Event(Event.HIDE, {
+      let hideEvent = $.Event(Event.HIDE, {
         relatedTarget: this._element
       });
-      var showEvent = $.Event(Event.SHOW, {
+      let showEvent = $.Event(Event.SHOW, {
         relatedTarget: previous
       });
 
@@ -121,11 +121,11 @@
 
       this._activate(this._element, listElement);
 
-      var complete = function complete() {
-        var hiddenEvent = $.Event(Event.HIDDEN, {
+      let complete = function complete() {
+        let hiddenEvent = $.Event(Event.HIDDEN, {
           relatedTarget: _this._element
         });
-        var shownEvent = $.Event(Event.SHOWN, {
+        let shownEvent = $.Event(Event.SHOWN, {
           relatedTarget: previous
         });
         $(previous).trigger(hiddenEvent);
@@ -146,18 +146,18 @@
     ;
 
     _proto._activate = function _activate(element, container, callback) {
-      var _this2 = this;
+      let _this2 = this;
 
-      var activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $(container).find(Selector.ACTIVE_UL) : $(container).children(Selector.ACTIVE);
-      var active = activeElements[0];
-      var isTransitioning = callback && active && $(active).hasClass(ClassName.FADE);
+      let activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ? $(container).find(Selector.ACTIVE_UL) : $(container).children(Selector.ACTIVE);
+      let active = activeElements[0];
+      let isTransitioning = callback && active && $(active).hasClass(ClassName.FADE);
 
-      var complete = function complete() {
+      let complete = function complete() {
         return _this2._transitionComplete(element, active, callback);
       };
 
       if (active && isTransitioning) {
-        var transitionDuration = Util.getTransitionDurationFromElement(active);
+        let transitionDuration = Util.getTransitionDurationFromElement(active);
         $(active).removeClass(ClassName.SHOW).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
         complete();
@@ -167,7 +167,7 @@
     _proto._transitionComplete = function _transitionComplete(element, active, callback) {
       if (active) {
         $(active).removeClass(ClassName.ACTIVE);
-        var dropdownChild = $(active.parentNode).find(Selector.DROPDOWN_ACTIVE_CHILD)[0];
+        let dropdownChild = $(active.parentNode).find(Selector.DROPDOWN_ACTIVE_CHILD)[0];
 
         if (dropdownChild) {
           $(dropdownChild).removeClass(ClassName.ACTIVE);
@@ -191,10 +191,10 @@
       }
 
       if (element.parentNode && $(element.parentNode).hasClass(ClassName.DROPDOWN_MENU)) {
-        var dropdownElement = $(element).closest(Selector.DROPDOWN)[0];
+        let dropdownElement = $(element).closest(Selector.DROPDOWN)[0];
 
         if (dropdownElement) {
-          var dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(Selector.DROPDOWN_TOGGLE));
+          let dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(Selector.DROPDOWN_TOGGLE));
           $(dropdownToggleList).addClass(ClassName.ACTIVE);
         }
 
@@ -209,8 +209,8 @@
 
     Tab._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var $this = $(this);
-        var data = $this.data(DATA_KEY);
+        let $this = $(this);
+        let data = $this.data(DATA_KEY);
 
         if (!data) {
           data = new Tab(this);

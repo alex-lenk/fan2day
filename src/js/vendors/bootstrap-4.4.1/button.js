@@ -12,8 +12,8 @@
   $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
       if ("value" in descriptor) descriptor.writable = true;
@@ -33,18 +33,18 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'button';
-  var VERSION = '4.4.1';
-  var DATA_KEY = 'bs.button';
-  var EVENT_KEY = "." + DATA_KEY;
-  var DATA_API_KEY = '.data-api';
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var ClassName = {
+  let NAME = 'button';
+  let VERSION = '4.4.1';
+  let DATA_KEY = 'bs.button';
+  let EVENT_KEY = "." + DATA_KEY;
+  let DATA_API_KEY = '.data-api';
+  let JQUERY_NO_CONFLICT = $.fn[NAME];
+  let ClassName = {
     ACTIVE: 'active',
     BUTTON: 'btn',
     FOCUS: 'focus'
   };
-  var Selector = {
+  let Selector = {
     DATA_TOGGLE_CARROT: '[data-toggle^="button"]',
     DATA_TOGGLES: '[data-toggle="buttons"]',
     DATA_TOGGLE: '[data-toggle="button"]',
@@ -53,7 +53,7 @@
     ACTIVE: '.active',
     BUTTON: '.btn'
   };
-  var Event = {
+  let Event = {
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY,
     FOCUS_BLUR_DATA_API: "focus" + EVENT_KEY + DATA_API_KEY + " " + ("blur" + EVENT_KEY + DATA_API_KEY),
     LOAD_DATA_API: "load" + EVENT_KEY + DATA_API_KEY
@@ -64,7 +64,7 @@
    * ------------------------------------------------------------------------
    */
 
-  var Button =
+  let Button =
   /*#__PURE__*/
   function () {
     function Button(element) {
@@ -72,23 +72,23 @@
     } // Getters
 
 
-    var _proto = Button.prototype;
+    let _proto = Button.prototype;
 
     // Public
     _proto.toggle = function toggle() {
-      var triggerChangeEvent = true;
-      var addAriaPressed = true;
-      var rootElement = $(this._element).closest(Selector.DATA_TOGGLES)[0];
+      let triggerChangeEvent = true;
+      let addAriaPressed = true;
+      let rootElement = $(this._element).closest(Selector.DATA_TOGGLES)[0];
 
       if (rootElement) {
-        var input = this._element.querySelector(Selector.INPUT);
+        let input = this._element.querySelector(Selector.INPUT);
 
         if (input) {
           if (input.type === 'radio') {
             if (input.checked && this._element.classList.contains(ClassName.ACTIVE)) {
               triggerChangeEvent = false;
             } else {
-              var activeElement = rootElement.querySelector(Selector.ACTIVE);
+              let activeElement = rootElement.querySelector(Selector.ACTIVE);
 
               if (activeElement) {
                 $(activeElement).removeClass(ClassName.ACTIVE);
@@ -132,7 +132,7 @@
 
     Button._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var data = $(this).data(DATA_KEY);
+        let data = $(this).data(DATA_KEY);
 
         if (!data) {
           data = new Button(this);
@@ -162,7 +162,7 @@
 
 
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
-    var button = event.target;
+    let button = event.target;
 
     if (!$(button).hasClass(ClassName.BUTTON)) {
       button = $(button).closest(Selector.BUTTON)[0];
@@ -171,7 +171,7 @@
     if (!button || button.hasAttribute('disabled') || button.classList.contains('disabled')) {
       event.preventDefault(); // work around Firefox bug #1540995
     } else {
-      var inputBtn = button.querySelector(Selector.INPUT);
+      let inputBtn = button.querySelector(Selector.INPUT);
 
       if (inputBtn && (inputBtn.hasAttribute('disabled') || inputBtn.classList.contains('disabled'))) {
         event.preventDefault(); // work around Firefox bug #1540995
@@ -182,17 +182,17 @@
       Button._jQueryInterface.call($(button), 'toggle');
     }
   }).on(Event.FOCUS_BLUR_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
-    var button = $(event.target).closest(Selector.BUTTON)[0];
+    let button = $(event.target).closest(Selector.BUTTON)[0];
     $(button).toggleClass(ClassName.FOCUS, /^focus(in)?$/.test(event.type));
   });
   $(window).on(Event.LOAD_DATA_API, function () {
     // ensure correct active class is set to match the controls' actual values/states
     // find all checkboxes/readio buttons inside data-toggle groups
-    var buttons = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLES_BUTTONS));
+    let buttons = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLES_BUTTONS));
 
-    for (var i = 0, len = buttons.length; i < len; i++) {
-      var button = buttons[i];
-      var input = button.querySelector(Selector.INPUT);
+    for (let i = 0, len = buttons.length; i < len; i++) {
+      let button = buttons[i];
+      let input = button.querySelector(Selector.INPUT);
 
       if (input.checked || input.hasAttribute('checked')) {
         button.classList.add(ClassName.ACTIVE);
@@ -204,8 +204,8 @@
 
     buttons = [].slice.call(document.querySelectorAll(Selector.DATA_TOGGLE));
 
-    for (var _i = 0, _len = buttons.length; _i < _len; _i++) {
-      var _button = buttons[_i];
+    for (let _i = 0, _len = buttons.length; _i < _len; _i++) {
+      let _button = buttons[_i];
 
       if (_button.getAttribute('aria-pressed') === 'true') {
         _button.classList.add(ClassName.ACTIVE);

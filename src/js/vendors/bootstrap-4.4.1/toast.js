@@ -13,8 +13,8 @@
   Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
 
   function _defineProperties(target, props) {
-    for (var i = 0; i < props.length; i++) {
-      var descriptor = props[i];
+    for (let i = 0; i < props.length; i++) {
+      let descriptor = props[i];
       descriptor.enumerable = descriptor.enumerable || false;
       descriptor.configurable = true;
       if ("value" in descriptor) descriptor.writable = true;
@@ -44,10 +44,10 @@
   }
 
   function ownKeys(object, enumerableOnly) {
-    var keys = Object.keys(object);
+    let keys = Object.keys(object);
 
     if (Object.getOwnPropertySymbols) {
-      var symbols = Object.getOwnPropertySymbols(object);
+      let symbols = Object.getOwnPropertySymbols(object);
       if (enumerableOnly) symbols = symbols.filter(function (sym) {
         return Object.getOwnPropertyDescriptor(object, sym).enumerable;
       });
@@ -58,8 +58,8 @@
   }
 
   function _objectSpread2(target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i] != null ? arguments[i] : {};
+    for (let i = 1; i < arguments.length; i++) {
+      let source = arguments[i] != null ? arguments[i] : {};
 
       if (i % 2) {
         ownKeys(Object(source), true).forEach(function (key) {
@@ -83,35 +83,35 @@
    * ------------------------------------------------------------------------
    */
 
-  var NAME = 'toast';
-  var VERSION = '4.4.1';
-  var DATA_KEY = 'bs.toast';
-  var EVENT_KEY = "." + DATA_KEY;
-  var JQUERY_NO_CONFLICT = $.fn[NAME];
-  var Event = {
+  let NAME = 'toast';
+  let VERSION = '4.4.1';
+  let DATA_KEY = 'bs.toast';
+  let EVENT_KEY = "." + DATA_KEY;
+  let JQUERY_NO_CONFLICT = $.fn[NAME];
+  let Event = {
     CLICK_DISMISS: "click.dismiss" + EVENT_KEY,
     HIDE: "hide" + EVENT_KEY,
     HIDDEN: "hidden" + EVENT_KEY,
     SHOW: "show" + EVENT_KEY,
     SHOWN: "shown" + EVENT_KEY
   };
-  var ClassName = {
+  let ClassName = {
     FADE: 'fade',
     HIDE: 'hide',
     SHOW: 'show',
     SHOWING: 'showing'
   };
-  var DefaultType = {
+  let DefaultType = {
     animation: 'boolean',
     autohide: 'boolean',
     delay: 'number'
   };
-  var Default = {
+  let Default = {
     animation: true,
     autohide: true,
     delay: 500
   };
-  var Selector = {
+  let Selector = {
     DATA_DISMISS: '[data-dismiss="toast"]'
   };
   /**
@@ -120,7 +120,7 @@
    * ------------------------------------------------------------------------
    */
 
-  var Toast =
+  let Toast =
   /*#__PURE__*/
   function () {
     function Toast(element, config) {
@@ -132,13 +132,13 @@
     } // Getters
 
 
-    var _proto = Toast.prototype;
+    let _proto = Toast.prototype;
 
     // Public
     _proto.show = function show() {
-      var _this = this;
+      let _this = this;
 
-      var showEvent = $.Event(Event.SHOW);
+      let showEvent = $.Event(Event.SHOW);
       $(this._element).trigger(showEvent);
 
       if (showEvent.isDefaultPrevented()) {
@@ -149,7 +149,7 @@
         this._element.classList.add(ClassName.FADE);
       }
 
-      var complete = function complete() {
+      let complete = function complete() {
         _this._element.classList.remove(ClassName.SHOWING);
 
         _this._element.classList.add(ClassName.SHOW);
@@ -170,7 +170,7 @@
       this._element.classList.add(ClassName.SHOWING);
 
       if (this._config.animation) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+        let transitionDuration = Util.getTransitionDurationFromElement(this._element);
         $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
         complete();
@@ -182,7 +182,7 @@
         return;
       }
 
-      var hideEvent = $.Event(Event.HIDE);
+      let hideEvent = $.Event(Event.HIDE);
       $(this._element).trigger(hideEvent);
 
       if (hideEvent.isDefaultPrevented()) {
@@ -214,7 +214,7 @@
     };
 
     _proto._setListeners = function _setListeners() {
-      var _this2 = this;
+      let _this2 = this;
 
       $(this._element).on(Event.CLICK_DISMISS, Selector.DATA_DISMISS, function () {
         return _this2.hide();
@@ -222,9 +222,9 @@
     };
 
     _proto._close = function _close() {
-      var _this3 = this;
+      let _this3 = this;
 
-      var complete = function complete() {
+      let complete = function complete() {
         _this3._element.classList.add(ClassName.HIDE);
 
         $(_this3._element).trigger(Event.HIDDEN);
@@ -233,7 +233,7 @@
       this._element.classList.remove(ClassName.SHOW);
 
       if (this._config.animation) {
-        var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+        let transitionDuration = Util.getTransitionDurationFromElement(this._element);
         $(this._element).one(Util.TRANSITION_END, complete).emulateTransitionEnd(transitionDuration);
       } else {
         complete();
@@ -243,10 +243,10 @@
 
     Toast._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
-        var $element = $(this);
-        var data = $element.data(DATA_KEY);
+        let $element = $(this);
+        let data = $element.data(DATA_KEY);
 
-        var _config = typeof config === 'object' && config;
+        let _config = typeof config === 'object' && config;
 
         if (!data) {
           data = new Toast(this, _config);

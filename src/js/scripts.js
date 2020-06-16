@@ -1,3 +1,5 @@
+'use strict';
+
 // Импортируем другие js-файлы
 import './snippets/tab.js';
 import './snippets/login.js';
@@ -175,7 +177,7 @@ $(document).ready(function () {
 
 
   /* BEGIN: Разворачиваем панель с вводом данных филиала */
-  $('.personal-area__add-address').click(function () {
+  $('.js__personal-area__add-address').click(function () {
     $(this).prev('.personal-area-box').slideDown();
   });
   /* END */
