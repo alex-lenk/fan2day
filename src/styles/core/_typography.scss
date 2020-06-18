@@ -12,7 +12,7 @@ h4 {
   line-height: 24px;
 }
 
-h1, h2, .h2, h3, h4 {
+h1, .h1, h2, .h2, h3, h4 {
   color: $black;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -23,7 +23,7 @@ img {
 }
 
 @media (min-width: 766px) {
-  h1 {
+  h1, .h1 {
     margin-bottom: 29px;
     font-size: 32px;
     line-height: 42px;
@@ -50,7 +50,7 @@ img {
 }
 
 @media (max-width: 765px) {
-  h1 {
+  h1, .h1 {
     font-size: 24px;
     line-height: 32px;
   }

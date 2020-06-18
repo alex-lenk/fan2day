@@ -2,7 +2,7 @@ let modalLogin = '#modal-login',
   modalForgot = '#modal-forgot',
   modalRegister = '#modal-register',
   modalAuth = '#modal-auth',
-  modalOpened = 'modal-opened',
+  modalOpen = 'modal-open',
   modalForm = '.modal-form',
   modalFormActive = 'modal-form__active',
   modalAuth__org = '#modal-auth__org',
@@ -13,58 +13,58 @@ let modalLogin = '#modal-login',
 $(document).ready(function () {
   /* BEGIN: For logic on modals login, forgot and register */
   $('.js__login').click(function () {
-    $(modalAuth).addClass(modalOpened);
+    $(modalAuth).addClass(modalOpen);
     $(modalForm).removeClass(modalFormActive);
     $(modalLogin).addClass(modalFormActive);
   });
 
   $('.js__login__org').click(function () {
-    $(modalAuth__org).addClass(modalOpened);
+    $(modalAuth__org).addClass(modalOpen);
     $(modalForm).removeClass(modalFormActive);
     $(modalLogin__org).addClass(modalFormActive);
   });
 
   $('.js__forgot').click(function () {
-    $(modalAuth).addClass(modalOpened);
+    $(modalAuth).addClass(modalOpen);
     $(modalForm).removeClass(modalFormActive);
     $(modalForgot).addClass(modalFormActive);
   });
 
   $('.js__forgot__org').click(function () {
-    $(modalAuth__org).addClass(modalOpened);
+    $(modalAuth__org).addClass(modalOpen);
     $(modalForm).removeClass(modalFormActive);
     $(modalForgot__org).addClass(modalFormActive);
   });
 
   $('.js__register').click(function () {
-    $(modalAuth).addClass(modalOpened);
+    $(modalAuth).addClass(modalOpen);
     $(modalForm).removeClass(modalFormActive);
     $(modalRegister).addClass(modalFormActive);
   });
 
   $('.js__register__org').click(function () {
-    $(modalAuth__org).addClass(modalOpened);
+    $(modalAuth__org).addClass(modalOpen);
     $(modalForm).removeClass(modalFormActive);
     $(modalRegister__org).addClass(modalFormActive);
   });
 
   $('.modal-close').click(function () {
-    $(this).closest('.modal-wrapper').removeClass(modalOpened);
+    $(this).closest('.modal-wrapper').removeClass(modalOpen);
   });
 
 
   let hash = window.location.hash;
 
   if (hash === modalForgot || hash === '/#modal-forgot') {
-    $(modalAuth).addClass(modalOpened);
+    $(modalAuth).addClass(modalOpen);
     $(modalForm).removeClass(modalFormActive);
     $(modalForgot).addClass(modalFormActive);
   } else if (hash === modalLogin || hash === '/#modal-login') {
-    $(modalAuth).addClass(modalOpened);
+    $(modalAuth).addClass(modalOpen);
     $(modalForm).removeClass(modalFormActive);
     $(modalLogin).addClass(modalFormActive);
   } else if (hash === modalRegister || hash === '/#modal-register') {
-    $(modalAuth).addClass(modalOpened);
+    $(modalAuth).addClass(modalOpen);
     $(modalForm).removeClass(modalFormActive);
     $(modalRegister).addClass(modalFormActive);
   }

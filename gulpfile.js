@@ -40,15 +40,15 @@ const dataSite = require(`./src/data/site.json`);
 
 /* пути */
 const paths = {
-  root: './dist',
-  clean: './dist',
+  root: './public_html',
+  clean: './public_html',
   dist: {
-    html: './dist',
-    js: './dist/js',
-    css: './dist/css',
-    img: './dist/img',
-    fonts: './dist/fonts',
-    favicon: './dist/favicon'
+    html: './public_html',
+    js: './public_html/js',
+    css: './public_html/css',
+    img: './public_html/img',
+    fonts: './public_html/fonts',
+    favicon: './public_html/favicon'
   },
   src: {
     twig: './src/views/*.twig',
@@ -82,11 +82,11 @@ function watch() {
 // следим за dist и релоадим браузер
 function server() {
   browserSync.init({
-    server: './dist',
+    server: './public_html',
     notify: false,
     port: 5005
   });
-  browserSync.watch('./dist/**/*.*', browserSync.reload);
+  browserSync.watch('./public_html/**/*.*', browserSync.reload);
 }
 
 
@@ -219,7 +219,7 @@ gulp.task('countriesIcons', function () {
       }
     }))
     .pipe(svgstore())
-    .pipe(gulp.dest('./dist/img/'));
+    .pipe(gulp.dest('./public_html/img/'));
 });
 
 
@@ -232,7 +232,7 @@ gulp.task('deploy', function () {
   });
 
   var globs = [
-    './dist/**'
+    './public_html/**'
   ];
   return gulp.src(globs, {buffer: false})
     .pipe(conn.dest('/'));

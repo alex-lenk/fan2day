@@ -83,8 +83,7 @@
     &:nth-child(3),
     &:nth-child(4) {
       &:before {
-        @include coreIcon;
-        content: $icon-arrow-long;
+        content: '\e921';
       }
     }
   }
@@ -130,16 +129,6 @@
 
     &:not(:last-child) {
       margin-bottom: 50px;
-    }
-
-    &:nth-child(1),
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(4) {
-      &:before {
-        @include coreIcon;
-        content: $icon-arrow-bend;
-      }
     }
   }
   .steps-item__text {

@@ -65,15 +65,6 @@
   &:nth-child(5) {
     background-image: url(../img/icons/route.svg);
   }
-  &:nth-child(1),
-  &:nth-child(2),
-  &:nth-child(3),
-  &:nth-child(4) {
-    &:before {
-      @include coreIcon;
-      content: $icon-arrow-bend;
-    }
-  }
 }
 
 .steps-item__text {

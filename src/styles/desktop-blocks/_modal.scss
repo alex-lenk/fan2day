@@ -8,6 +8,7 @@
   position: fixed;
   z-index: 55;
   display: flex;
+  align-items: center;
   opacity: 0;
   pointer-events: none;
   transition: opacity .3s ease-out;
@@ -70,7 +71,7 @@
   position: absolute;
 }
 
-.modal-opened {
+.modal-open {
   opacity: 1;
   pointer-events: auto;
 }

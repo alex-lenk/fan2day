@@ -21,6 +21,7 @@
 @import "desktop-blocks/footer";
 @import "desktop-blocks/mini-card";
 @import "desktop-blocks/search-form";
+@import "desktop-blocks/steps";
 
 @import "mobile-blocks/menu";
 @import "mobile-blocks/header";
@@ -88,6 +89,29 @@
 
 .header .search-form__wrap {
   display: none;
+}
+
+.modal-add-event__holder {
+  padding: 30px;
+  overflow: hidden;
+  background: #E3E5EC;
+  border-radius: 15px;
+}
+
+.modal-add-event__container {
+  display: flex;
+}
+
+.modal-add-event__title {
+  margin-bottom: 10px;
+}
+
+.modal-add-event__container {
+  display: flex;
+}
+
+.modal-add-event__item:not(:last-child) {
+  margin-bottom: 15px;
 }
 
 @media (min-width: 1200px) {
